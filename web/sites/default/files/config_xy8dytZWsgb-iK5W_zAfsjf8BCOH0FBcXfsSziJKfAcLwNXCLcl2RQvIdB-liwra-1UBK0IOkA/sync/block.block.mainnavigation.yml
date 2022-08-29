@@ -1,0 +1,25 @@
+uuid: bac423be-a210-4370-9b81-bf5edcf1c578
+langcode: sk
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - zijem_vedu
+id: mainnavigation
+theme: zijem_vedu
+region: main_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

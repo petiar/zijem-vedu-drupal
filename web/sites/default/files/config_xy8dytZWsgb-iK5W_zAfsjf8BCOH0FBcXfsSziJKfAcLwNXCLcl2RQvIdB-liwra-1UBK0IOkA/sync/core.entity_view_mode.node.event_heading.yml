@@ -1,0 +1,10 @@
+uuid: f5b9ae6f-b2cd-4993-b41c-e37bf8bb87c2
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: node.event_heading
+label: 'Event Heading'
+targetEntityType: node
+cache: true

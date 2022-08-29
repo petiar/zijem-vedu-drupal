@@ -1,0 +1,11 @@
+uuid: 45da1aec-82c3-4d3c-9f44-8d4af6edc1d6
+langcode: sk
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eNX6lLCKDaY83nCMh20My---y03KbiFlv802DKCCpvg
+id: und
+label: Neurčené
+direction: ltr
+weight: 2
+locked: true

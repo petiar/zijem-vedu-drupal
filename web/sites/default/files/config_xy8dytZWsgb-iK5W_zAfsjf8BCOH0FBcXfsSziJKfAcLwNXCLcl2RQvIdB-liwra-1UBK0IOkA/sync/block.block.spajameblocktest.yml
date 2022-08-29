@@ -1,0 +1,20 @@
+uuid: 2d3635c1-1d2d-471b-8a3e-99b4c0aec404
+langcode: sk
+status: true
+dependencies:
+  module:
+    - zijem_vedu_blocks
+  theme:
+    - zijem_vedu
+id: spajameblocktest
+theme: zijem_vedu
+region: frontpage_heading_block
+weight: 0
+provider: null
+plugin: spajame_block
+settings:
+  id: spajame_block
+  label: 'Spájame Block'
+  label_display: '0'
+  provider: zijem_vedu_blocks
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 333d5d84-b1a5-4211-9309-e54c12221310
+langcode: sk
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - zijem_vedu
+_core:
+  default_config_hash: NjcxOBrPOiK5-38t56DwFBDVY4yer7YSlbRWXFuHe7A
+id: zijem_vedu_breadcrumbs
+theme: zijem_vedu
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

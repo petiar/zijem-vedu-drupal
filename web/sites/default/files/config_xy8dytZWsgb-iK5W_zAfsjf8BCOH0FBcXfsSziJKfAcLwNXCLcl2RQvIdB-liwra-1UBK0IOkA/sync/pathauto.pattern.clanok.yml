@@ -1,0 +1,22 @@
+uuid: 81ddff9e-40af-4b17-9739-d11e41e3ac23
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: clanok
+label: Článok
+type: 'canonical_entities:node'
+pattern: 'clanok/[node:title]'
+selection_criteria:
+  7a00122b-78d4-4c29-9b57-5529091a1a4d:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 7a00122b-78d4-4c29-9b57-5529091a1a4d
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+selection_logic: and
+weight: -5
+relationships: {  }

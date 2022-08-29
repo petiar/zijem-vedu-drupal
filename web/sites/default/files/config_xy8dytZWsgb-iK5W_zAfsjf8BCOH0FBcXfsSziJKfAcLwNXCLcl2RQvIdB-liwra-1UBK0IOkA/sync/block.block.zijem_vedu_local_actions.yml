@@ -1,0 +1,20 @@
+uuid: 42088af9-9422-4acf-89e7-cf89d502e5f0
+langcode: sk
+status: true
+dependencies:
+  theme:
+    - zijem_vedu
+_core:
+  default_config_hash: CdXfDmRgAvms7EQovxxWPdYi0GitxeRbVtScYK16ZH0
+id: zijem_vedu_local_actions
+theme: zijem_vedu
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

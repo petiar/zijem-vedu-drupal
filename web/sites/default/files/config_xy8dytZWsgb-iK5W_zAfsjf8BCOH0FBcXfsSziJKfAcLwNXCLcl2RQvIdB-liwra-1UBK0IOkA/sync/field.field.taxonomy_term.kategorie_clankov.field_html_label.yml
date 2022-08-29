@@ -1,0 +1,19 @@
+uuid: 03a185c2-9a1c-4e7a-8037-bd147ee67a55
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_html_label
+    - taxonomy.vocabulary.kategorie_clankov
+id: taxonomy_term.kategorie_clankov.field_html_label
+field_name: field_html_label
+entity_type: taxonomy_term
+bundle: kategorie_clankov
+label: 'HTML label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

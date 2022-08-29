@@ -1,0 +1,21 @@
+uuid: 4dc45f10-b8eb-4a49-a3fe-7163b4888826
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zaciatok
+    - node.type.event
+  module:
+    - datetime
+id: node.event.field_zaciatok
+field_name: field_zaciatok
+entity_type: node
+bundle: event
+label: Začiatok
+description: 'Tu zadajte dátum a čas začiatku eventu.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

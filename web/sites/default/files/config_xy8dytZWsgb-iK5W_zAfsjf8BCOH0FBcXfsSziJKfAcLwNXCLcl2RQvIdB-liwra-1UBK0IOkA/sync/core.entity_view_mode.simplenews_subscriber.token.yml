@@ -1,0 +1,10 @@
+uuid: 4fbb4070-6cfd-4c92-902c-869d9740981a
+langcode: sk
+status: true
+dependencies:
+  module:
+    - simplenews
+id: simplenews_subscriber.token
+label: Token
+targetEntityType: simplenews_subscriber
+cache: true
