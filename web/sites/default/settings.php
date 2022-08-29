@@ -779,7 +779,7 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 $databases['default']['default'] = array (
   'database' => 'drupal_zijem_vedu',
-  'username' => 'drupal_zijem_vedu',
+  'username' => 'drupal_zijem_ved',
   'password' => 'Cf5-\Q]q0T',
   'prefix' => '',
   'host' => 'mariadb103.r1.websupport.sk',
