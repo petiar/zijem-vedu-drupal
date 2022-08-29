@@ -22,10 +22,7 @@
 
 @font-face {
 	font-family: "Objektiv Mk1";
-	src: url("../font/objektiv-mk1-xbold/@font-face/4977957c89851357e46a14aed949a313.eot");
-	/* IE9*/
-	src: url("../font/objektiv-mk1-xbold/@font-face/4977957c89851357e46a14aed949a313.eot?#iefix") format("embedded-opentype"), url("../font/objektiv-mk1-xbold/@font-face/4977957c89851357e46a14aed949a313.woff2") format("woff2"), url("../font/objektiv-mk1-xbold/@font-face/4977957c89851357e46a14aed949a313.woff") format("woff"), url("../font/objektiv-mk1-xbold/@font-face/4977957c89851357e46a14aed949a313.ttf") format("truetype"), url("../font/objektiv-mk1-xbold/@font-face/4977957c89851357e46a14aed949a313.svg#Objektiv Mk1 W03 XBold") format("svg");
-	/* iOS 4.1- */
+  src: url("../font/objektiv-mk1-xbold/4977957c89851357e46a14aed949a313.woff2") format("woff2"), url("../font/objektiv-mk1-xbold/4977957c89851357e46a14aed949a313.woff") format("woff");
 	font-weight: 700;
 }
 
