@@ -4,16 +4,15 @@
     <section class="site__entry">
       <div class="container">
         <div class="row align-items-end">
-          {% if node.getType == 'article' %}
+
           <div class="col-12 col-lg-3">
-            <a href="{{ url('view.blogcast.page_1') }}" class="breandcrumb__link color-violet"><i class="fas fa-chevron-left"></i> <span>Blog</span></a>
-          </div>
-          {% endif %}
-          {% if node.getType == 'event' %}
-            <div class="col-12 col-lg-3">
+            {% if node.getType == 'article' %}
+              <a href="{{ url('view.blogcast.page_1') }}" class="breandcrumb__link color-violet"><i class="fas fa-chevron-left"></i> <span>Blog</span></a>
+            {% endif %}
+            {% if node.getType == 'event' %}
               <a href="{{ url('view.podujatia.page_1') }}" class="breandcrumb__link color-violet"><i class="fas fa-chevron-left"></i> <span>Podujatia</span></a>
-            </div>
-          {% endif %}
+            {% endif %}
+          </div>
           <div class="col-12 col-lg-6"><h1 class="mb-0 text-center">{{ node.label }}</h1></div>
           <div class="col-12 col-lg-3"></div>
         </div>
