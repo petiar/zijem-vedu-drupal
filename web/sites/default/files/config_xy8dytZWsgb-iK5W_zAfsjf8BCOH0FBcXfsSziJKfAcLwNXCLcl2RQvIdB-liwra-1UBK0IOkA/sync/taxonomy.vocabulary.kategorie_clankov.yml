@@ -1,8 +1,0 @@
-uuid: 116c21cc-a8cf-42a1-baa1-24ed5e6c494e
-langcode: sk
-status: true
-dependencies: {  }
-name: 'Kategórie článkov'
-vid: kategorie_clankov
-description: ''
-weight: 0
