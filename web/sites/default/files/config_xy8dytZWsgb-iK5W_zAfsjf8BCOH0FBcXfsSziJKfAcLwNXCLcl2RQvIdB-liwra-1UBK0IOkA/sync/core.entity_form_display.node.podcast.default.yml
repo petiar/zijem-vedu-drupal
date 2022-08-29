@@ -71,14 +71,10 @@ content:
       show_default_crop: true
     third_party_settings: {  }
   field_kategoria:
-    type: entity_reference_autocomplete
+    type: options_buttons
     weight: 18
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_playtime_seconds:
     type: readonly_field_widget

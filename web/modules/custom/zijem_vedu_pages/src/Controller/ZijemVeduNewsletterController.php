@@ -20,7 +20,7 @@ class ZijemVeduNewsletterController extends ControllerBase {
     $subscriptionManager = \Drupal::service('simplenews.subscription_manager');
 
     if (!$emailValidator->isValid($email)) {
-      $errors[] = 'Neplatný e-mail';
+      $errors[] = 'Toto veru nevyzerá na platný e-mail...';
     }
     if ($subscriptionManager->isSubscribed($email, self::NEWSLETTER_ID)) {
       $errors[] = 'Tento e-mail už registrujeme, vďaka!';
@@ -29,7 +29,7 @@ class ZijemVeduNewsletterController extends ControllerBase {
       $subscriptionManager->subscribe($email, self::NEWSLETTER_ID, false, self::NEWSLETTER_SUBSCRIPTION_SOURCE_WEBPAGE);
       $subscriptionManager->reset();
       if ($subscriptionManager->isSubscribed($email, self::NEWSLETTER_ID)) {
-        $notices[] = 'Úspešne prihlásený!';
+        $notices[] = 'Úspešne prihlásený, ďakujeme!';
       }
     }
     return new JsonResponse(['errors' => $errors, 'notices' => $notices]);
