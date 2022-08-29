@@ -1,0 +1,163 @@
+<?php
+/**
+ * Is used for rendering both HTML player and Playlist player
+ *
+ * @see \SeriouslySimplePodcasting\Controllers\Players_Controller::render_html_player();
+ * @see \SeriouslySimplePodcasting\Controllers\Players_Controller::render_playlist_player();
+ *
+ * @var \Cake\View\View $this
+ * @var \App\Model\Entity\Podcast $podcast
+ **/
+
+use App\Controller\Admin\PodcastsController;
+
+?>
+
+<div class="castos-player dark-mode" data-episode="{{ node.id }}" data-player_id="2508994380">
+  <div class="player">
+    <div class="player__main">
+      <div class="player__artwork player__artwork-{{ node.id }}"
+           style="background-position: center;background-size: cover;background-image: url('{{ file_url(node.field_image.entity.fileuri) }}');">
+      </div>
+      <div class="player__body">
+        <div class="currently-playing">
+          <div class="show player__podcast-title">
+            Žijem vedu
+          </div>
+          <div class="episode-title player__episode-title">{{ node.label }}</div>
+        </div>
+        <div class="play-progress">
+          <div class="play-pause-controls">
+            <button title="<?php __( 'Play'|t }}" class="play-btn">
+              <span class="screen-reader-text"><?php __( 'Play Episode'|t }}</span>
+            </button>
+            <button title="<?php __( 'Pause'|t }}" class="pause-btn hide">
+              <span class="screen-reader-text"><?php __( 'Pause Episode'|t }}</span>
+            </button>
+            <img src="/themes/custom/zijem_vedu/img/icon-loader.svg" class="ssp-loader hide"/>
+          </div>
+          <div>
+            <audio preload="none" class="clip clip-{{ node.id }}">
+              <source src="{{ file_url(node.field_subor.entity.fileuri) }}">
+            </audio>
+            <div class="ssp-progress" title="{{ 'Seek'|t }}">
+              <span class="progress__filled"></span>
+            </div>
+            <div class="ssp-playback playback">
+              <div class="playback__controls">
+                <button class="player-btn__volume" title="{{ 'Mute/Unmute'|t }}">
+                  <span class="screen-reader-text">{{ 'Mute/Unmute Episode'|t }}</span>
+                </button>
+                <button data-skip="-10" class="player-btn__rwd" title="{{ 'Rewind 10 seconds'|t }}">
+                <span class="screen-reader-text">{{ 'Rewind 10 Seconds'|t }}</span>
+                </button>
+                <button data-speed="1" class="player-btn__speed" title="{{ 'Playback Speed'|t }}">1x</button>
+                <button data-skip="30" class="player-btn__fwd" title="{{ 'Fast Forward 30 seconds'|t }}">
+                  <span class="screen-reader-text">{{ 'Fast Forward 30 seconds'|t }}</span>
+                </button>
+              </div>
+              <div class="playback__timers">
+                <time class="ssp-timer">00:00</time>
+                <span>/</span>
+                <!-- We need actual duration here from the server -->
+                <time class="ssp-duration">{{ node.field_playtime_string.0.value }}</time>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="player-panels-nav">
+
+          <button class="subscribe-btn" id="subscribe-btn-{{ node.id }}" title="{{ 'Subscribe'|t }}">{{ 'Subscribe'|t }}</button>
+          <button class="share-btn" id="share-btn-{{ node.id }}" title="{{ 'Share'|t }}">{{ 'Share'|t }}</button>
+
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="player-panels player-panels-{{ node.id }}">
+
+    <div class="subscribe player-panel subscribe-{{ node.id }}">
+      <div class="close-btn close-btn-{{ node.id }}">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="panel__inner">
+        <div class="subscribe-icons">
+          <a href="https://podcasts.apple.com/sk/podcast/%C5%BEijemvedu-podcast/id1533576341" target="_blank" rel="noopener noreferrer" class="apple_podcasts" title="Subscribe on  Apple Podcasts"> <span></span> Apple Podcasts	</a>
+          <a href="https://podcasts.google.com/feed/aHR0cHM6Ly96aWplbXZlZHUuc2svZmVlZC9wb2RjYXN0" target="_blank" rel="noopener noreferrer" class="google_podcasts" title="Subscribe on  Google Podcasts"> <span></span> Google Podcasts	</a>
+          <a href="https://open.spotify.com/show/6L4MTVWsBUvvAvv8GPdH16" target="_blank" rel="noopener noreferrer" class="spotify" title="Subscribe on  Spotify"> <span></span> Spotify	</a></div>
+        <div class="player-panel-row">
+          <div class="title">
+            {{ 'RSS Feed'|t }}
+          </div>
+          <div>
+            <input value="/podcast/feed.xml" class="input-rss input-rss-{{ node.id }}" />
+          </div>
+          <button class="copy-rss copy-rss-{{ node.id }}"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="share share-{{ node.id }} player-panel">
+      <div class="close-btn close-btn-{{ node.id }}">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="player-panel-row">
+        <div class="title">
+          {{ 'Share'|t }}
+        </div>
+        <div class="icons-holder">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ file_url(node.field_subor.entity.fileuri) }}&t={{ node.label }}"
+             target="_blank" rel="noopener noreferrer" class="share-icon facebook" title="{{ 'Share on Facebook'|t }}">
+            <span></span>
+          </a>
+          <a href="https://twitter.com/intent/tweet?text={{ node.label }}&url={{ file_url(node.field_subor.entity.fileuri) }}"
+             target="_blank" rel="noopener noreferrer" class="share-icon twitter" title="{{ 'Share on Twitter'|t }}">
+            <span></span>
+          </a>
+          <a href="{{ file_url(node.field_subor.entity.fileuri) }}"
+             target="_blank" rel="noopener noreferrer" class="share-icon download" title="{{ 'Download'|t }}" download>
+            <span></span>
+          </a>
+        </div>
+      </div>
+      <div class="player-panel-row">
+        <div class="title">
+          {{ 'Link'|t }}
+        </div>
+        <div>
+          <input value="/" class="input-link input-link-{{ node.id }}"/>
+        </div>
+        <button class="copy-link copy-link-{{ node.id }}"></button>
+      </div>
+      <div class="player-panel-row">
+        <div class="title">
+          {{ 'Embed'|t }}
+        </div>
+        <div style="height: 10px;">
+          <input type="text" value=''
+                 class="input-embed input-embed-{{ node.id }}"/>
+        </div>
+        <button class="copy-embed copy-embed-{{ node.id }}"></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="podcast_meta article__tag mb-0 color-gold">
+  <p>
+    <a href="{{ file_url(node.field_subor.entity.fileuri) }}" class="podcast-meta-download">{{ 'Download file'|t }}</a>
+    | <a href="{{ file_url(node.field_subor.entity.fileuri) }}" class="podcast-meta-new-window" target="_blank">{{ 'Play in new window'|t }}</a>
+    | <span class="podcast-meta-duration">{{'Duration'|t }}: {{ node.field_playtime_string.0.value }}</span>
+    | <span class="podcast-meta-date">{{'Recorded on'|t }} {{ date.value|date('d. m. Y') }}</span>
+
+    <br>{{'Subscribe'|t }}: <a href="https://podcasts.apple.com/sk/podcast/%C5%BEijemvedu-podcast/id1533576341" target="_blank" title="Apple Podcasts" class="podcast-meta-itunes">Apple Podcasts</a> | <a href="https://podcasts.google.com/feed/aHR0cHM6Ly96aWplbXZlZHUuc2svZmVlZC9wb2RjYXN0" target="_blank" title="Google Podcasts" class="podcast-meta-itunes">Google Podcasts</a> | <a href="https://open.spotify.com/show/6L4MTVWsBUvvAvv8GPdH16" target="_blank" title="Spotify" class="podcast-meta-itunes">Spotify</a>
+  </p>
+</div>
+
+<div class="clearfix"></div>

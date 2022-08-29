@@ -1,0 +1,22 @@
+zijem_vedu_pages.subscribe:
+  path: '/subscribe'
+  methods: [POST]
+  defaults:
+    _controller: '\Drupal\zijem_vedu_pages\Controller\ZijemVeduNewsletterController::subscribe'
+    _title: 'Subscribe to Zijem vedu newsletter'
+  requirements:
+    _permission: 'access content'
+zijem_vedu_pages.platforma:
+  path: '/platforma'
+  defaults:
+    _controller: '\Drupal\zijem_vedu_pages\Controller\ZijemVeduNewsletterController::platforma'
+    _title: 'Platforma'
+  requirements:
+    _permission: 'access content'
+zijem_vedu_pages.about:
+  path: '/o-nas'
+  defaults:
+    _controller: '\Drupal\zijem_vedu_pages\Controller\ZijemVeduNewsletterController::about'
+    _title: 'O nás'
+  requirements:
+    _permission: 'access content'

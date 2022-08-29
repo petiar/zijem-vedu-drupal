@@ -1,0 +1,95 @@
+<main class="site__main">
+{{ page.frontpage_heading_block }}
+{{ page.content.messages }}
+    <section class="p-4">
+      <div class="container">
+        {% if display_two_percent == 1 %}
+        <div class="row mb-5">
+          <div class="col-12 col-md-8 offset-md-2 col-lg-8 offset-lg-2">
+            <div class="banner">
+              <div class="banner__icon"><i class="fas fa-thumbtack"></i></div>
+              <div class="banner__content">
+                <p>Občianske združenie Žijemvedu o.z. sa uchádza o 2% z daní za rok {{ now|date('Y')-1 }}.</p>
+                <a href="http://" class="btn-link">Ako nám môžete venovať 2% <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-xl-8 offset-xl-2"><div class="separator"></div></div>
+      </div>
+    </div>
+
+    <section class="articles py-4">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-6 col-xl-4 offset-xl-4">
+            <h3 class="text-center mb-4">Články a podcasty</h3>
+            <p>Slovenské vedkyne a vedcov, ich výskum, ale aj názory a skúsenosti predstavujeme prostredníctvom <u>podcastov, videí, článkov o súčasnom výskume a blogov na Denníku N</u></p>
+          </div>
+        </div>
+        <div class="row pt-4 pb-5">
+          <div class="col-12 col-md-8 col-lg-8 col-xl-8 offset-xl-2">
+            {{ page.frontpage_main_article }}
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          {{ page.frontpage_recent_articles }}
+        </div>
+
+        <div class="d-flex py-3 justify-content-center">
+          <a href="/blogcast" class="btn btn-md btn-gradient-outline"><span>VŠETKY ČLÁNKY A PODCASTY </span> <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </section>
+</main>
+<footer class="site__footer">
+
+  <div class="footer__upper">
+
+    <div class="media">
+      <div class="container">
+
+        <div class="row pt-4">
+          <div class="col-12 col-lg-6 py-3">
+            {{ page.recent_news }}
+          </div>
+          <div class="col-12 col-lg-6">
+            {{ page.newsletter_block }}
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-xl-4 offset-xl-3">
+            <h2 class="mb-2">Občianske združenie Žijem vedu</h2>
+            <p class="fs-5">Cez naše OZko umožňujeme slovenským vedcom a vedkyniam kdekoľvek vo svete dať o sebe vedieť, nadväzovať spolupráce a prispievať k rozvoju vedy a výskumu na Slovensku.</p>
+          </div>
+          <div class="col">
+            <a href="http://" class="btn btn-xl btn-gradient btn-double"><span>VIAC O ŽIJEM</span><span>VEDU OZ <i class="fas fa-arrow-right"></i></span></a>
+          </div>
+        </div>
+
+        <div class="row py-5">
+          <div class="col-xl-6 offset-xl-3">
+            {{ page.followus_block }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ page.partners_block }}
+  </div>
+  {{ footer_lower }}
+</footer>
+
+
+

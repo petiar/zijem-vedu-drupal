@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains zijem_vedu_blocks.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function zijem_vedu_blocks_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the zijem_vedu_blocks module.
+    case 'help.page.zijem_vedu_blocks':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Bloky pre Žijem vedu') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function zijem_vedu_blocks_theme() {
+  return [
+    'spajame_block' => [
+      'variables' => [],
+    ],
+    'newsletter_block' => [
+      'variables' => [],
+    ],
+    'partners_block' => [
+      'variables' => [],
+    ],
+    'followus_block' => [
+      'variables' => [],
+    ],
+    'members_block' => [
+      'variables' => [
+        'members' => [],
+      ],
+    ],
+    'zijem_vedu_blocks' => [
+      'render element' => 'children',
+    ],
+  ];
+}

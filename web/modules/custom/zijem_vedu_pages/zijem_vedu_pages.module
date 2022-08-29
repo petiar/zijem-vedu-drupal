@@ -1,0 +1,98 @@
+<?php
+
+/**
+ * @file
+ * Contains zijem_vedu_pages.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\file\Entity\File;
+use Drupal\media\Plugin\media\Source\AudioFile;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_help().
+ */
+function zijem_vedu_pages_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the zijem_vedu_pages module.
+    case 'help.page.zijem_vedu_pages':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Stránky pre prijekt Žijem vedu') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function zijem_vedu_pages_theme() {
+  return [
+    'zijem_vedu_pages' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function zijem_vedu_pages_entity_insert(\Drupal\Core\Entity\EntityInterface $entity) {
+  zijem_vedu_pages_uncheck_others_featured($entity);
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function zijem_vedu_pages_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
+  zijem_vedu_pages_uncheck_others_featured($entity);
+}
+
+function zijem_vedu_pages_uncheck_others_featured(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node') {
+    if ($entity->bundle() == 'article') {
+      $featured = $entity->get('field_featured')->getValue();
+      if ($featured[0]['value'] == 1) {
+        $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+        $query->condition('status', 1)
+          ->condition('field_featured', 1);
+        $nids = $query->execute();
+        foreach ($nids as $nid) {
+          if ($nid !== $entity->id()) {
+            $node = Node::load($nid);
+            if ($node) {
+              $node->set('field_featured', 0);
+              $node->save();
+              \Drupal::messenger()
+                ->addStatus('Dal som preč featured flag z článku ' . $node->getTitle());
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function zijem_vedu_pages_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node') {
+    if ($entity->bundle() == 'podcast') {
+      $fileField = $entity->get('field_subor')->getValue();
+      $file = File::load($fileField[0]['target_id']);
+      /** @var \Drupal\Core\File\FileUrlGenerator $fileUrlGenerator */
+      $fileUrlGenerator = \Drupal::service('file_url_generator');
+      $fileUrl = DRUPAL_ROOT . $fileUrlGenerator->generateString($file->getFileUri());
+      $getID3 = new getID3;
+      $fileInfo = $getID3->analyze($fileUrl);
+      $entity->set('field_playtime_seconds', $fileInfo['playtime_seconds']);
+      $entity->set('field_playtime_string', $fileInfo['playtime_string']);
+    }
+  }
+}

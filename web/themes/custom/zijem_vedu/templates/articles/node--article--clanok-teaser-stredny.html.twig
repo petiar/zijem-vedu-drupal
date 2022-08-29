@@ -1,0 +1,13 @@
+<a href="{{ url }}" class="article__block article__block--wide">
+  <div class="article__image">
+    <figure>
+      <img src="{{ file_url(node.field_image.entity.fileuri) }}" alt="{{ node.field_image.alt }}">
+    </figure>
+  </div>
+  <div class="article__content">
+    <span class="tag-gradient">Neprehliadnite</span>
+    <strong class="article__tag color-red">{{ content.field_kategoria }}</strong>
+    <h3 class="family-heading mb-2 color-violet">{{ label }}</h3>
+    <p class="article__excerpt mb-auto">{{ content.body }}</p>
+  </div>
+</a>

@@ -1,0 +1,26 @@
+name: Zijem vedu
+type: theme
+description: 'Custom téma pre projekt Žijem vedu.'
+package: Other
+core_version_requirement: ^8 || ^9
+libraries:
+  - zijem_vedu/bootstrap
+  - zijem_vedu/global-styling
+
+base theme: false
+regions:
+  frontpage_heading_block: Frontpage Heading Block
+  frontpage_main_article: Frontpage Main Article
+  frontpage_recent_articles: Frontpage Recent Articles
+  newsletter_block: Newsletter Block
+  followus_block: Follow us Block
+  partners_block: Partners Block
+  members_block: Members Block
+  event_heading_block: Event Heading Bock
+  recent_news: Novinky
+  main_menu: Main menu
+  navigation: Navigation
+  header: Header
+  footer: Footer
+  primary: Primary links
+  content: Content

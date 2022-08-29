@@ -1,0 +1,77 @@
+<div class="site">
+  <main class="site__main">
+
+    <section class="site__entry">
+      <div class="container">
+        <div class="row align-items-end">
+          {% if node.getType == 'article' %}
+          <div class="col-12 col-lg-3">
+            <a href="{{ url('view.blogcast.page_1') }}" class="breandcrumb__link color-violet"><i class="fas fa-chevron-left"></i> <span>Blog</span></a>
+          </div>
+          {% endif %}
+          {% if node.getType == 'event' %}
+            <div class="col-12 col-lg-3">
+              <a href="{{ url('view.podujatia.page_1') }}" class="breandcrumb__link color-violet"><i class="fas fa-chevron-left"></i> <span>Podujatia</span></a>
+            </div>
+          {% endif %}
+          <div class="col-12 col-lg-6"><h1 class="mb-0 text-center">{{ node.label }}</h1></div>
+          <div class="col-12 col-lg-3"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="content">
+      {{ page.content }}
+    </section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-xl-6 offset-xl-3"><div class="separator"></div></div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-xl-6 offset-xl-3">
+          <div class="article__author">
+            <div class="author__image">
+              <figure>
+                <img src="{{ file_url(node.Owner.user_picture.entity.fileuri) }}" alt="Article">
+              </figure>
+            </div>
+            <div class="author__content">
+              <p class="m-0 text-muted text-uppercase fs-7">Autor:</p>
+              <p class="m-0 color-violet">{{ node.Owner.field_meno.value }} {{ node.Owner.field_priezvisko.value }}</p>
+              <p class="m-0 text-muted">{{ node.Owner.field_pracovisko.value }}</p>
+              <p class="m-0 text-muted fs-8">{{ node.Owner.field_specializacia.value }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-xl-6 offset-xl-3"><div class="separator"></div></div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site__footer">
+
+    <div class="footer__upper">
+
+      <div class="media">
+        <div class="container">
+          {{ page.newsletter_block }}
+          <div class="row py-5">
+            <div class="col-xl-6 offset-xl-3">
+              {{ page.followus_block }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{ page.partners_block }}
+
+
+    </div>
+    {{ footer_lower }}
+  </footer>
+</div>
