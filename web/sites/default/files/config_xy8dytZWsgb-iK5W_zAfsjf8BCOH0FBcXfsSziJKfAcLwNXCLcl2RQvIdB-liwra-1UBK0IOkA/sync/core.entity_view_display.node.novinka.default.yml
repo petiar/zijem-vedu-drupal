@@ -1,0 +1,29 @@
+uuid: cdefc4c6-69ce-4dcc-91ca-e261b597de1d
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.field.node.novinka.body
+    - node.type.novinka
+  module:
+    - text
+    - user
+id: node.novinka.default
+targetEntityType: node
+bundle: novinka
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

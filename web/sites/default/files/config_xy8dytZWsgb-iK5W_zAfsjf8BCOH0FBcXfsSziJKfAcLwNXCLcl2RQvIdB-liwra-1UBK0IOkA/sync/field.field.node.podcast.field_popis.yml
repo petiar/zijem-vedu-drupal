@@ -1,0 +1,21 @@
+uuid: ff5abdb8-6bba-4b8b-aa96-080c65fe6c71
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_popis
+    - node.type.podcast
+  module:
+    - text
+id: node.podcast.field_popis
+field_name: field_popis
+entity_type: node
+bundle: podcast
+label: Popis
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

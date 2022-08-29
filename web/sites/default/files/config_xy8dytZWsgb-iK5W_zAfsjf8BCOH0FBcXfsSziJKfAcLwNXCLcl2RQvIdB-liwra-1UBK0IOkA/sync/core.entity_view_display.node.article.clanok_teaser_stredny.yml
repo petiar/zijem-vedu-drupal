@@ -1,0 +1,76 @@
+uuid: 4ea7befb-5219-40ba-afd7-73f09210961f
+langcode: sk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.clanok_teaser_stredny
+    - field.field.node.article.body
+    - field.field.node.article.field_featured
+    - field.field.node.article.field_image
+    - field.field.node.article.field_kategoria
+    - field.field.node.article.field_tags
+    - image.style.obrazok_k_clanku_stredny
+    - node.type.article
+  module:
+    - image
+    - text
+    - user
+_core:
+  default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
+id: node.article.clanok_teaser_stredny
+targetEntityType: node
+bundle: article
+mode: clanok_teaser_stredny
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_featured:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: obrazok_k_clanku_stredny
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_kategoria:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

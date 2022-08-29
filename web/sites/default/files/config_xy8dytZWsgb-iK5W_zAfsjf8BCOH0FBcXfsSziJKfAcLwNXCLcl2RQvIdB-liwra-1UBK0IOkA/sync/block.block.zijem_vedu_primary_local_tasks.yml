@@ -1,0 +1,22 @@
+uuid: 6be3b865-1808-4a6a-b85a-c6ee172e76e6
+langcode: sk
+status: true
+dependencies:
+  theme:
+    - zijem_vedu
+_core:
+  default_config_hash: ACjBZI5shAMiiUpsz-inLYVXDqNNXRnSzAWV3kV_8Hw
+id: zijem_vedu_primary_local_tasks
+theme: zijem_vedu
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primárne karty'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

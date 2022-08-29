@@ -1,0 +1,21 @@
+uuid: defc4e2e-9c3e-4161-8f65-c0e599591645
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_miesto_konania
+    - node.type.event
+  module:
+    - text
+id: node.event.field_miesto_konania
+field_name: field_miesto_konania
+entity_type: node
+bundle: event
+label: 'Miesto konania'
+description: 'Miesto konania so všetkými užitočnými detailami - adresa, budova a podobne.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

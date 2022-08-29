@@ -1,0 +1,18 @@
+uuid: caed437c-fb29-46f7-bfda-136d97bc3b00
+langcode: sk
+status: true
+dependencies:
+  config:
+    - crop.type.obrazok_k_clanku_maly
+  module:
+    - crop
+name: maly_obrazok_k_clanku
+label: 'Malý obrázok k článku'
+effects:
+  b7d4d674-a075-4651-b3c1-7bba7c7a902c:
+    uuid: b7d4d674-a075-4651-b3c1-7bba7c7a902c
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: obrazok_k_clanku_maly
+      automatic_crop_provider: null

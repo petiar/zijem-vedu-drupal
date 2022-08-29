@@ -1,0 +1,20 @@
+uuid: 6288e600-67dd-4006-b60a-7e88c19a106e
+langcode: sk
+status: true
+dependencies:
+  module:
+    - zijem_vedu_blocks
+  theme:
+    - zijem_vedu
+id: clenoviazijemvedu
+theme: zijem_vedu
+region: members_block
+weight: 0
+provider: null
+plugin: members_block
+settings:
+  id: members_block
+  label: 'Členovia Žijem vedu'
+  label_display: '0'
+  provider: zijem_vedu_blocks
+visibility: {  }

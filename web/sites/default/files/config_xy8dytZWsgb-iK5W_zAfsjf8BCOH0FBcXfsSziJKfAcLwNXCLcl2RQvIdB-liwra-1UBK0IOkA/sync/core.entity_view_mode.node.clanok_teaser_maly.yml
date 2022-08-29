@@ -1,0 +1,10 @@
+uuid: faeaa7e8-6390-473d-af46-9f85428047af
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: node.clanok_teaser_maly
+label: 'Článok teaser - malý'
+targetEntityType: node
+cache: true

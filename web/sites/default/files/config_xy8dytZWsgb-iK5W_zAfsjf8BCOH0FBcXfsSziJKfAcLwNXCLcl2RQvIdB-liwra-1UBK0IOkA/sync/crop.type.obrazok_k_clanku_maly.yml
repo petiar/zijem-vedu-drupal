@@ -1,0 +1,12 @@
+uuid: e7425768-de27-41c1-b6bf-249ce81b6ece
+langcode: sk
+status: true
+dependencies: {  }
+label: 'Obrázok k článku - malý'
+id: obrazok_k_clanku_maly
+description: ''
+aspect_ratio: '9:11'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

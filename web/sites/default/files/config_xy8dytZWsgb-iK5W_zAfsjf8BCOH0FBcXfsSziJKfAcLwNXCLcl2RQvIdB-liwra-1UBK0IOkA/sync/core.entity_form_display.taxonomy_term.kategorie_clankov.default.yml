@@ -1,0 +1,60 @@
+uuid: c3a97335-2a53-4148-8145-0f0a4e222ebd
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.kategorie_clankov.field_html_label
+    - taxonomy.vocabulary.kategorie_clankov
+  module:
+    - path
+    - text
+id: taxonomy_term.kategorie_clankov.default
+targetEntityType: taxonomy_term
+bundle: kategorie_clankov
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_html_label:
+    type: string_textfield
+    weight: 101
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,12 @@
+uuid: b0902f7b-daec-4cd1-87c0-f478d6ea4861
+langcode: sk
+status: true
+dependencies: {  }
+label: 'Obrázok k článku - stredný'
+id: obrazok_k_clanku_stredny
+description: ''
+aspect_ratio: '101:55'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null
