@@ -1,0 +1,18 @@
+uuid: 6a40280e-ac76-4006-8f88-260264af44e2
+langcode: sk
+status: true
+dependencies:
+  config:
+    - crop.type.event_dlhy
+  module:
+    - crop
+name: dlhy_obrazok_event_list
+label: 'Dlhý obrázok - event list'
+effects:
+  a2701226-0d9b-4547-8402-521f99647a13:
+    uuid: a2701226-0d9b-4547-8402-521f99647a13
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: event_dlhy
+      automatic_crop_provider: null

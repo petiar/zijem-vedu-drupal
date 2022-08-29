@@ -1,0 +1,18 @@
+uuid: 78232d95-b685-4f5a-a768-8ba31bb60950
+langcode: sk
+status: true
+dependencies:
+  config:
+    - node.type.podcast
+id: node.podcast.title
+field_name: title
+entity_type: node
+bundle: podcast
+label: Názov
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
