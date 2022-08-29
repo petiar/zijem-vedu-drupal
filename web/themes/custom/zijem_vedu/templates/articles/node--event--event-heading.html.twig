@@ -1,0 +1,25 @@
+<div class="events">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="event__entry">
+          <img src="{{ file_url(node.field_image.entity.fileuri) }}" alt="{{ node.field_image.alt }}">
+        </div>
+      </div>
+    </div>
+
+    <div class="row py-5">
+      <div class="col-12 col-md-8 col-xl-10 offset-xl-1">
+        <h2 class="color-violet">{{ label }}</h2>
+      </div>
+      <div class="col-12 col-md-8 col-xl-6 offset-xl-1">
+        <p>{{ content.body }}</p>
+      </div>
+      <div class="col-12 col-md-4 col-xl-3 offset-xl-1">
+        <div class="label-gradient">{{ node.field_zaciatok.0.value|date('d. m') }} - {{ node.field_koniec.0.value|date('d. m') }}</div>
+        <p class="fs-7 mt-2 mb-3">{{ content.field_miesto_konania }}</p>
+        <a href="/podujatia/starsie" class="btn btn-md btn-gradient-outline"><span>Staršie podujatia</span> <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

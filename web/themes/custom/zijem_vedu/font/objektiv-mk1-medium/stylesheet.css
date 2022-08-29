@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Objektiv Mk1';
+    src: url('ObjektivMk1-Medium.woff2') format('woff2'),
+        url('ObjektivMk1-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
