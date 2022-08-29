@@ -1,0 +1,23 @@
+uuid: 8b1736bd-95a1-4c8c-a243-621595b0f1f0
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cislo_epizody
+    - node.type.podcast
+id: node.podcast.field_cislo_epizody
+field_name: field_cislo_epizody
+entity_type: node
+bundle: podcast
+label: 'Číslo epizódy'
+description: 'Zadajte číslo tejto epizódy.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

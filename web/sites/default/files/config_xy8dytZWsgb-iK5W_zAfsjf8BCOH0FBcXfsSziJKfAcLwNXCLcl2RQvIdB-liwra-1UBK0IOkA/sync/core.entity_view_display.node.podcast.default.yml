@@ -3,12 +3,14 @@ langcode: sk
 status: true
 dependencies:
   config:
+    - field.field.node.podcast.field_cislo_epizody
     - field.field.node.podcast.field_datum_nahravky
     - field.field.node.podcast.field_explicit
     - field.field.node.podcast.field_image
     - field.field.node.podcast.field_kategoria
     - field.field.node.podcast.field_playtime_seconds
     - field.field.node.podcast.field_playtime_string
+    - field.field.node.podcast.field_podcast
     - field.field.node.podcast.field_popis
     - field.field.node.podcast.field_subor
     - field.field.node.podcast.field_tags
@@ -24,6 +26,15 @@ targetEntityType: node
 bundle: podcast
 mode: default
 content:
+  field_cislo_epizody:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
   field_datum_nahravky:
     type: datetime_default
     label: above
@@ -80,6 +91,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 108
+    region: content
+  field_podcast:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_popis:
     type: text_default
