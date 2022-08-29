@@ -1,0 +1,10 @@
+uuid: 7cbee1d5-3b4f-4fc7-a21a-04e42fac3ede
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: node.event_list
+label: 'Event list'
+targetEntityType: node
+cache: true

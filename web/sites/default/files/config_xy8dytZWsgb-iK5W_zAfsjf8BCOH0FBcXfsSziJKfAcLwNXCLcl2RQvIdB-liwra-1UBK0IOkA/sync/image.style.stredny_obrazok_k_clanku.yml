@@ -1,0 +1,18 @@
+uuid: 8052c20d-a193-4d5c-abf8-d3025a4edc04
+langcode: sk
+status: true
+dependencies:
+  config:
+    - crop.type.obrazok_k_clanku_stredny
+  module:
+    - crop
+name: stredny_obrazok_k_clanku
+label: 'Stredný obrázok k článku'
+effects:
+  0cb1be01-a378-4dc5-b913-ccb3425308d5:
+    uuid: 0cb1be01-a378-4dc5-b913-ccb3425308d5
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: obrazok_k_clanku_stredny
+      automatic_crop_provider: null

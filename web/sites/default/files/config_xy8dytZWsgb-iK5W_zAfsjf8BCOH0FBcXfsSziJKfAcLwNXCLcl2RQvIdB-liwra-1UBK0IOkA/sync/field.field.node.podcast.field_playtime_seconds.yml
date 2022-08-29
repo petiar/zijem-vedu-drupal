@@ -1,0 +1,23 @@
+uuid: 1f53d4ae-3afe-478c-bbee-64251ac7e139
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_playtime_seconds
+    - node.type.podcast
+id: node.podcast.field_playtime_seconds
+field_name: field_playtime_seconds
+entity_type: node
+bundle: podcast
+label: 'Playtime seconds'
+description: 'Dĺžka v sekundách.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,15 @@
+uuid: 81fa1c16-139d-47fb-829b-87e25cebc4c9
+langcode: sk
+status: false
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - simplenews
+_core:
+  default_config_hash: rCDGCl6pMFu6zZuErLQggKvmawfFDysFcZNCDL72U4M
+id: node.email_plain
+label: 'Email: obyčajný text'
+targetEntityType: node
+cache: true

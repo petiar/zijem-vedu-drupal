@@ -1,0 +1,20 @@
+uuid: 53187cab-9dde-469d-8b4e-3c75ce28adc8
+langcode: sk
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_zaciatok
+field_name: field_zaciatok
+entity_type: node
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

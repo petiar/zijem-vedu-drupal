@@ -1,0 +1,9 @@
+uuid: 98d08167-1cb0-49b7-bc7d-2b01df7b20c6
+langcode: sk
+status: true
+dependencies: {  }
+id: sk
+label: Slovak
+direction: ltr
+weight: 0
+locked: false

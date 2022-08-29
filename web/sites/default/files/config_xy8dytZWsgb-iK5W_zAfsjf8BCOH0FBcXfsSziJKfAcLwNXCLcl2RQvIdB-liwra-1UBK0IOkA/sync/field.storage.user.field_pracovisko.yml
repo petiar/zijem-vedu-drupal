@@ -1,0 +1,21 @@
+uuid: 597e676b-6747-4594-a135-f2e6f97178f0
+langcode: sk
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_pracovisko
+field_name: field_pracovisko
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

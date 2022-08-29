@@ -1,0 +1,27 @@
+uuid: 754501e4-3db8-497b-9486-37eec2e35b84
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subor
+    - node.type.podcast
+  module:
+    - file
+id: node.podcast.field_subor
+field_name: field_subor
+entity_type: node
+bundle: podcast
+label: Súbor
+description: 'Súbor pre tento podcast.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: mp3
+  max_filesize: ''
+  description_field: false
+field_type: file

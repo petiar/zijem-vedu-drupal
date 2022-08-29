@@ -1,0 +1,24 @@
+uuid: bed13958-ea1b-40b6-bada-5e4733cfdd96
+langcode: sk
+status: true
+dependencies:
+  config:
+    - views.view.najnovsi_clanok
+  module:
+    - views
+  theme:
+    - zijem_vedu
+id: views_block__najnovsi_clanok_block_1
+theme: zijem_vedu
+region: frontpage_main_article
+weight: 0
+provider: null
+plugin: 'views_block:najnovsi_clanok-block_1'
+settings:
+  id: 'views_block:najnovsi_clanok-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }
