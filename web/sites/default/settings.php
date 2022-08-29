@@ -777,6 +777,19 @@ $settings['entity_update_backup'] = TRUE;
  */
 $settings['migrate_node_migrate_type_classic'] = FALSE;
 
+$databases['default']['default'] = array (
+  'database' => 'drupal_zijem_vedu',
+  'username' => 'drupal_zijem_vedu',
+  'password' => 'Cf5-\Q]q0T',
+  'prefix' => '',
+  'host' => 'mariadb103.r1.websupport.sk',
+  'port' => '3313',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+  'driver' => 'mysql',
+  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+);
+$settings['config_sync_directory'] = 'sites/default/files/config_xy8dytZWsgb-iK5W_zAfsjf8BCOH0FBcXfsSziJKfAcLwNXCLcl2RQvIdB-liwra-1UBK0IOkA/sync';
+
 /**
  * Load local development override configuration, if available.
  *
@@ -790,19 +803,7 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-#
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
-$databases['default']['default'] = array (
-  'database' => 'drupal9',
-  'username' => 'drupal9',
-  'password' => 'drupal9',
-  'prefix' => '',
-  'host' => 'database',
-  'port' => '3306',
-  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'driver' => 'mysql',
-  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
-);
-$settings['config_sync_directory'] = 'sites/default/files/config_xy8dytZWsgb-iK5W_zAfsjf8BCOH0FBcXfsSziJKfAcLwNXCLcl2RQvIdB-liwra-1UBK0IOkA/sync';
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
