@@ -1,3 +1,4 @@
 .fixed-top {
   top: inherit;
+  z-index:100;
 }
