@@ -5,7 +5,7 @@
     </figure>
   </div>
   <div class="article__content">
-    <strong class="article__tag color-gold">{{ content.field_kategoria }}</strong>
+    <strong class="article__tag color-gold">{{ node.field_kategoria.0.entity.field_html_label.0.value|raw }}</strong>
     <h4 class="family-heading mb-2 color-violet">{{ label }}</h4>
     <div class="mb-1 label-base">{{ date.value|date('d. m. Y') }}</div>
     <p class="article__excerpt mb-auto">{{ content.body }}</p>
