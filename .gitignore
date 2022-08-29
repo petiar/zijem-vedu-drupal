@@ -2,14 +2,13 @@
 /web/sites/*/*settings*.php
 settings.local.php
 /web/sites/*/*services*.yml
-
+!settings.php
+!services.yml
 /vendor/
 
 # Ignore paths that contain user-generated content.
 /web/sites/*/files/*
 !/web/sites/default/files/config_*/
-
-
 
 /web/sites/*/private
 
