@@ -1,0 +1,12 @@
+uuid: 587262cb-af0a-46ee-9512-355d0b1afcc3
+langcode: sk
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  canonical_url: '[current-page:url]'
+  icon_192x192: /themes/custom/zijem_vedu/img/cropped-favicon-192x192.webp
+  title: '[current-page:title] | [site:name]'
