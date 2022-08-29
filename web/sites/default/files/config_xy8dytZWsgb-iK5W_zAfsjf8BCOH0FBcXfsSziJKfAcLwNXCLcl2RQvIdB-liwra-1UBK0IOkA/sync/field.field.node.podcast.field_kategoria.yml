@@ -6,15 +6,19 @@ dependencies:
     - field.storage.node.field_kategoria
     - node.type.podcast
     - taxonomy.vocabulary.kategorie_clankov
+  content:
+    - 'taxonomy_term:kategorie_clankov:84288ef5-b90b-4bcd-814f-80250178cb9b'
 id: node.podcast.field_kategoria
 field_name: field_kategoria
 entity_type: node
 bundle: podcast
 label: Kategória
 description: ''
-required: false
+required: true
 translatable: true
-default_value: {  }
+default_value:
+  -
+    target_uuid: 84288ef5-b90b-4bcd-814f-80250178cb9b
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
