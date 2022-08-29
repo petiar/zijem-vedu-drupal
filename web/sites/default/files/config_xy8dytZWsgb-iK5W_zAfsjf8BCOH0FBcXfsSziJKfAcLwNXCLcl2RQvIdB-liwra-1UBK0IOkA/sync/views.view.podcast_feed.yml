@@ -1169,7 +1169,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'Science, Education'
+            text: 'Science/Natural Sciences, Education'
             make_link: false
             path: ''
             absolute: false
@@ -1427,7 +1427,7 @@ display:
           'itunes:explicit_field': nothing_7
           'itunes:owner--name_field': ''
           'itunes:owner--email_field': nothing_4
-          'itunes:author_field': ''
+          'itunes:author_field': nothing_2
           'itunes:summary_field': nothing
           'itunes:keywords_field': ''
           'itunes:image_field': nothing_6
