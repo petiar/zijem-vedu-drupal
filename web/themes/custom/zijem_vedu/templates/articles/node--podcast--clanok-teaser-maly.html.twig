@@ -7,7 +7,7 @@
   <div class="article__content">
     <strong class="article__tag color-gold">{{ content.field_kategoria }}</strong>
     <h4 class="family-heading mb-2 color-violet">{{ label }}</h4>
-    <div class="mb-1 label-base">{{ date.value|date('d. m. Y') }}</div>
+    <div class="mb-1 label-base">{{ node.created.value|date('d. m. Y') }}</div>
     <p class="article__excerpt mb-auto">{{ content.body }}</p>
     <p class="article__excerpt mb-auto">{{ content.field_popis }}</p>
   </div>
