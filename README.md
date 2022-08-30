@@ -12,6 +12,8 @@ drush cim
 drush cr
 ```
 
+Do `.gitignore` som hodil adresár `modules/contrib`, takže pozor na ten composer - nezabudnúť ho púšťať.
+
 ## Custom moduly
 
 ### zijem_vedu_block
