@@ -32,6 +32,7 @@
         "drupal/preload_font": "^1.0",
         "drupal/readonly_field_widget": "^1.5",
         "drupal/simplenews": "^3.0@beta",
+        "drupal/twig_tweak": "^3.1",
         "drush/drush": "^11.1",
         "gmostafa/php-graphql-client": "^1.13",
         "james-heinrich/getid3": "^1.9",

@@ -2,7 +2,7 @@
   <a href="{{ url }}" class="event__block">
     <div class="event__image">
       <figure>
-        <img src="{{ file_url(node.field_image.entity.fileuri) }}" alt="{{ node.field_image.alt }}">
+        <img src="{{ file_url(node.field_image.entity.fileuri | image_style('dlhy_obrazok_event_list')) }}" alt="{{ node.field_image.alt }}">
       </figure>
     </div>
     <div class="event__content">
