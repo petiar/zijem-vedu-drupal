@@ -1,4 +1,4 @@
-uuid: c611e57d-f1dc-4482-bbeb-1874b419270f
+uuid: 8a6274fd-9f16-41a0-9a98-b62f0d46fd14
 langcode: sk
 status: true
 dependencies:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_powered_by_block
 settings:
   id: system_powered_by_block
-  label: 'Beží na Drupale'
+  label: 'Powered by Drupal'
   label_display: '0'
   provider: system
 visibility: {  }

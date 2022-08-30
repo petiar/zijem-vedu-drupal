@@ -1,0 +1,24 @@
+uuid: 0c2b5437-c180-410d-a0d1-d600a03d201f
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_eu_cookie_consent
+  module:
+    - user
+id: user.user.field_eu_cookie_consent
+field_name: field_eu_cookie_consent
+entity_type: user
+bundle: user
+label: 'EU cookie consent'
+description: 'Potvrď, že súhlasíš s ukladaním cookies potrebných pre prihlásenie a prácu s administráciou webu.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Zapnúť
+  off_label: Vypnúť
+field_type: boolean

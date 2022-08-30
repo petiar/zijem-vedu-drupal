@@ -1,4 +1,4 @@
-uuid: 255f954f-cfcd-4a31-b804-5f741bb3a22b
+uuid: 17ce2e5e-5020-4056-a9ad-463af80f3640
 langcode: sk
 status: true
 dependencies:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
-  label: 'Hlavný obsah stránky'
+  label: 'Main page content'
   label_display: '0'
   provider: system
 visibility: {  }

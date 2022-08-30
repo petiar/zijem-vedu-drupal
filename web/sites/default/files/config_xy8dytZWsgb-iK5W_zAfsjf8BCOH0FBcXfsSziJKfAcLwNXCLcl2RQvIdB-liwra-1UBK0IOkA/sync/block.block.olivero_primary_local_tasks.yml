@@ -1,4 +1,4 @@
-uuid: 9b42e586-c58f-410f-b911-9331bfd43a80
+uuid: 47aa4ec0-9810-4559-85ca-8da232a72e00
 langcode: sk
 status: true
 dependencies:
@@ -14,7 +14,7 @@ provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: 'Primárne karty'
+  label: 'Primary tabs'
   label_display: '0'
   provider: core
   primary: true

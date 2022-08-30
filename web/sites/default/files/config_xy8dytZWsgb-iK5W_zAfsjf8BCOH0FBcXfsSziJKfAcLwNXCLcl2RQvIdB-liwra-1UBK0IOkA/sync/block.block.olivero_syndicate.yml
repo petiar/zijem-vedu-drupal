@@ -1,4 +1,4 @@
-uuid: f2a2a6f1-9eda-4c85-9017-6e81e27fd9a8
+uuid: 56780db3-9ba9-40df-b162-f11f43b6f55c
 langcode: sk
 status: true
 dependencies:
@@ -16,7 +16,7 @@ provider: null
 plugin: node_syndicate_block
 settings:
   id: node_syndicate_block
-  label: 'Kanál správ RSS'
+  label: 'RSS feed'
   label_display: '0'
   provider: node
   block_count: 10
