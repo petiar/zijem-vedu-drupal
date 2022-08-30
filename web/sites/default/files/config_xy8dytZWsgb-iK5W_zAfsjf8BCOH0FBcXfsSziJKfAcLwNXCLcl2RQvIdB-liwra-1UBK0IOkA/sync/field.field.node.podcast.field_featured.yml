@@ -1,0 +1,23 @@
+uuid: 4c906e14-4b37-4afb-8301-471930de00c9
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured
+    - node.type.podcast
+id: node.podcast.field_featured
+field_name: field_featured
+entity_type: node
+bundle: podcast
+label: 'Podcast je featured'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Zapnúť
+  off_label: Vypnúť
+field_type: boolean

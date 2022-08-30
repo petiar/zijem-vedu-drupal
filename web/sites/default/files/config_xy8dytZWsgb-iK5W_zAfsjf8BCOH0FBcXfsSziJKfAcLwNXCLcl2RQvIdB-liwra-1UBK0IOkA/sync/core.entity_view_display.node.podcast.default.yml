@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.podcast.field_cislo_epizody
     - field.field.node.podcast.field_datum_nahravky
     - field.field.node.podcast.field_explicit
+    - field.field.node.podcast.field_featured
     - field.field.node.podcast.field_image
     - field.field.node.podcast.field_kategoria
     - field.field.node.podcast.field_playtime_seconds
@@ -53,6 +54,16 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_featured:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 112
     region: content
   field_image:
     type: image

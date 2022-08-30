@@ -1,4 +1,4 @@
-uuid: 44297be5-dc11-4b9d-a8e5-450d051f8870
+uuid: fdc00a64-4916-4b81-9eb5-1bcd5b8ff524
 langcode: sk
 status: true
 dependencies:
@@ -14,7 +14,7 @@ provider: null
 plugin: page_title_block
 settings:
   id: page_title_block
-  label: 'Názov stránky'
+  label: 'Page title'
   label_display: '0'
   provider: core
 visibility: {  }

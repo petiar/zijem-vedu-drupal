@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_eu_cookie_consent
     - field.field.user.user.field_meno
     - field.field.user.user.field_pracovisko
     - field.field.user.user.field_priezvisko
@@ -32,6 +33,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_eu_cookie_consent: true
   field_meno: true
   field_pracovisko: true
   field_priezvisko: true

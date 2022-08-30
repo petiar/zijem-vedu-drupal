@@ -3,6 +3,7 @@ langcode: sk
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_eu_cookie_consent
     - field.field.user.user.field_meno
     - field.field.user.user.field_pracovisko
     - field.field.user.user.field_priezvisko
@@ -19,6 +20,16 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_eu_cookie_consent:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_meno:
     type: string
     label: above

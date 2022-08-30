@@ -55,7 +55,7 @@ function zijem_vedu_pages_entity_update(\Drupal\Core\Entity\EntityInterface $ent
 
 function zijem_vedu_pages_uncheck_others_featured(EntityInterface $entity) {
   if ($entity->getEntityTypeId() == 'node') {
-    if ($entity->bundle() == 'article') {
+    if (in_array($entity->bundle(), ['article', 'podcast'])) {
       $featured = $entity->get('field_featured')->getValue();
       if ($featured[0]['value'] == 1) {
         $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
@@ -69,7 +69,7 @@ function zijem_vedu_pages_uncheck_others_featured(EntityInterface $entity) {
               $node->set('field_featured', 0);
               $node->save();
               \Drupal::messenger()
-                ->addStatus('Dal som preč featured flag z článku ' . $node->getTitle());
+                ->addStatus('Dal som preč featured flag z článku/podcasu ' . $node->getTitle());
             }
           }
         }

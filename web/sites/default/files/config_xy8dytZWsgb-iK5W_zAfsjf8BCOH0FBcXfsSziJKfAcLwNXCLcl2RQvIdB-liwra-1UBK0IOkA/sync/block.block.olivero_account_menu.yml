@@ -1,4 +1,4 @@
-uuid: d4054015-f318-457c-a4d3-e37787271496
+uuid: 4c348798-c129-42f2-9455-d64973a9639b
 langcode: sk
 status: true
 dependencies:
@@ -18,7 +18,7 @@ provider: null
 plugin: 'system_menu_block:account'
 settings:
   id: 'system_menu_block:account'
-  label: 'Používateľské menu'
+  label: 'User account menu'
   label_display: '0'
   provider: system
   level: 1
