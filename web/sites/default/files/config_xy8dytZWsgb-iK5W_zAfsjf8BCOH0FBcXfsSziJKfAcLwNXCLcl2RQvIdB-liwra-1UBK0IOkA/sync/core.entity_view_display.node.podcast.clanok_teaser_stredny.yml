@@ -1,0 +1,72 @@
+uuid: 61a8dd5b-ddcb-41c0-96c5-d129f63748f9
+langcode: sk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.clanok_teaser_stredny
+    - field.field.node.podcast.field_cislo_epizody
+    - field.field.node.podcast.field_datum_nahravky
+    - field.field.node.podcast.field_explicit
+    - field.field.node.podcast.field_featured
+    - field.field.node.podcast.field_image
+    - field.field.node.podcast.field_kategoria
+    - field.field.node.podcast.field_playtime_seconds
+    - field.field.node.podcast.field_playtime_string
+    - field.field.node.podcast.field_podcast
+    - field.field.node.podcast.field_popis
+    - field.field.node.podcast.field_subor
+    - field.field.node.podcast.field_tags
+    - node.type.podcast
+  module:
+    - file
+    - image
+    - text
+    - user
+id: node.podcast.clanok_teaser_stredny
+targetEntityType: node
+bundle: podcast
+mode: clanok_teaser_stredny
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_popis:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_subor:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_cislo_epizody: true
+  field_datum_nahravky: true
+  field_explicit: true
+  field_featured: true
+  field_kategoria: true
+  field_playtime_seconds: true
+  field_playtime_string: true
+  field_podcast: true
+  field_tags: true
+  langcode: true
