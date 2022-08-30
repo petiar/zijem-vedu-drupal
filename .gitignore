@@ -8,11 +8,17 @@ settings.local.php
 
 # Ignore paths that contain user-generated content.
 /web/sites/*/files/*
+
+# Do not ignore config
 !/web/sites/default/files/config_*/
+
+# Ignore modules contrib directory, because we use composer install on server
+/web/modules/contrib
 
 /web/sites/*/private
 
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest
 
+# Ignore macOS system files
 _DS_Store
