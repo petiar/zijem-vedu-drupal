@@ -1,0 +1,19 @@
+uuid: 61a5db81-fc6d-461c-92e7-0d1ae0406e24
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_autor_specializacia
+    - node.type.article
+id: node.article.field_autor_specializacia
+field_name: field_autor_specializacia
+entity_type: node
+bundle: article
+label: Špecializácia
+description: 'Napíš niečo viac ak autorovej práci -pozícia, špecializácia, prípadne čokoľvek iné, čo je relevantné k obsahu článku.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

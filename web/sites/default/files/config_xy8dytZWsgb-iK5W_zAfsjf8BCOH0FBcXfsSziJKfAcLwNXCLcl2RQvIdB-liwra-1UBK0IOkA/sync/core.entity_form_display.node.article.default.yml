@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_autor_fotografia
+    - field.field.node.article.field_autor_meno
+    - field.field.node.article.field_autor_organizacia
+    - field.field.node.article.field_autor_specializacia
     - field.field.node.article.field_featured
     - field.field.node.article.field_image
     - field.field.node.article.field_kategoria
@@ -11,9 +15,30 @@ dependencies:
     - image.style.thumbnail
     - node.type.article
   module:
+    - field_group
+    - image
     - image_widget_crop
     - path
     - text
+third_party_settings:
+  field_group:
+    group_autor:
+      children:
+        - field_autor_meno
+        - field_autor_fotografia
+        - field_autor_organizacia
+        - field_autor_specializacia
+      label: 'Pár informácií o autorovi článku'
+      region: content
+      parent_name: ''
+      weight: 17
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        description: 'Tieto informácie o autorovi sa zobrazia pod článkom.'
+        required_fields: true
 _core:
   default_config_hash: Pzq9mzrsfoPf775qgEU_SUbHSro9pv1ga-Euh1Ykd_k
 id: node.article.default
@@ -33,13 +58,45 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_autor_fotografia:
+    type: image_image
+    weight: 14
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_autor_meno:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_autor_organizacia:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_autor_specializacia:
+    type: string_textfield
+    weight: 16
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_featured:
     type: boolean_checkbox
-    weight: 122
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -64,7 +121,7 @@ content:
     third_party_settings: {  }
   field_kategoria:
     type: options_buttons
-    weight: 121
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -87,27 +144,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 8
     region: content
     settings:
       display_label: true

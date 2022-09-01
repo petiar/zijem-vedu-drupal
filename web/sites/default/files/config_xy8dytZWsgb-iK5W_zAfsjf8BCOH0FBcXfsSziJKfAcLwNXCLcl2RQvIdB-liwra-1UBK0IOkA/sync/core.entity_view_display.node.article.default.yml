@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_autor_fotografia
+    - field.field.node.article.field_autor_meno
+    - field.field.node.article.field_autor_organizacia
+    - field.field.node.article.field_autor_specializacia
     - field.field.node.article.field_featured
     - field.field.node.article.field_image
     - field.field.node.article.field_kategoria
@@ -27,6 +31,41 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_autor_fotografia:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_autor_meno:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_autor_organizacia:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_autor_specializacia:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_featured:
     type: boolean

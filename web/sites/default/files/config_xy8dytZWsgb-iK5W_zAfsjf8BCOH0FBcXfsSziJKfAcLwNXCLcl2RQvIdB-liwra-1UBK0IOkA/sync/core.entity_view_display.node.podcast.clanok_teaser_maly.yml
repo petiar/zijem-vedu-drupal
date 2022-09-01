@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.podcast.field_datum_nahravky
     - field.field.node.podcast.field_explicit
     - field.field.node.podcast.field_featured
-    - field.field.node.podcast.field_image
     - field.field.node.podcast.field_kategoria
     - field.field.node.podcast.field_playtime_seconds
     - field.field.node.podcast.field_playtime_string
@@ -16,10 +15,8 @@ dependencies:
     - field.field.node.podcast.field_popis
     - field.field.node.podcast.field_subor
     - field.field.node.podcast.field_tags
-    - image.style.maly_obrazok_k_clanku
     - node.type.podcast
   module:
-    - image
     - text
     - user
 id: node.podcast.clanok_teaser_maly
@@ -27,17 +24,6 @@ targetEntityType: node
 bundle: podcast
 mode: clanok_teaser_maly
 content:
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: maly_obrazok_k_clanku
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_kategoria:
     type: entity_reference_label
     label: hidden

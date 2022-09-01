@@ -17,7 +17,7 @@ use App\Controller\Admin\PodcastsController;
   <div class="player">
     <div class="player__main">
       <div class="player__artwork player__artwork-{{ node.id }}"
-           style="background-position: center;background-size: cover;background-image: url('{{ file_url(node.field_image.entity.fileuri) }}');">
+           style="background-position: center;background-size: cover;background-image: url('{{ file_url(node.field_podcast.entity.field_player_obrazok.entity.uri.value) }}');">
       </div>
       <div class="player__body">
         <div class="currently-playing">

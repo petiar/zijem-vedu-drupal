@@ -1,7 +1,7 @@
 <a href="{{ url }}" class="article__block article__block--wide">
   <div class="article__image">
     <figure>
-      <img src="{{ file_url(node.field_image.entity.fileuri | image_style('stredny_obrazok_k_clanku')) }}" alt="{{ node.field_image.alt }}">
+      <img src="{{ file_url(node.field_podcast.entity.field_header_obrazok.entity.uri.value | image_style('stredny_obrazok_k_clanku')) }}" alt="{{ label }}">
     </figure>
   </div>
   <div class="article__content">
