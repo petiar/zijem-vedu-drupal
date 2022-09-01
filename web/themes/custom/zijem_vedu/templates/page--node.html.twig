@@ -37,7 +37,7 @@
                 {% if node.field_autor_fotografia.entity.uri.value %}
                 <img src="{{ file_url(node.field_autor_fotografia.entity.uri.value) }}" alt="Autor článku">
                 {% else %}
-                <img src="/themes/custom/zijem_vedu/img/member_placeholder.png" alt="Ilustračný obrázok">
+                <img src="{{ base_path ~ directory }}/img/member_placeholder.png" alt="Ilustračný obrázok">
                 {% endif %}
               </figure>
             </div>
