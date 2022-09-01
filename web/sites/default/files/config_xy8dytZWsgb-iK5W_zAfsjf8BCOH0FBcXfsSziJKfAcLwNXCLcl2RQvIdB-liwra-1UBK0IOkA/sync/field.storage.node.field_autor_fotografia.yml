@@ -1,0 +1,30 @@
+uuid: c20b5b95-3018-4877-a223-a501181e7f9a
+langcode: sk
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - node
+id: node.field_autor_fotografia
+field_name: field_autor_fotografia
+entity_type: node
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: ad8d4d75-19c0-473d-b77d-1cafd1c2decd
+    alt: 'Fotografia autora'
+    title: ''
+    width: 242
+    height: 244
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

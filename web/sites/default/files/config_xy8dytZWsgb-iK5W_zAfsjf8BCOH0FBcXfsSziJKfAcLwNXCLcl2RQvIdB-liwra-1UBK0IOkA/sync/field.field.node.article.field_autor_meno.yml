@@ -1,0 +1,19 @@
+uuid: 72d7b13f-3ae0-42b5-a9fa-b88e7e075c55
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_autor_meno
+    - node.type.article
+id: node.article.field_autor_meno
+field_name: field_autor_meno
+entity_type: node
+bundle: article
+label: 'Meno autora'
+description: 'Tuto napíš meno autora článku.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

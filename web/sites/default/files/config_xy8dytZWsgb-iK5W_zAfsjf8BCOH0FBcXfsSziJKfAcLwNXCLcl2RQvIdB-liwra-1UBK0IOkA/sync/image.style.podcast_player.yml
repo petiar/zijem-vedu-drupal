@@ -1,0 +1,26 @@
+uuid: 948a09a6-0ac8-4d34-af4f-ebf48ef60c29
+langcode: sk
+status: true
+dependencies:
+  config:
+    - crop.type.stvorec
+  module:
+    - crop
+name: podcast_player
+label: 'Podcast player'
+effects:
+  1fd70e27-1b42-4e5f-805b-852868be628e:
+    uuid: 1fd70e27-1b42-4e5f-805b-852868be628e
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: stvorec
+      automatic_crop_provider: null
+  f483ad33-4ec5-4a3d-bf80-edd1da9bb2b5:
+    uuid: f483ad33-4ec5-4a3d-bf80-edd1da9bb2b5
+    id: image_scale
+    weight: 2
+    data:
+      width: 150
+      height: null
+      upscale: false

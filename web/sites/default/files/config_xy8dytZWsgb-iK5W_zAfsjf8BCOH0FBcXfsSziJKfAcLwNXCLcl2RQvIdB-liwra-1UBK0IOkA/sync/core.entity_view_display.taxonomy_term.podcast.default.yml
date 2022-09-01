@@ -1,0 +1,48 @@
+uuid: 1684ee9f-08d1-44cd-b9d5-11ea8ea0cdbf
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.podcast.field_header_obrazok
+    - field.field.taxonomy_term.podcast.field_player_obrazok
+    - image.style.podcast_player
+    - taxonomy.vocabulary.podcast
+  module:
+    - image
+    - text
+id: taxonomy_term.podcast.default
+targetEntityType: taxonomy_term
+bundle: podcast
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_header_obrazok:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_player_obrazok:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: podcast_player
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true

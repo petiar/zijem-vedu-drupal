@@ -5,6 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.clanok_teaser_stredny
     - field.field.node.article.body
+    - field.field.node.article.field_autor_fotografia
+    - field.field.node.article.field_autor_meno
+    - field.field.node.article.field_autor_organizacia
+    - field.field.node.article.field_autor_specializacia
     - field.field.node.article.field_featured
     - field.field.node.article.field_image
     - field.field.node.article.field_kategoria
@@ -73,4 +77,8 @@ content:
     weight: 100
     region: content
 hidden:
+  field_autor_fotografia: true
+  field_autor_meno: true
+  field_autor_organizacia: true
+  field_autor_specializacia: true
   langcode: true

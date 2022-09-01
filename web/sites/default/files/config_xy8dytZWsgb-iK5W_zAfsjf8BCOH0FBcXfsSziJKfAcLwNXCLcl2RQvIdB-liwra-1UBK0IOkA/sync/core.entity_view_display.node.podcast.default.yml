@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.podcast.field_datum_nahravky
     - field.field.node.podcast.field_explicit
     - field.field.node.podcast.field_featured
-    - field.field.node.podcast.field_image
     - field.field.node.podcast.field_kategoria
     - field.field.node.podcast.field_playtime_seconds
     - field.field.node.podcast.field_playtime_string
@@ -19,7 +18,6 @@ dependencies:
   module:
     - datetime
     - file
-    - image
     - text
     - user
 id: node.podcast.default
@@ -64,17 +62,6 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 112
-    region: content
-  field_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 102
     region: content
   field_kategoria:
     type: entity_reference_label

@@ -28,19 +28,24 @@
       <div class="row">
         <div class="col-12 col-xl-6 offset-xl-3"><div class="separator"></div></div>
       </div>
+      {% if node.getType == 'article' %}
       <div class="row">
         <div class="col-12 col-xl-6 offset-xl-3">
           <div class="article__author">
             <div class="author__image">
               <figure>
-                <img src="{{ file_url(node.Owner.user_picture.entity.fileuri) }}" alt="Article">
+                {% if node.field_autor_fotografia.entity.uri.value %}
+                <img src="{{ file_url(node.field_autor_fotografia.entity.uri.value) }}" alt="Autor článku">
+                {% else %}
+                <img src="/themes/custom/zijem_vedu/img/member_placeholder.png" alt="Ilustračný obrázok">
+                {% endif %}
               </figure>
             </div>
             <div class="author__content">
               <p class="m-0 text-muted text-uppercase fs-7">Autor:</p>
-              <p class="m-0 color-violet">{{ node.Owner.field_meno.value }} {{ node.Owner.field_priezvisko.value }}</p>
-              <p class="m-0 text-muted">{{ node.Owner.field_pracovisko.value }}</p>
-              <p class="m-0 text-muted fs-8">{{ node.Owner.field_specializacia.value }}</p>
+              <p class="m-0 color-violet">{{ node.field_autor_meno.value }}</p>
+              <p class="m-0 text-muted">{{ node.field_autor_organizacia.value }}</p>
+              <p class="m-0 text-muted fs-8">{{ node.field_autor_specializacia.value }}</p>
             </div>
           </div>
         </div>
@@ -48,6 +53,7 @@
       <div class="row">
         <div class="col-12 col-xl-6 offset-xl-3"><div class="separator"></div></div>
       </div>
+      {% endif %}
     </div>
 
   </main>
