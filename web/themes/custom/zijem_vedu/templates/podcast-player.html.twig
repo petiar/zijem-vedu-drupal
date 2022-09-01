@@ -34,7 +34,7 @@ use App\Controller\Admin\PodcastsController;
             <button title="{{ 'Pause'|t }}" class="pause-btn hide">
               <span class="screen-reader-text"><?php __( 'Pause Episode'|t }}</span>
             </button>
-            <img src="/themes/custom/zijem_vedu/img/icon-loader.svg" class="ssp-loader hide"/>
+            <img src="{{ base_path ~ directory }}/img/icon-loader.svg" class="ssp-loader hide"/>
           </div>
           <div>
             <audio preload="none" class="clip clip-{{ node.id }}">
