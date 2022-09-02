@@ -1593,7 +1593,7 @@ display:
           'itunes:season_field': ''
           'itunes:episode_field': ''
       display_extenders: {  }
-      path: podcast/feed.xml
+      path: feed/podcast
     cache_metadata:
       max-age: -1
       contexts:
