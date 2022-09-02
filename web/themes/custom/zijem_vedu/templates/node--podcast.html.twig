@@ -22,11 +22,7 @@
           </div>
           <div class="col-12 col-xl-6 offset-xl-3">
             {{ content.field_popis }}
-            <ul class="hashtags">
-              {% for tag in content.field_tags %}
-                <li>{{ tag.value }}</li>
-              {% endfor %}
-            </ul>
+            {{ content.field_tags }}
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 uuid: 9bf2acc0-c314-4cfc-b442-858e17b5b28b
 langcode: sk
-status: true
+status: false
 dependencies:
   module:
     - mailchimp_campaign
