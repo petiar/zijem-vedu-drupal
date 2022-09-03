@@ -215,10 +215,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: datetime_default
+          type: datetime_custom
           settings:
             timezone_override: ''
-            format_type: html_datetime
+            date_format: 'D, j F Y, H:i:S O'
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -475,8 +475,8 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: html_datetime
-            custom_date_format: ''
+            date_format: custom
+            custom_date_format: 'D, j F Y, H:i:S O'
             timezone: ''
           group_column: value
           group_columns: {  }
@@ -1161,7 +1161,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'http://zijemvedu.sk/sites/default/files/pictures/podcast-header.png'
+            text: /sites/default/files/pictures/podcast-header.png
             make_link: false
             path: ''
             absolute: false
@@ -1523,7 +1523,7 @@ display:
           link_field: view_node
           description_field: field_popis
           creator_field: uid
-          date_field: title
+          date_field: created
           guid_field_options:
             guid_field: uuid
             guid_field_is_permalink: 0
