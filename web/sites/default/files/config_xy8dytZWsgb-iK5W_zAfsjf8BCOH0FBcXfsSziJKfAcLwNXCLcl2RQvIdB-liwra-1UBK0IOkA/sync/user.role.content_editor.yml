@@ -3,14 +3,21 @@ langcode: sk
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
+    - filter.format.restricted_html
     - node.type.article
+    - node.type.event
+    - node.type.novinka
     - node.type.page
+    - node.type.podcast
     - taxonomy.vocabulary.tags
   module:
     - contextual
     - file
+    - filter
     - node
     - path
+    - shortcut
     - system
     - taxonomy
     - toolbar
@@ -22,23 +29,48 @@ weight: 2
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access content'
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
   - 'access toolbar'
+  - 'administer nodes'
+  - 'administer shortcuts'
   - 'administer url aliases'
   - 'create article content'
-  - 'create page content'
+  - 'create event content'
+  - 'create novinka content'
+  - 'create podcast content'
   - 'create terms in tags'
   - 'create url aliases'
+  - 'customize shortcut links'
+  - 'delete any article content'
+  - 'delete any event content'
+  - 'delete any novinka content'
+  - 'delete any podcast content'
   - 'delete article revisions'
   - 'delete own article content'
-  - 'delete own page content'
+  - 'delete own event content'
+  - 'delete own novinka content'
+  - 'delete own podcast content'
   - 'delete page revisions'
+  - 'edit any article content'
+  - 'edit any event content'
+  - 'edit any novinka content'
+  - 'edit any page content'
+  - 'edit any podcast content'
   - 'edit own article content'
+  - 'edit own event content'
+  - 'edit own novinka content'
   - 'edit own page content'
+  - 'edit own podcast content'
   - 'edit terms in tags'
   - 'revert all revisions'
+  - 'switch shortcut sets'
+  - 'use text format basic_html'
+  - 'use text format restricted_html'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'

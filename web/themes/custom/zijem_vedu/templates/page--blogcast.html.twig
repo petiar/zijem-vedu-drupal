@@ -13,8 +13,8 @@
             <div class="links">
               {% set current = path('<current>')|split('/') %}
               <a href="/blogcast" class="link article-category-menu-item {% if current.2 is empty %}active{% endif %}">Všetky články</a>
-              <a href="/blogcast/7" class="link article-category-menu-item {% if current.2 == 7 %}active{% endif %}">Podcasty</a>
-              <a href="/blogcast/1" class="link article-category-menu-item {% if current.2 == 1 %}active{% endif %}">Blogy</a>
+              <a href="/blogcast/podcast" class="link article-category-menu-item {% if current.2 == "podcast" %}active{% endif %}">Podcasty</a>
+              <a href="/blogcast/article" class="link article-category-menu-item {% if current.2 == "article" %}active{% endif %}">Blogy</a>
             </div>
           </div>
         </div>
