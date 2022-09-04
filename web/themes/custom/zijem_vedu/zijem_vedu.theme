@@ -210,7 +210,7 @@ function zijem_vedu_preprocess_views_view_field(&$variables) {
     if ($field->field == 'created') {
       $fieldValue = $variables['field']->getValue($variables['row']);
       setlocale(LC_TIME, 'en_US');
-      $variables['output'] = date('D, j F Y, H:i:s O', $fieldValue);
+      $variables['output'] = date('D, j M Y, H:i:s O', $fieldValue);
     }
   }
 }
