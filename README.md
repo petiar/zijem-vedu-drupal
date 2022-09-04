@@ -25,3 +25,10 @@ Všeobecný modul, v ktorom sa nachádza nejaká aplikačná logika, ako napr. s
 ## Custom grafická téma: zijem_vedu
 Najviac práce je v templatoch, prakticky všetko, čo sa dalo, som dával do templatov, nech je to cca na jednom mieste. Pár drobností je v preprocess funkciách.
 Niečo som dal aj do view, myslím, že stránka (page) s novinkami je naštýlovaná jemne cez príslušné view.
+
+## Patches
+
+Máme tu už aj folder s patchmi, tu sú linky:
+- https://www.drupal.org/project/drupal/issues/2628230#comment-13213379
+
+Je asi dobré keď sa spustí `composer install` potom pustiť aj `patch -p1 <` a príslušný patch. Teda všetky, ak ich bude viacej.
