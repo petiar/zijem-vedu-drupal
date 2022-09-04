@@ -1539,6 +1539,7 @@ display:
           'itunes:image_field': field_image
           'itunes:season_field': ''
           'itunes:episode_field': ''
+      rendering_language: '***LANGUAGE_entity_translation***'
       display_extenders: {  }
       path: feed/podcast
     cache_metadata:
