@@ -209,9 +209,8 @@ function zijem_vedu_preprocess_views_view_field(&$variables) {
   if ($view->id() == 'podcast_feed') {
     if ($field->field == 'created') {
       $fieldValue = $variables['field']->getValue($variables['row']);
-      setlocale('en_US');
+      setlocale(LC_TIME, 'en_US');
       $variables['output'] = date('D, j F Y, H:i:s O', $fieldValue);
     }
   }
 }
-
