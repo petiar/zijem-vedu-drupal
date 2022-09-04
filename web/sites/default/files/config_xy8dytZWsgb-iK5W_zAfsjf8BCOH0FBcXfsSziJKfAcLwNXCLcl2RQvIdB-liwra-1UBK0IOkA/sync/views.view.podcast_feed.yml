@@ -10,6 +10,7 @@ dependencies:
     - field.storage.node.field_playtime_string
     - field.storage.node.field_popis
     - field.storage.node.field_subor
+    - field.storage.taxonomy_term.field_header_obrazok
     - node.type.podcast
   module:
     - datetime
@@ -17,6 +18,7 @@ dependencies:
     - image
     - node
     - podcast
+    - taxonomy
     - text
     - user
 id: podcast_feed
@@ -1375,6 +1377,118 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        nothing_8:
+          id: nothing_8
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: Autor
+          exclude: false
+          alter:
+            alter_text: true
+            text: 'Žijem vedu'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        field_header_obrazok:
+          id: field_header_obrazok
+          table: taxonomy_term__field_header_obrazok
+          field: field_header_obrazok
+          relationship: field_podcast
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image_url
+          settings:
+            image_style: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: none
         options:
@@ -1468,6 +1582,15 @@ display:
           group_type: group
           admin_label: Súbor
           required: true
+        field_podcast:
+          id: field_podcast
+          table: node__field_podcast
+          field: field_podcast
+          relationship: none
+          group_type: group
+          admin_label: 'field_podcast: Taxonomy term'
+          plugin_id: standard
+          required: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -1486,6 +1609,7 @@ display:
         - 'config:field.storage.node.field_playtime_string'
         - 'config:field.storage.node.field_popis'
         - 'config:field.storage.node.field_subor'
+        - 'config:field.storage.taxonomy_term.field_header_obrazok'
   feed_1:
     id: feed_1
     display_title: 'Kanál správ'
@@ -1522,7 +1646,7 @@ display:
           title_field: title
           link_field: view_node
           description_field: field_popis
-          creator_field: uid
+          creator_field: nothing_8
           date_field: created
           guid_field_options:
             guid_field: uuid
@@ -1536,7 +1660,7 @@ display:
           'itunes:explicit_field': field_explicit
           'itunes:duration_field': field_playtime_string
           'itunes:summary_field': field_popis
-          'itunes:image_field': field_image
+          'itunes:image_field': field_header_obrazok
           'itunes:season_field': ''
           'itunes:episode_field': ''
       rendering_language: '***LANGUAGE_entity_translation***'
@@ -1557,6 +1681,7 @@ display:
         - 'config:field.storage.node.field_playtime_string'
         - 'config:field.storage.node.field_popis'
         - 'config:field.storage.node.field_subor'
+        - 'config:field.storage.taxonomy_term.field_header_obrazok'
   page_1:
     id: page_1
     display_title: Page
@@ -1580,3 +1705,4 @@ display:
         - 'config:field.storage.node.field_playtime_string'
         - 'config:field.storage.node.field_popis'
         - 'config:field.storage.node.field_subor'
+        - 'config:field.storage.taxonomy_term.field_header_obrazok'
