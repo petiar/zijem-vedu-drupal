@@ -202,3 +202,16 @@ function zijem_vedu_preprocess_taxonomy_term(array &$variables) {
   // does not work for some reason
 }
 
+function zijem_vedu_preprocess_views_view_field(&$variables) {
+  $view = $variables['view'];
+  /** @var \Drupal\views\Plugin\views\field\EntityField $field */
+  $field = $variables['field'];
+  if ($view->id() == 'podcast_feed') {
+    if ($field->field == 'created') {
+      $fieldValue = $variables['field']->getValue($variables['row']);
+      setlocale('en_US');
+      $variables['output'] = date('D, j F Y, H:i:s O', $fieldValue);
+    }
+  }
+}
+
