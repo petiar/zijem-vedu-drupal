@@ -4,7 +4,6 @@ namespace Drupal\podcast_feed\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\File\FileUrlGenerator;
-use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -13,10 +12,9 @@ use Symfony\Component\HttpFoundation\Response;
 class PodcastFeedController extends ControllerBase {
 
   /**
-   * Hello.
+   * The index method returns podcast XML.
    *
-   * @return string
-   *   Return Hello string.
+   * @return \Symfony\Component\HttpFoundation\Response
    */
   public function index() {
     $fileUrlGenerator = \Drupal::service('file_url_generator');

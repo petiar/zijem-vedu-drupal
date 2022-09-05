@@ -18,7 +18,7 @@
     <description>Žijem vedu je platforma, ktorá dáva priestor všetkým slovenským vedkyniam a vedcom prispieť k
       napredovaniu vedy na Slovensku.
     </description>
-    <lastBuildDate>{{ channel.lastBuildDate|date('D, j M Y, H:i:s O') }}</lastBuildDate>
+    <lastBuildDate>{{ channel.lastBuildDate|date('D, j M Y H:i:s O') }}</lastBuildDate>
     <language>sk</language>
     <copyright>© Žijem vedu</copyright>
     <itunes:subtitle></itunes:subtitle>
@@ -49,7 +49,7 @@
       <item>
         <title>{{ item.title }}</title>
         <link>{{ item.link }}</link>
-        <pubDate>{{ item.pubDate|date('D, j M Y, H:i:s O') }}</pubDate>
+        <pubDate>{{ item.pubDate|date('D, j M Y H:i:s O') }}</pubDate>
         <dc:creator>
           <![CDATA[Žijem vedu]]>
         </dc:creator>
