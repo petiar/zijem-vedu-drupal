@@ -1665,7 +1665,7 @@ display:
           'itunes:episode_field': ''
       rendering_language: '***LANGUAGE_entity_translation***'
       display_extenders: {  }
-      path: feed/podcast
+      path: views/podcast
     cache_metadata:
       max-age: -1
       contexts:
