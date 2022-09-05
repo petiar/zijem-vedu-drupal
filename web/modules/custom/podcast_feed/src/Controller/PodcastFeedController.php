@@ -44,9 +44,9 @@ class PodcastFeedController extends ControllerBase {
         'pubDate' => $node->getCreatedTime(),
         'link' => $node->toUrl('canonical', ['absolute' => true]),
         'guid' => $node->uuid(),
-        'description' => substr(strip_tags($fieldPopis[0]['value']), 0, 300),
-        'subtitle' => substr(strip_tags($fieldPopis[0]['value']), 0, 300),
-        'encoded' => substr(strip_tags($fieldPopis[0]['value']), 0, 300),
+        'description' => $this->truncateDescription($fieldPopis[0]['value'], 300),
+        'subtitle' => $this->truncateDescription($fieldPopis[0]['value'], 300),
+        'encoded' => $this->truncateDescription($fieldPopis[0]['value'], 300),
         'filePath' => $fileUrlGenerator->generateAbsoluteString($file->getFileUri()),
         'fileSize' => $file->getSize(),
         'fileType' => $file->getMimeType(),
@@ -75,6 +75,15 @@ class PodcastFeedController extends ControllerBase {
     $response->headers->set('Content-Type', 'text/xml');
 
     return $response;
+  }
+
+  function truncateDescription($text, $limit = 200) {
+    $append = false;
+    $text = strip_tags($text);
+    if (strlen(substr($text, 0, $limit)) < strlen($text)) {
+      $append = true;
+    }
+    return substr(html_entity_decode($text), 0, $limit) . $append ? '...' : '';
   }
 
 }
