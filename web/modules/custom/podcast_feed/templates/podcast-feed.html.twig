@@ -14,14 +14,18 @@
     <title>Žijem vedu podcast</title>
     <atom:link href="{{ channel.atomLink }}" rel="self" type="application/rss+xml"/>
     <link>{{ channel.url }}</link>
-    <description>Žijem vedu je platforma, ktorá dáva priestor všetkým slovenským vedkyniam a vedcom prispieť k napredovaniu vedy na Slovensku.</description>
+    <description>Žijem vedu je platforma, ktorá dáva priestor všetkým slovenským vedkyniam a vedcom prispieť k
+      napredovaniu vedy na Slovensku.
+    </description>
     <lastBuildDate>{{ channel.lastBuildDate|date('D, j M Y, H:i:s O') }}</lastBuildDate>
     <language>sk</language>
     <copyright>© Žijem vedu</copyright>
     <itunes:subtitle></itunes:subtitle>
     <itunes:author>Žijem vedu</itunes:author>
     <itunes:type>episodic</itunes:type>
-    <itunes:summary>Žijem vedu je platforma, ktorá dáva priestor všetkým slovenským vedkyniam a vedcom prispieť k napredovaniu vedy na Slovensku.</itunes:summary>
+    <itunes:summary>Žijem vedu je platforma, ktorá dáva priestor všetkým slovenským vedkyniam a vedcom prispieť k
+      napredovaniu vedy na Slovensku.
+    </itunes:summary>
     <itunes:owner>
       <itunes:name>Žijem vedu</itunes:name>
       <itunes:email>zijemvedu@zijemvedu.sk</itunes:email>
@@ -31,7 +35,8 @@
     <image>
       <url>https://zijemvedu.sk/wp-content/uploads/2020/10/podcast-header.png</url>
       <title>Žijem vedu podcast</title>
-      <link>https://zijemvedu.sk/</link>
+      <link>
+      https://zijemvedu.sk/</link>
     </image>
     <itunes:category text="Science">
     </itunes:category>
@@ -40,7 +45,7 @@
     <podcast:locked owner="zijemvedu@zijemvedu.sk">yes</podcast:locked>
     <podcast:guid>82c055c5-120c-5c80-9973-7a41fc7b5445</podcast:guid>
     {% for item in items %}
-      <link>
+      <item>
         <title>{{ item.title }}</title>
         <link>{{ item.link }}</link>
         <pubDate>{{ item.pubDate|date('D, j M Y, H:i:s O') }}</pubDate>
@@ -51,27 +56,27 @@
         <description><![CDATA[{{ item.description }}]]></description>
         <itunes:subtitle><![CDATA[{{ item.subtitle }}]]></itunes:subtitle>
         <content:encoded><![CDATA[{{ item.encoded }}]]></content:encoded>
-      <enclosure url="{{ item.filePath }}" length="{{ item.fileSize }}" type="{{ item.fileType }}"></enclosure>
-      <itunes:summary>
-        <![CDATA[{{ item.description }}]]>
-      </itunes:summary>
-      <itunes:image href="{{ item.image }}"></itunes:image>
-      <image>
-        <url>{{ item.image }}</url>
-        <title>{{ item.title }}</title>
-      </image>
-      <itunes:explicit>clean</itunes:explicit>
-      <itunes:block>no</itunes:block>
-      <itunes:duration>{{ item.playtime }}</itunes:duration>
-      <itunes:author>
-        <![CDATA[Žijem vedu]]>
-      </itunes:author>
-      <googleplay:description>
-        <![CDATA[{{ item.description }}]]>
-      </googleplay:description>
-      <googleplay:image href="{{ item.image }}"></googleplay:image>
-      <googleplay:explicit>No</googleplay:explicit>
-      <googleplay:block>no</googleplay:block>
+        <enclosure url="{{ item.filePath }}" length="{{ item.fileSize }}" type="{{ item.fileType }}"></enclosure>
+        <itunes:summary>
+          <![CDATA[{{ item.description }}]]>
+        </itunes:summary>
+        <itunes:image href="{{ item.image }}"></itunes:image>
+        <image>
+          <url>{{ item.image }}</url>
+          <title>{{ item.title }}</title>
+        </image>
+        <itunes:explicit>clean</itunes:explicit>
+        <itunes:block>no</itunes:block>
+        <itunes:duration>{{ item.playtime }}</itunes:duration>
+        <itunes:author>
+          <![CDATA[Žijem vedu]]>
+        </itunes:author>
+        <googleplay:description>
+          <![CDATA[{{ item.description }}]]>
+        </googleplay:description>
+        <googleplay:image href="{{ item.image }}"></googleplay:image>
+        <googleplay:explicit>No</googleplay:explicit>
+        <googleplay:block>no</googleplay:block>
       </item>
     {% endfor %}
   </channel>
