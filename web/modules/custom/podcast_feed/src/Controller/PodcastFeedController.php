@@ -19,11 +19,13 @@ class PodcastFeedController extends ControllerBase {
    *   Return Hello string.
    */
   public function index() {
+    $fileUrlGenerator = \Drupal::service('file_url_generator');
     $items = [];
 
     $nids = \Drupal::entityQuery('node')
       ->condition('type', 'podcast')
       ->condition('status', 1)
+      ->sort('created', 'DESC')
       ->execute();
     $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
 
@@ -36,7 +38,6 @@ class PodcastFeedController extends ControllerBase {
       /** @var \Drupal\file\Entity\File $file */
       $file = $node->get('field_subor')->entity;
       /** @var FileUrlGenerator $fileUrlGenerator */
-      $fileUrlGenerator = \Drupal::service('file_url_generator');
       $taxonomy = $node->get('field_podcast')->entity;
       $image = $taxonomy->get('field_header_obrazok')->entity;
       $playtime = $node->get('field_playtime_string')->getValue();
