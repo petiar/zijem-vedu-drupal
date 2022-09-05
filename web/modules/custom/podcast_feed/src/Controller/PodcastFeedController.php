@@ -80,10 +80,10 @@ class PodcastFeedController extends ControllerBase {
   function truncateDescription($text, $limit = 200) {
     $append = false;
     $text = strip_tags($text);
-    if (strlen(substr($text, 0, $limit)) < strlen($text)) {
+    if (mb_strlen(mb_substr($text, 0, $limit)) < strlen($text)) {
       $append = true;
     }
-    return substr(html_entity_decode($text), 0, $limit) . $append ? '...' : '';
+    return mb_substr(html_entity_decode($text), 0, $limit) . ($append ? '...' : '');
   }
 
 }
