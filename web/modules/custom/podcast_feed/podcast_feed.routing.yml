@@ -1,0 +1,6 @@
+podcast.feed:
+  path: '/feed/podcast'
+  defaults:
+    _controller: '\Drupal\podcast_feed\Controller\PodcastFeedController::index'
+  requirements:
+    _permission: 'access content'
