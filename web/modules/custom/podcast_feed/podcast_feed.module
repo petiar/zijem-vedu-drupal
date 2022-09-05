@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Contains podcast_feed.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function podcast_feed_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the podcast_feed module.
+    case 'help.page.podcast_feed':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Podcast Feed Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function podcast_feed_theme() {
+  return [
+    'podcast_feed' => [
+      'render element' => 'children',
+      'variables' => [
+        'items' => [],
+        'channel' => [],
+      ]
+    ],
+  ];
+}

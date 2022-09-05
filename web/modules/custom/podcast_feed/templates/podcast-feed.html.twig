@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+>
+  <channel>
+    <title>Žijem vedu podcast</title>
+    <atom:link href="{{ channel.atomLink }}" rel="self" type="application/rss+xml"/>
+    <link>{{ channel.url }}</link>
+    <description>Žijem vedu je platforma, ktorá dáva priestor všetkým slovenským vedkyniam a vedcom prispieť k napredovaniu vedy na Slovensku.</description>
+    <lastBuildDate>{{ channel.lastBuildDate|date('D, j M Y, H:i:s O') }}</lastBuildDate>
+    <language>sk</language>
+    <copyright>© Žijem vedu</copyright>
+    <itunes:subtitle></itunes:subtitle>
+    <itunes:author>Žijem vedu</itunes:author>
+    <itunes:type>episodic</itunes:type>
+    <itunes:summary>Žijem vedu je platforma, ktorá dáva priestor všetkým slovenským vedkyniam a vedcom prispieť k napredovaniu vedy na Slovensku.</itunes:summary>
+    <itunes:owner>
+      <itunes:name>Žijem vedu</itunes:name>
+      <itunes:email>zijemvedu@zijemvedu.sk</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>clean</itunes:explicit>
+    <itunes:image href="https://zijemvedu.sk/wp-content/uploads/2020/10/podcast-header.png"></itunes:image>
+    <image>
+      <url>https://zijemvedu.sk/wp-content/uploads/2020/10/podcast-header.png</url>
+      <title>Žijem vedu podcast</title>
+      <link>https://zijemvedu.sk/</link>
+    </image>
+    <itunes:category text="Science">
+    </itunes:category>
+    <itunes:category text="Education">
+    </itunes:category>
+    <podcast:locked owner="zijemvedu@zijemvedu.sk">yes</podcast:locked>
+    <podcast:guid>82c055c5-120c-5c80-9973-7a41fc7b5445</podcast:guid>
+    {% for item in items %}
+      <item>
+        <title>{{ item.title }}</title>
+        <link>{{ item.link }}</item>
+        <pubDate>{{ item.pubDate|date('D, j M Y, H:i:s O') }}</pubDate>
+        <dc:creator>
+          <![CDATA[Žijem vedu]]>
+        </dc:creator>
+        <guid isPermaLink="false">{{ item.guid }}</guid>
+        <description><![CDATA[{{ item.description }}]]></description>
+        <itunes:subtitle><![CDATA[{{ item.subtitle }}]]></itunes:subtitle>
+        <content:encoded><![CDATA[{{ item.encoded }}]]></content:encoded>
+      <enclosure url="{{ item.filePath }}" length="{{ item.fileSize }}" type="{{ item.fileType }}"></enclosure>
+      <itunes:summary>
+        <![CDATA[{{ item.description }}]]>
+      </itunes:summary>
+      <itunes:image href="{{ item.image }}"></itunes:image>
+      <image>
+        <url>{{ item.image }}</url>
+        <title>{{ item.title }}</title>
+      </image>
+      <itunes:explicit>clean</itunes:explicit>
+      <itunes:block>no</itunes:block>
+      <itunes:duration>{{ item.playtime }}</itunes:duration>
+      <itunes:author>
+        <![CDATA[Žijem vedu]]>
+      </itunes:author>
+      <googleplay:description>
+        <![CDATA[{{ item.description }}]]>
+      </googleplay:description>
+      <googleplay:image href="{{ item.image }}"></googleplay:image>
+      <googleplay:explicit>No</googleplay:explicit>
+      <googleplay:block>no</googleplay:block>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

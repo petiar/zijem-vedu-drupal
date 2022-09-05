@@ -1,0 +1,13 @@
+{
+    "name": "podcast_feed",
+    "type": "drupal-module",
+    "description": "Podcast Feed Module",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/podcast_feed",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/podcast_feed",
+        "source": "http://cgit.drupalcode.org/podcast_feed",
+    },
+}
