@@ -7,33 +7,24 @@
         <title><xsl:value-of select="/rss/channel/title"/> RSS Feed</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style type="text/css">
-          body {
-            font-family: Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            color: #545454;
-            background: #E5E5E5;
-            line-height: 1.5;
+          @font-face {
+            font-family: 'Objektiv Mk1';
+            src: url("/themes/custom/zijem_vedu/font/objektiv-mk1-medium/ObjektivMk1-Medium.woff2") format("woff2"), url("../font/objektiv-mk1-medium/ObjektivMk1-Medium.woff") format("woff");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
           }
-          .explanation {
-            font-style: italic;
-            font-size: 10px;
-            color: #9E9E9E;
-            text-align: center;
-            margin-bottom: 30px;
+
+          @font-face {
+            font-family: "Objektiv Mk1";
+            src: url("/themes/custom/zijem_vedu/font/objektiv-mk1-xbold/4977957c89851357e46a14aed949a313.woff2") format("woff2"), url("../font/objektiv-mk1-xbold/4977957c89851357e46a14aed949a313.woff") format("woff");
+            font-weight: 700;
           }
-          a, a:link, a:visited {
-            color: #005C82;
-            text-decoration: none;
-          }
-          a:hover {
-            color: #000;
-          }
-          h1, h2, h3, p {
-            margin-top: 0;
-            margin-bottom: 20px;
-          }
-          h3 {
-            font-style: italic;
+
+          @font-face {
+            font-family: 'Sofia Pro Soft Bold';
+            src: url("/themes/custom/zijem_vedu/font/sofia-pro-soft-bold/SOFIAPROSOFTBOLD.eot");
+            src: local("SOFIAPROSOFTBOLD"), url("../font/sofia-pro-soft-bold/SOFIAPROSOFTBOLD.woff") format("woff"), url("../font/sofia-pro-soft-bold/SOFIAPROSOFTBOLD.ttf") format("truetype");
           }
           #content {
             width: 700px;
@@ -70,14 +61,47 @@
           .episode_meta {
             font-size: 11px;
             font-weight: bold;
-            font-style: italic;
+          }
+
+          html {
+            box-sizing: border-box;
+          }
+
+          html *, html *:before, html *:after {
+            box-sizing: border-box;
+          }
+
+          html body {
+            background-color: #ffffff;
+            color: #27013D;
+            font-family: "Objektiv Mk1";
+          }
+
+          a {
+            color: #5104CE;
+          }
+
+          a:hover {
+            color: #660bfa;
+          }
+
+          u {
+            text-decoration-color: rgba(255, 0, 215, 0.6);
+          }
+
+          .image {
+            float:left;
+          }
+
+          .explanation {
+            text-align: center;
           }
         </style>
       </head>
       <body>
         <div id="content">
           <p class="explanation">
-            This is a podcast RSS feed using a <a href="http://www.seriouslysimplepodcasting.com/" target="_blank">Seriously Simple Podcasting</a> XSL.
+            Toto je podcast feed (kanál) pre podcast Žijem wedu. Použitím URL (odkazu, linku) tejto stránky (<strong>https://zijemvedu.sk/feed/podcast</strong>) si ho môžeš otvoriť a počúvať vo svojej obľúbenej podcast aplikácii.
           </p>
           <div id="channel-header">
             <h1>
@@ -125,7 +149,7 @@
                 </a>
               </h2>
               <xsl:if test="image">
-                <img>
+                <img class="image">
                   <xsl:attribute name="src">
                     <xsl:value-of select="image/url"/>
                   </xsl:attribute>
@@ -144,6 +168,7 @@
                   <xsl:attribute name="href">
                     <xsl:value-of select="enclosure/@url"/>?ref=download
                   </xsl:attribute>
+                  <xsl:attribute name="download"></xsl:attribute>
                   Stiahnuť epizódu
                 </a> |
                 <a>
