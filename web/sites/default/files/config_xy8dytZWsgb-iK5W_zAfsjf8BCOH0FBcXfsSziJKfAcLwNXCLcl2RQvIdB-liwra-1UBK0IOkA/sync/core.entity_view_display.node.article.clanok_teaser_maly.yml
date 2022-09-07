@@ -28,7 +28,7 @@ mode: clanok_teaser_maly
 content:
   body:
     type: text_trimmed
-    label: visually_hidden
+    label: hidden
     settings:
       trim_length: 200
     third_party_settings: {  }

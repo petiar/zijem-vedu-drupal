@@ -8,6 +8,9 @@
     <span class="tag-gradient">Neprehliadnite</span>
     <strong class="article__tag color-red">{{ content.field_kategoria }}</strong>
     <h3 class="family-heading mb-2 color-violet">{{ label }}</h3>
-    <p class="article__excerpt mb-auto">{{ content.body }}</p>
+    {% set conBody %}
+      {{ content.body }}
+    {% endset %}
+    <p class="article__excerpt mb-auto">{{ conBody|striptags }}</p>
   </div>
 </a>
