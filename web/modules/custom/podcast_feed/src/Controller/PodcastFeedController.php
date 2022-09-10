@@ -17,6 +17,7 @@ class PodcastFeedController extends ControllerBase {
    * @return \Symfony\Component\HttpFoundation\Response
    */
   public function index() {
+    /** @var FileUrlGenerator $fileUrlGenerator */
     $fileUrlGenerator = \Drupal::service('file_url_generator');
     $items = [];
 
@@ -35,11 +36,12 @@ class PodcastFeedController extends ControllerBase {
       $fieldPopis = $node->get('field_popis')->getValue();
       /** @var \Drupal\file\Entity\File $file */
       $file = $node->get('field_subor')->entity;
-      /** @var FileUrlGenerator $fileUrlGenerator */
+      /** @var \Drupal\taxonomy\Entity\Term $taxonomy */
       $taxonomy = $node->get('field_podcast')->entity;
       $image = $taxonomy->get('field_header_obrazok')->entity;
       $playtime = $node->get('field_playtime_string')->getValue();
       $items[] = [
+        'podcast' => $taxonomy->getName(),
         'title' => $node->getTitle(),
         'pubDate' => $node->getCreatedTime(),
         'link' => $node->toUrl('canonical', ['absolute' => true]),
