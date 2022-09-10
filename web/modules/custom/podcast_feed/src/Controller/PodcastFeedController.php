@@ -36,12 +36,12 @@ class PodcastFeedController extends ControllerBase {
       $fieldPopis = $node->get('field_popis')->getValue();
       /** @var \Drupal\file\Entity\File $file */
       $file = $node->get('field_subor')->entity;
-      /** @var \Drupal\taxonomy\Entity\Term $taxonomy */
-      $taxonomy = $node->get('field_podcast')->entity;
-      $image = $taxonomy->get('field_header_obrazok')->entity;
+      /** @var \Drupal\taxonomy\Entity\Term $term */
+      $term = $node->get('field_podcast')->entity;
+      $image = $term->get('field_header_obrazok')->entity;
       $playtime = $node->get('field_playtime_string')->getValue();
       $items[] = [
-        'podcast' => $taxonomy->getName(),
+        'podcast' => $term->getName(),
         'title' => $node->getTitle(),
         'pubDate' => $node->getCreatedTime(),
         'link' => $node->toUrl('canonical', ['absolute' => true]),
