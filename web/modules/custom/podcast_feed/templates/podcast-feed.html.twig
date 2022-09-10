@@ -45,7 +45,7 @@
     <podcast:guid>82c055c5-120c-5c80-9973-7a41fc7b5445</podcast:guid>
     {% for item in items %}
       <item>
-        <title>{{ item.title }}</title>
+        <title>{{ item.podcast }}: {{ item.title }}</title>
         <link>{{ item.link }}</link>
         <pubDate>{{ item.pubDate|date('D, j M Y H:i:s O') }}</pubDate>
         <dc:creator>
