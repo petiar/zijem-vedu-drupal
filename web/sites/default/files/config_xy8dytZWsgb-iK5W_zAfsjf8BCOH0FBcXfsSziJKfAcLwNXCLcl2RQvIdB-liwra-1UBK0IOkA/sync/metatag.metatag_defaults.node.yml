@@ -7,6 +7,11 @@ _core:
 id: node
 label: Content
 tags:
+  article_author: 'https://www.facebook.com/zijemvedu'
+  article_modified_time: '[node:changed:html_datetime]'
+  article_published_time: '[node:created:html_datetime]'
+  article_publisher: 'https://www.facebook.com/zijemvedu'
+  article_tag: '[node:field_tags]'
   canonical_url: '[node:url]'
   content_language: sk
   description: '[node:summary]'

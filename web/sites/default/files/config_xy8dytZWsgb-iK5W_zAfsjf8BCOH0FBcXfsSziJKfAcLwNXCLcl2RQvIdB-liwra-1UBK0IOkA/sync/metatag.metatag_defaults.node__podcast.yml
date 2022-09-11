@@ -1,0 +1,13 @@
+uuid: 38aad6af-972b-4756-b12a-8269f5dcae95
+langcode: sk
+status: true
+dependencies: {  }
+id: node__podcast
+label: 'Content: Podcast'
+tags:
+  og_audio: '[node:field_subor:entity:url]'
+  og_audio_secure_url: '[node:field_subor:entity:url]'
+  og_audio_type: '[node:field_subor:entity:mime]'
+  og_description: '[node:field_popis]'
+  og_image: '[node:field_podcast:entity:field_header_obrazok]'
+  og_title: '[node:field_podcast]: [node:title]'
