@@ -26,4 +26,4 @@ settings.local.php
 /web/sites/simpletest
 
 # Ignore macOS system files
-_DS_Store
+.DS_Store
