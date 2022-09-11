@@ -184,7 +184,7 @@ function zijem_vedu_theme_suggestions_details_alter(array &$suggestions, array $
  * Implements hook_preprocess_menu_local_task().
  */
 function zijem_vedu_preprocess_menu_local_task(array &$variables) {
-  //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+  $variables['element']['#link']['url']->setOption('attributes', ['class'=>'nav-link']);
 }
 
 /**

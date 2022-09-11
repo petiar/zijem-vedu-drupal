@@ -1,0 +1,20 @@
+uuid: 29444ee8-7892-4478-a187-3f7ca7d93a3e
+langcode: sk
+status: true
+dependencies:
+  theme:
+    - zijem_vedu
+id: zalozky
+theme: zijem_vedu
+region: tabs
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Záložky
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }
