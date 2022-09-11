@@ -42,6 +42,11 @@ settings:
           name: Tools
           items:
             - Source
+        -
+          name: Misc
+          items:
+            - Undo
+            - Redo
   plugins: {  }
 image_upload:
   status: true
@@ -49,5 +54,5 @@ image_upload:
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: 1200
+    height: null
