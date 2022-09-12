@@ -5,6 +5,11 @@ dependencies:
   config:
     - filter.format.basic_html
     - filter.format.restricted_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
     - node.type.article
     - node.type.event
     - node.type.novinka
@@ -15,6 +20,7 @@ dependencies:
     - contextual
     - file
     - filter
+    - media
     - node
     - path
     - shortcut
@@ -33,6 +39,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access media overview'
   - 'access shortcuts'
   - 'access site in maintenance mode'
   - 'access toolbar'
@@ -40,32 +47,60 @@ permissions:
   - 'administer shortcuts'
   - 'administer url aliases'
   - 'create article content'
+  - 'create audio media'
+  - 'create document media'
   - 'create event content'
+  - 'create image media'
+  - 'create media'
   - 'create novinka content'
   - 'create podcast content'
+  - 'create remote_video media'
   - 'create terms in tags'
   - 'create url aliases'
+  - 'create video media'
   - 'customize shortcut links'
   - 'delete any article content'
+  - 'delete any audio media'
+  - 'delete any document media'
   - 'delete any event content'
+  - 'delete any image media'
+  - 'delete any media'
   - 'delete any novinka content'
   - 'delete any podcast content'
+  - 'delete any remote_video media'
+  - 'delete any video media'
   - 'delete article revisions'
+  - 'delete media'
   - 'delete own article content'
+  - 'delete own audio media'
+  - 'delete own document media'
   - 'delete own event content'
+  - 'delete own image media'
   - 'delete own novinka content'
   - 'delete own podcast content'
+  - 'delete own remote_video media'
+  - 'delete own video media'
   - 'delete page revisions'
   - 'edit any article content'
+  - 'edit any audio media'
+  - 'edit any document media'
   - 'edit any event content'
+  - 'edit any image media'
   - 'edit any novinka content'
   - 'edit any page content'
   - 'edit any podcast content'
+  - 'edit any remote_video media'
+  - 'edit any video media'
   - 'edit own article content'
+  - 'edit own audio media'
+  - 'edit own document media'
   - 'edit own event content'
+  - 'edit own image media'
   - 'edit own novinka content'
   - 'edit own page content'
   - 'edit own podcast content'
+  - 'edit own remote_video media'
+  - 'edit own video media'
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'revert article revisions'
@@ -73,12 +108,16 @@ permissions:
   - 'revert novinka revisions'
   - 'revert podcast revisions'
   - 'switch shortcut sets'
+  - 'update any media'
+  - 'update media'
   - 'use text format basic_html'
   - 'use text format restricted_html'
+  - 'view all media revisions'
   - 'view all revisions'
   - 'view article revisions'
   - 'view event revisions'
   - 'view novinka revisions'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view podcast revisions'
   - 'view the administration theme'
