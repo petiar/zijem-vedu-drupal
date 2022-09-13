@@ -2,3 +2,9 @@
   top: inherit;
   z-index:100;
 }
+
+.freeweb-banner {
+  right: 0;
+  position: absolute;
+  top: 50%;
+}

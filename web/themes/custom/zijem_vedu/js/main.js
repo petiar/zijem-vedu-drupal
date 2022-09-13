@@ -10,7 +10,7 @@
 		previousTop = 0,
 		currentTop = 0,
 		scrollDelta = 10,
-		scrollOffset = 150;
+		scrollOffset = 50;
 
 	if ( siteHeader.length ) {
 		checkSimpleNavigation( currentTop );
