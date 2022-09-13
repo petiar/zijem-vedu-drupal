@@ -14,11 +14,6 @@
             {% include '@zijem_vedu/podcast-player.html.twig' with { node } %}
             <?php endif; ?>
             {{ node.body.value|raw }}
-            <ul class="hashtags">
-              {% for tag in content.field_tags %}
-                <li>{{ tag.value }}</li>
-              {% endfor %}
-            </ul>
           </div>
           <div class="col-12 col-xl-6 offset-xl-3">
             {{ content.field_popis }}
