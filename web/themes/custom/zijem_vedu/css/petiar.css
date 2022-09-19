@@ -7,4 +7,22 @@
   right: 0;
   position: absolute;
   top: 50%;
+  z-index:1000;
 }
+
+[data-align="left"] {
+  float: left;
+  margin: 0 1rem 1rem 0;
+}
+
+[data-align="right"] {
+  float: right;
+  margin: 0 0 1rem 1rem;
+}
+
+[data-align="center"] {
+  margin:1rem auto;
+  display: block;
+  padding: 2rem;
+}
+
