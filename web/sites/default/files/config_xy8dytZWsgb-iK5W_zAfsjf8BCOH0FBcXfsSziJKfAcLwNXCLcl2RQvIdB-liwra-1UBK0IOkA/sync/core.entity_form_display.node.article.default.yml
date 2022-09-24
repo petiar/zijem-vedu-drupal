@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_autor_organizacia
     - field.field.node.article.field_autor_specializacia
     - field.field.node.article.field_featured
+    - field.field.node.article.field_galeria
     - field.field.node.article.field_image
     - field.field.node.article.field_kategoria
     - field.field.node.article.field_tags
@@ -100,6 +101,16 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_galeria:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_image:
     type: image_widget_crop

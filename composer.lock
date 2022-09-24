@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9a4542ec785ad1ef73acae2fad211a3",
+    "content-hash": "e84a2fa261e8abc56fa429efcc1f7614",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2063,6 +2063,59 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/admin_toolbar"
+            }
+        },
+        {
+            "name": "drupal/baguettebox",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/baguettebox.git",
+                "reference": "8.x-1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/baguettebox-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "ba974ab46c1f6df5338044c93746d6ea555badfa"
+            },
+            "require": {
+                "drupal/core": "^8.7 || ^9.0 || ^10",
+                "php": ">=7.1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.5",
+                    "datestamp": "1659463746",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Chi",
+                    "homepage": "https://www.drupal.org/user/556138"
+                },
+                {
+                    "name": "elber",
+                    "homepage": "https://www.drupal.org/user/3684818"
+                }
+            ],
+            "description": "A BaguetteBox image formatter.",
+            "homepage": "https://www.drupal.org/project/baguettebox",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/baguettebox",
+                "issues": "https://www.drupal.org/project/issues/baguettebox"
             }
         },
         {
@@ -10029,5 +10082,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.2.0"
 }

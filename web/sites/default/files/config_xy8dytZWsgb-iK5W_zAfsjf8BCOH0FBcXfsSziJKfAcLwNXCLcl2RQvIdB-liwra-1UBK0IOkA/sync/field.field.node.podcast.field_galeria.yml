@@ -1,0 +1,29 @@
+uuid: d0ecb709-0c50-48b8-bdac-2b447fdff34f
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_galeria
+    - node.type.galeria
+    - node.type.podcast
+id: node.podcast.field_galeria
+field_name: field_galeria
+entity_type: node
+bundle: podcast
+label: Galéria
+description: 'Vyberte galériu, ktorú chcete pripojiť k eventu. Dá sa aj viac. Stačí začať písať názov a systém to dohľadá a doplní.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      galeria: galeria
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

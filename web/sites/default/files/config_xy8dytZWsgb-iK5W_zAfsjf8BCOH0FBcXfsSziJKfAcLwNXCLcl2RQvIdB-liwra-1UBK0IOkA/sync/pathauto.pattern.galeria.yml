@@ -1,0 +1,22 @@
+uuid: de99c3d1-58a1-42c5-90e0-d976672cd467
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: galeria
+label: Galéria
+type: 'canonical_entities:node'
+pattern: 'galeria/[node:title]'
+selection_criteria:
+  6c6d3ec6-5f57-499a-bf7b-b35358181bd5:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 6c6d3ec6-5f57-499a-bf7b-b35358181bd5
+    context_mapping:
+      node: node
+    bundles:
+      galeria: galeria
+selection_logic: and
+weight: -5
+relationships: {  }

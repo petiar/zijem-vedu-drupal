@@ -22,3 +22,9 @@ castos-player:
       css/castos-player.css: {}
   js:
     js/castos-player.js: {}
+baguettebox:
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css: { type: external, minified: true }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js: { type: external, minified: true }

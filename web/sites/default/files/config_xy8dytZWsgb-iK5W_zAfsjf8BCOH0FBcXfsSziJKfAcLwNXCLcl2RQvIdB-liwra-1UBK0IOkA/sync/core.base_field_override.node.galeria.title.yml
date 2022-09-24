@@ -1,0 +1,18 @@
+uuid: 8974ea15-f149-4984-b1b1-8139a2073f9b
+langcode: sk
+status: true
+dependencies:
+  config:
+    - node.type.galeria
+id: node.galeria.title
+field_name: title
+entity_type: node
+bundle: galeria
+label: 'Názov galérie'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

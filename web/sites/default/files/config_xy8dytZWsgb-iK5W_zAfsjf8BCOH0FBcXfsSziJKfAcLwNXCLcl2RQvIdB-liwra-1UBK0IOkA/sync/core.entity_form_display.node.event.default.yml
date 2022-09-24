@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_galeria
     - field.field.node.event.field_image
     - field.field.node.event.field_koniec
     - field.field.node.event.field_miesto_konania
@@ -39,6 +40,16 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_galeria:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_image:
     type: image_widget_crop

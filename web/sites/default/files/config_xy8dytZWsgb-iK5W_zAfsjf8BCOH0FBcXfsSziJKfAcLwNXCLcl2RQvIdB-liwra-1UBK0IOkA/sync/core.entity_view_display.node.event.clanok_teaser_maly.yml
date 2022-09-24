@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.clanok_teaser_maly
     - field.field.node.event.body
+    - field.field.node.event.field_galeria
     - field.field.node.event.field_image
     - field.field.node.event.field_koniec
     - field.field.node.event.field_miesto_konania
@@ -102,4 +103,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_galeria: true
   langcode: true
