@@ -87,4 +87,9 @@
     event.preventDefault();
   });
 
+  $(window).scroll(function (event) {
+    var scroll = $(window).scrollTop() * -1;
+    $('.freeweb-banner').css('right', scroll);
+  });
+
 })( jQuery );

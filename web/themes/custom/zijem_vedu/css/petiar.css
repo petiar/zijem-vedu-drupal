@@ -5,9 +5,9 @@
 
 .freeweb-banner {
   right: 0;
-  position: absolute;
-  top: 50%;
-  z-index:1000;
+  position: fixed;
+  top: 380px;
+  z-index:10;
 }
 
 [data-align="left"] {
