@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.podcast.field_datum_nahravky
     - field.field.node.podcast.field_explicit
     - field.field.node.podcast.field_featured
+    - field.field.node.podcast.field_galeria
     - field.field.node.podcast.field_kategoria
     - field.field.node.podcast.field_playtime_seconds
     - field.field.node.podcast.field_playtime_string
@@ -58,6 +59,16 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_galeria:
+    type: entity_reference_autocomplete
+    weight: 27
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_kategoria:
     type: options_buttons

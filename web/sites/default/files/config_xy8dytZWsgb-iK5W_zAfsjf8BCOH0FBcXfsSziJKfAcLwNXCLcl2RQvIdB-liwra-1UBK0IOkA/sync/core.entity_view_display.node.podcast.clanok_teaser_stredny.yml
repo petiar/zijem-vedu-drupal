@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.podcast.field_datum_nahravky
     - field.field.node.podcast.field_explicit
     - field.field.node.podcast.field_featured
+    - field.field.node.podcast.field_galeria
     - field.field.node.podcast.field_kategoria
     - field.field.node.podcast.field_playtime_seconds
     - field.field.node.podcast.field_playtime_string
@@ -51,6 +52,7 @@ hidden:
   field_datum_nahravky: true
   field_explicit: true
   field_featured: true
+  field_galeria: true
   field_kategoria: true
   field_playtime_seconds: true
   field_playtime_string: true

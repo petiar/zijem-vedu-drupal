@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_autor_organizacia
     - field.field.node.article.field_autor_specializacia
     - field.field.node.article.field_featured
+    - field.field.node.article.field_galeria
     - field.field.node.article.field_image
     - field.field.node.article.field_kategoria
     - field.field.node.article.field_tags
@@ -76,6 +77,15 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_galeria:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 107
     region: content
   field_image:
     type: image

@@ -1,0 +1,15 @@
+uuid: 6a49fc0c-a815-4c6d-b095-08fa91ef56dc
+langcode: sk
+status: true
+dependencies: {  }
+name: medium_stvorec
+label: 'Medium - štvorec'
+effects:
+  067020b4-5c9c-4431-97d9-989ac2642deb:
+    uuid: 067020b4-5c9c-4431-97d9-989ac2642deb
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 264
+      height: 220
+      anchor: center-center

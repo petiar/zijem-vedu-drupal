@@ -1,0 +1,15 @@
+uuid: 95f8d651-a9b1-441d-af21-93610fe5aba6
+langcode: sk
+status: true
+dependencies: {  }
+name: galeria
+label: Galéria
+effects:
+  3307542c-5cca-400c-a72d-ea2a312ba6a5:
+    uuid: 3307542c-5cca-400c-a72d-ea2a312ba6a5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 210
+      height: 200
+      anchor: center-center

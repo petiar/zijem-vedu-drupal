@@ -1,0 +1,33 @@
+uuid: 5db75a8b-e02e-4fcb-b2b2-beaca1da0e5d
+langcode: sk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.galeria.body
+    - field.field.node.galeria.field_obrazky
+    - node.type.galeria
+  module:
+    - text
+    - user
+id: node.galeria.teaser
+targetEntityType: node
+bundle: galeria
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_obrazky: true
+  langcode: true
