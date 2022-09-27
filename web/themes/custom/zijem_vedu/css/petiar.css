@@ -10,16 +10,19 @@
   z-index:10;
 }
 
+img.align-left,
 [data-align="left"] {
   float: left;
   margin: 0 1rem 1rem 0;
 }
 
+img.align-right,
 [data-align="right"] {
   float: right;
   margin: 0 0 1rem 1rem;
 }
 
+img.align-center,
 [data-align="center"] {
   margin:1rem auto;
   display: block;
