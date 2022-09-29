@@ -7,7 +7,9 @@
 
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\simplenews\Subscription\SubscriptionManager;
+use Drupal\views\Entity\View;
 use Drupal\views\ViewExecutable;
+use Drupal\views\Views;
 
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
@@ -50,6 +52,12 @@ function zijem_vedu_preprocess_page(array &$variables) {
   $variables['footer_lower'] = [
     '#theme' => 'footer_block',
   ];
+  if ($variables['is_front']) {
+    $view = Views::getView('event_heading');
+    $view->setDisplay('block_2');
+    $view->execute();
+    $variables['events_count'] = count($view->result);
+  }
 }
 
 /**

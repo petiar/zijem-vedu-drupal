@@ -21,6 +21,27 @@
           </div>
         </div>
         {% endif %}
+        {% if events_count > 0 %}
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="event__block">
+              <div class="label-base mb-2">Poďte s nami žiť vedu</div>
+              <div class="event__image">
+                <figure>
+                  <img src="/themes/custom/zijem_vedu/img/Zijem_vedu_logo.png" alt="Event">
+                </figure>
+              </div>
+              <div class="event__content">
+                <p class="mb-auto">Pôvodne ako neformálna skupina vedkýň a vedcov sme 2. augusta 2018 založili občianske združenie Žijem vedu. Zastrešenie pod právnu entitu nám umožnuje rozširovať naše aktivity vo viacerých smeroch, ako aj zapájať sa do rôznych výziev a grantových schém.</p>
+                <a href="/o-nas" class="btn btn-md btn-gradient-outline mt-2"><span>VIAC O TÍME </span> <i class="fas fa-arrow-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-7 offset-lg-1">
+            {{ page.event_frontpage }}
+          </div>
+        </div>
+        {% endif %}
       </div>
     </section>
 
