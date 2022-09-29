@@ -17,6 +17,7 @@ regions:
   partners_block: Partners Block
   members_block: Members Block
   event_heading_block: Event Heading Bock
+  event_frontpage: Event block on frontpage
   recent_news: Novinky
   main_menu: Main menu
   navigation: Navigation

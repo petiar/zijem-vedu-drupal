@@ -32,3 +32,7 @@ Máme tu už aj folder s patchmi, tu sú linky:
 - https://www.drupal.org/project/drupal/issues/2628230#comment-13213379
 
 Je asi dobré keď sa spustí `composer install` potom pustiť aj `patch -p1 <` a príslušný patch. Teda všetky, ak ich bude viacej.
+
+## TODO
+- Využiť custom block type aby si bloky mohli upravovať editori sami.
+- Autorov blogov ukladať ako entity a dať pri príaní blogu možnosť výberu už existujúceho autora.
