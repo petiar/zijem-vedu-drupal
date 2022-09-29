@@ -4,6 +4,8 @@ namespace Drupal\podcast_feed\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\File\FileUrlGenerator;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -42,7 +44,7 @@ class PodcastFeedController extends ControllerBase {
       $playtime = $node->get('field_playtime_string')->getValue();
       $items[] = [
         'podcast' => $term->getName(),
-        'title' => $node->getTitle(),
+        'title' => $this->getEpisodeTitle($term, $node),
         'pubDate' => $node->getCreatedTime(),
         'link' => $node->toUrl('canonical', ['absolute' => true]),
         'guid' => $node->uuid(),
@@ -86,6 +88,10 @@ class PodcastFeedController extends ControllerBase {
       $append = true;
     }
     return mb_substr(html_entity_decode($text), 0, $limit) . ($append ? '...' : '');
+  }
+
+  private function getEpisodeTitle(Term $term, Node $node): string {
+    return $term->getName() . ' (' . $node->get('field_cislo_epizody')->getValue()[0]['value'] . ') - ' . $node->getTitle();
   }
 
 }
