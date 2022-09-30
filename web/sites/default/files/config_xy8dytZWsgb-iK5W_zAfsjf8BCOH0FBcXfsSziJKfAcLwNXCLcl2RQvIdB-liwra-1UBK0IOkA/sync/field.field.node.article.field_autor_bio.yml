@@ -1,0 +1,21 @@
+uuid: f44c0df2-f7f3-4241-9aac-a445207d3f48
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_autor_bio
+    - node.type.article
+  module:
+    - text
+id: node.article.field_autor_bio
+field_name: field_autor_bio
+entity_type: node
+bundle: article
+label: 'Autor Bio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

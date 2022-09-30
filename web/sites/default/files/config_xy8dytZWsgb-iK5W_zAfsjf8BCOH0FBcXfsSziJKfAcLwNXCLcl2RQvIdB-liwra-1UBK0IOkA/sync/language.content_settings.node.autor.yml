@@ -1,0 +1,11 @@
+uuid: 0a8a83a0-9b89-4027-b3d6-243f7eca6fda
+langcode: sk
+status: true
+dependencies:
+  config:
+    - node.type.autor
+id: node.autor
+target_entity_type_id: node
+target_bundle: autor
+default_langcode: site_default
+language_alterable: false

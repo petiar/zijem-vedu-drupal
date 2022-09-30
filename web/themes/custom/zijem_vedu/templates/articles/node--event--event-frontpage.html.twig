@@ -1,13 +1,13 @@
-<div class="event__block">
+<div href="{{ url }}" class="event__block">
   <div class="label-base mb-2">Najbližšie udalosti</div>
-  <div class="event__image">
+    <div class="event__image">
     <figure>
-      <img src="{{ file_url(node.field_image.entity.fileuri) }}" alt="{{ node.field_image.alt }}">
+      <img src="{{ file_url(node.field_image.entity.fileuri | image_style('event_titulka')) }}" alt="{{ node.field_image.alt }}">
     </figure>
   </div>
   <div class="event__content">
     <div class="d-flex align-items-center mb-2 fs-7 text-muted"><span class="label-gradient">{{ node.field_zaciatok.0.value|date('d. m') }}</span> {{ content.field_miesto_konania_kratko }}</div>
-    <h4 class="family-heading mb-2 color-violet">{{ label }}</h4>
+    <h4 class="family-heading mb-2 color-violet"><a href="{{ url }}">{{ label }}</a></h4>
     {% set text = content.body|render|striptags %}
     <p class="mb-auto">{{ text|length > 200 ? text|slice(0, 200)|raw ~ '...' : text|raw }}</p>
     <a href="/podujatia" class="btn btn-md btn-gradient-outline mt-2"><span>VŠETKY PODUJATIA <i class="fas fa-arrow-right"></i></span></a>

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_autor_bio
     - field.field.node.article.field_autor_fotografia
     - field.field.node.article.field_autor_meno
     - field.field.node.article.field_autor_organizacia
@@ -32,6 +33,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_autor_bio:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_autor_fotografia:
     type: image
