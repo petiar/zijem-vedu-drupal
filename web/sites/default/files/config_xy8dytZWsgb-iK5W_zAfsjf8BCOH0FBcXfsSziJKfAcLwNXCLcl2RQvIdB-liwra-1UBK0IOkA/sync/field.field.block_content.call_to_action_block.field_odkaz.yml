@@ -1,0 +1,23 @@
+uuid: 4ecca25e-4468-4180-9a6f-8eb59a7762d2
+langcode: sk
+status: true
+dependencies:
+  config:
+    - block_content.type.call_to_action_block
+    - field.storage.block_content.field_odkaz
+  module:
+    - link
+id: block_content.call_to_action_block.field_odkaz
+field_name: field_odkaz
+entity_type: block_content
+bundle: call_to_action_block
+label: Odkaz
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

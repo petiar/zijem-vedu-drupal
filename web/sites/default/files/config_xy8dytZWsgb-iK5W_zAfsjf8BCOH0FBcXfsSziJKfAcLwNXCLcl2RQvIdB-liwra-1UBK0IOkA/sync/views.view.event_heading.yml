@@ -3,6 +3,7 @@ langcode: sk
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.event_frontpage
     - core.entity_view_mode.node.event_heading
     - node.type.event
   module:
@@ -112,17 +113,15 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
+        field_zaciatok_value:
+          id: field_zaciatok_value
+          table: node__field_zaciatok
+          field: field_zaciatok_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          order: DESC
+          plugin_id: datetime
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -233,6 +232,33 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: 'Najbližší event - na titulke'
+    display_plugin: block
+    position: 2
+    display_options:
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: event_frontpage
+      defaults:
+        style: false
+        row: false
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1
