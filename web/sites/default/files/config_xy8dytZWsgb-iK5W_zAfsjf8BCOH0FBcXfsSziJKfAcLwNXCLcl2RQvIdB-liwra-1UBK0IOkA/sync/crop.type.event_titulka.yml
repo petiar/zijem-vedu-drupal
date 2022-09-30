@@ -1,0 +1,12 @@
+uuid: d50ef875-154b-4f06-ac93-2f68c6be5138
+langcode: sk
+status: true
+dependencies: {  }
+label: 'Event - titulka'
+id: event_titulka
+description: ''
+aspect_ratio: '746:180'
+soft_limit_width: 746
+soft_limit_height: 180
+hard_limit_width: null
+hard_limit_height: null

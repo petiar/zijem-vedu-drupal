@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.rss
     - field.field.node.article.body
+    - field.field.node.article.field_autor_bio
     - field.field.node.article.field_autor_fotografia
     - field.field.node.article.field_autor_meno
     - field.field.node.article.field_autor_organizacia
@@ -29,6 +30,7 @@ content:
     region: content
 hidden:
   body: true
+  field_autor_bio: true
   field_autor_fotografia: true
   field_autor_meno: true
   field_autor_organizacia: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_autor_bio
     - field.field.node.article.field_autor_fotografia
     - field.field.node.article.field_autor_meno
     - field.field.node.article.field_autor_organizacia
@@ -29,6 +30,7 @@ third_party_settings:
         - field_autor_fotografia
         - field_autor_organizacia
         - field_autor_specializacia
+        - field_autor_bio
       label: 'Pár informácií o autorovi článku'
       region: content
       parent_name: ''
@@ -62,6 +64,14 @@ content:
     weight: 6
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_autor_bio:
+    type: text_textarea
+    weight: 17
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_autor_fotografia:
     type: image_image

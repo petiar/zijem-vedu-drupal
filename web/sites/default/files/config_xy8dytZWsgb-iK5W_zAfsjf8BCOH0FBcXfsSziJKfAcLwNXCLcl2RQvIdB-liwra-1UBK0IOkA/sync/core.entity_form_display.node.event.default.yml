@@ -60,8 +60,10 @@ content:
       preview_image_style: thumbnail
       crop_preview_image_style: crop_thumbnail
       crop_list:
+        - event_titulka
         - event_dlhy
       crop_types_required:
+        - event_titulka
         - event_dlhy
       warn_multiple_usages: true
       show_crop_area: false

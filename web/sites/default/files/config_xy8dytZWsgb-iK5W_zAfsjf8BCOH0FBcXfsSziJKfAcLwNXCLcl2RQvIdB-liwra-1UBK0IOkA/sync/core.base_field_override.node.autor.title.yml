@@ -1,0 +1,18 @@
+uuid: 70a9d422-bd61-4677-b546-1c9ef09aed05
+langcode: sk
+status: true
+dependencies:
+  config:
+    - node.type.autor
+id: node.autor.title
+field_name: title
+entity_type: node
+bundle: autor
+label: 'Meno autora'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

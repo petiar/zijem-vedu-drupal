@@ -1,0 +1,20 @@
+uuid: d838f5f4-324f-4cd6-b9a5-755f540759b9
+langcode: sk
+status: true
+dependencies:
+  config:
+    - node.type.autor
+  module:
+    - user
+id: node.autor.default
+targetEntityType: node
+bundle: autor
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

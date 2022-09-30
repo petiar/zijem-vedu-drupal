@@ -1,0 +1,18 @@
+uuid: d33834e1-579b-4e0c-bea8-40ec1251a9d3
+langcode: sk
+status: true
+dependencies:
+  config:
+    - crop.type.event_titulka
+  module:
+    - crop
+name: event_titulka
+label: 'Event titulka'
+effects:
+  319136f4-07ff-4584-ba6a-3ff542bad7f7:
+    uuid: 319136f4-07ff-4584-ba6a-3ff542bad7f7
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: event_titulka
+      automatic_crop_provider: null
