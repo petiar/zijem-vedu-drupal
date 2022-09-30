@@ -1,0 +1,8 @@
+uuid: 380d9100-0734-4903-ab88-798b1e3f40ed
+langcode: sk
+status: true
+dependencies: {  }
+id: call_to_action_block
+label: 'Call to action block'
+revision: 0
+description: 'Blok obsahujúci obrázok, text a tlačidlo.'

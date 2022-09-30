@@ -1,0 +1,19 @@
+uuid: 2437c429-0bb7-46b1-9d7e-95a19697a3fe
+langcode: sk
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+id: block_content.field_odkaz
+field_name: field_odkaz
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

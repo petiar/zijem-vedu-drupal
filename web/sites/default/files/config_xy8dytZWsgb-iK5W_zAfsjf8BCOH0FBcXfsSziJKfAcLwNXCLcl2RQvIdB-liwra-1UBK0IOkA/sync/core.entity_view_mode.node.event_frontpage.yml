@@ -1,0 +1,10 @@
+uuid: f119c58a-c5da-4d22-918d-e1c639b5add2
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: node.event_frontpage
+label: 'Event Frontpage'
+targetEntityType: node
+cache: true
