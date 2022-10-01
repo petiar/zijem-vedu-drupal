@@ -1,0 +1,23 @@
+uuid: d37a36ad-3141-4205-87c4-a53a6e52f7b4
+langcode: sk
+status: true
+dependencies:
+  module:
+    - zijem_vedu_blocks
+  theme:
+    - zijem_vedu
+id: zijemvedublok
+theme: zijem_vedu
+region: frontpage_bottom_middle
+weight: -11
+provider: null
+plugin: zijem_vedu_block
+settings:
+  id: zijem_vedu_block
+  label: 'Žijem vedu o. z.'
+  label_display: '0'
+  provider: zijem_vedu_blocks
+  zv_block_content: 'Cez naše občianske združenie umožňujeme slovenským vedcom a vedkyniam kdekoľvek vo svete dať o sebe vedieť, nadväzovať spolupráce a prispievať k rozvoju vedy a výskumu na Slovensku.'
+  zv_block_link: 'https://zijemvedu.sk/platforma'
+  zv_block_link_text: '<span>Viac o Žijem</span><span>vedu OZ<i class="fas fa-arrow-right"></i></span>'
+visibility: {  }
