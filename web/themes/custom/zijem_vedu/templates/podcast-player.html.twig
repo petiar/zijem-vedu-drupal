@@ -149,14 +149,14 @@ use App\Controller\Admin\PodcastsController;
   </div>
 </div>
 
-<div class="podcast_meta article__tag mb-0 color-gold">
+<div class="podcast_meta fs-8 mb-0 color-gold">
   <p>
-    <a href="{{ file_url(node.field_subor.entity.fileuri) }}" class="podcast-meta-download">{{ 'Download file'|t }}</a>
-    | <a href="{{ file_url(node.field_subor.entity.fileuri) }}" class="podcast-meta-new-window" target="_blank">{{ 'Play in new window'|t }}</a>
-    | <span class="podcast-meta-duration">{{'Duration'|t }}: {{ node.field_playtime_string.0.value }}</span>
-    | <span class="podcast-meta-date">{{'Recorded on'|t }} {{ date.value|date('d. m. Y') }}</span>
+    <a href="{{ file_url(node.field_subor.entity.fileuri) }}" class="podcast-meta-download">Stiahnuť súbor</a>
+    | <a href="{{ file_url(node.field_subor.entity.fileuri) }}" class="podcast-meta-new-window" target="_blank">Otvoriť v novom okne</a>
+    | <span class="podcast-meta-duration">Dĺžka: {{ node.field_playtime_string.0.value }}</span>
+    | <span class="podcast-meta-date">Nahraté dňa {{ date.value|date('d. m. Y') }}</span>
 
-    <br>{{'Subscribe'|t }}: <a href="https://podcasts.apple.com/sk/podcast/%C5%BEijemvedu-podcast/id1533576341" target="_blank" title="Apple Podcasts" class="podcast-meta-itunes">Apple Podcasts</a> | <a href="https://podcasts.google.com/feed/aHR0cHM6Ly96aWplbXZlZHUuc2svZmVlZC9wb2RjYXN0" target="_blank" title="Google Podcasts" class="podcast-meta-itunes">Google Podcasts</a> | <a href="https://open.spotify.com/show/6L4MTVWsBUvvAvv8GPdH16" target="_blank" title="Spotify" class="podcast-meta-itunes">Spotify</a>
+    <br>Odoberať podcast: <a href="https://podcasts.apple.com/sk/podcast/%C5%BEijemvedu-podcast/id1533576341" target="_blank" title="Apple Podcasts" class="podcast-meta-itunes"><i class="fa-brands fa-apple"></i> Apple Podcasts</a> | <a href="https://podcasts.google.com/feed/aHR0cHM6Ly96aWplbXZlZHUuc2svZmVlZC9wb2RjYXN0" target="_blank" title="Google Podcasts" class="podcast-meta-itunes"><i class="fa-brands fa-google"></i> Google Podcasts</a> | <a href="https://open.spotify.com/show/6L4MTVWsBUvvAvv8GPdH16" target="_blank" title="Spotify" class="podcast-meta-itunes"><i class="fa-brands fa-spotify"></i> Spotify</a>
   </p>
 </div>
 
