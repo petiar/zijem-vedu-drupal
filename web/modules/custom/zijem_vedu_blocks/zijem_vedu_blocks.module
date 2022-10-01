@@ -40,6 +40,11 @@ function zijem_vedu_blocks_theme() {
     'followus_block' => [
       'variables' => [],
     ],
+    'zijem_vedu_block' => [
+      'variables' => [
+        'variables' => null,
+      ],
+    ],
     'members_block' => [
       'variables' => [
         'members' => [],
