@@ -5,6 +5,7 @@
  * Functions to support theming in the zijem_vedu theme.
  */
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\simplenews\Subscription\SubscriptionManager;
 use Drupal\views\Entity\View;
@@ -52,11 +53,16 @@ function zijem_vedu_preprocess_page(array &$variables) {
   $variables['footer_lower'] = [
     '#theme' => 'footer_block',
   ];
-  if ($variables['is_front']) {
+  $variables['route'] = \Drupal::routeMatch()->getRouteName();
+  if ($cache = \Drupal::cache()->get('events_count')) {
+    $variables['events_count'] = $cache->data;
+  }
+  else {
     $view = Views::getView('event_heading');
     $view->setDisplay('block_2');
     $view->execute();
     $variables['events_count'] = count($view->result);
+    \Drupal::cache()->set('events_count', $variables['events_count'], Cache::PERMANENT, ['node_list:event']);
   }
 }
 

@@ -108,18 +108,7 @@ display:
       cache:
         type: tag
         options: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          empty: true
-          content: "        <div class=\"container py-5\">\r\n            <div class=\"row align-items-center\">\r\n                <div class=\"col-12 col-md-6 offset-md-3 col-xl-4 offset-xl-4\">\r\n                    <p>Momentálne intenzívne pracujeme na nových aktivitách, o ktorých Vám dáme čoskoro vedieť.</p>\r\n                        <p>Zatiaľ nemáme ďalšie nadchádzajúce podujatia.</p>\r\n                    <p><a href=\"#newsletter-section\">Prihláste sa na odber noviniek</a> alebo si pozrite staršie podujatia.</p>\r\n                    <a href=\"/podujatia/starsie\" class=\"btn btn-md btn-gradient-outline\"><span>Staršie podujatia</span> <i class=\"fas fa-arrow-right\"></i></span></a>\r\n                </div>\r\n            </div>\r\n        </div>"
-          tokenize: false
+      empty: {  }
       sorts:
         field_zaciatok_value:
           id: field_zaciatok_value
