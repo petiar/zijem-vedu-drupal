@@ -11,10 +11,21 @@
       </div>
     </section>
 
-
     <section class="content">
       {{ page.event_heading_block }}
       {{ page.content }}
+      {% if events_count == 0 and route != 'view.podujatia.page_2' %}
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <p>Momentálne intenzívne pracujeme na nových aktivitách, o ktorých Vám dáme čoskoro vedieť.</p>
+            <p>Zatiaľ nemáme ďalšie nadchádzajúce podujatia.</p>
+            <p><a href="#newsletter-section">Prihláste sa na odber noviniek</a> alebo si pozrite staršie podujatia.</p>
+            <a href="/podujatia/starsie" class="btn btn-md btn-gradient-outline"><span>Staršie podujatia</span> <i class="fas fa-arrow-right"></i></span></a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
     </section>
 
   </main>
