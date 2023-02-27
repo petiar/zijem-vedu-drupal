@@ -1,7 +1,7 @@
 name: 'Žijem vedu blocks'
 type: module
 description: 'Bloky pre Žijem vedu'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: 'Žijem vedu'
 dependencies:
   - block

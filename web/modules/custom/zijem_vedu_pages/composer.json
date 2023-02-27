@@ -1,13 +1,13 @@
 {
     "name": "zijem_vedu_pages",
     "type": "drupal-module",
-    "description": "Stránky pre prijekt Žijem vedu",
+    "description": "Stránky pre projekt Žijem vedu",
     "keywords": [
     ],
     "homepage": "https://www.drupal.org/project/zijem_vedu_pages",
     "minimum-stability": "dev",
     "support": {
         "issues": "https://www.drupal.org/project/issues/zijem_vedu_pages",
-        "source": "http://cgit.drupalcode.org/zijem_vedu_pages",
-    },
+        "source": "http://cgit.drupalcode.org/zijem_vedu_pages"
+    }
 }

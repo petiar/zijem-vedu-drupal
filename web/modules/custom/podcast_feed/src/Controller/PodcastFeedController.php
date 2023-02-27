@@ -24,6 +24,7 @@ class PodcastFeedController extends ControllerBase {
     $items = [];
 
     $nids = \Drupal::entityQuery('node')
+      ->accessCheck(TRUE)
       ->condition('type', 'podcast')
       ->condition('status', 1)
       ->sort('created', 'DESC')
