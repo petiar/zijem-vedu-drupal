@@ -61,7 +61,9 @@ function zijem_vedu_pages_uncheck_others_featured(EntityInterface $entity) {
         $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
         $query->condition('status', 1)
           ->condition('field_featured', 1);
-        $nids = $query->execute();
+        $nids = $query
+          ->accessCheck(TRUE)
+          ->execute();
         foreach ($nids as $nid) {
           if ($nid !== $entity->id()) {
             $node = Node::load($nid);

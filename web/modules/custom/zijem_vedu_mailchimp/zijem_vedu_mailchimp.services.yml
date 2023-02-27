@@ -1,0 +1,4 @@
+services:
+  zijem_vedu_mailchimp.api:
+    class: Drupal\zijem_vedu_mailchimp\Api
+    arguments: ['@settings']

@@ -1,5 +1,5 @@
 name: 'Žijem Vedu pages'
 type: module
 description: 'Stránky pre prijekt Žijem vedu'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: 'Žijem vedu'

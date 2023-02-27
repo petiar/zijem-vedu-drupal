@@ -9,7 +9,7 @@ dependencies:
 id: zijemvedublok
 theme: zijem_vedu
 region: frontpage_bottom_middle
-weight: -11
+weight: -12
 provider: null
 plugin: zijem_vedu_block
 settings:

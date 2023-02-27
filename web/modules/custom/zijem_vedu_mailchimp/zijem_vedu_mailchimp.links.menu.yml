@@ -1,0 +1,7 @@
+zijem_vedu_mailchimp.settings_form:
+  title: 'Žijem vedu Mailchimp Integration'
+  description: 'Configure Žijem vedu Mailchimp Integration.'
+  parent: system.admin_config_system
+  route_name: zijem_vedu_mailchimp.settings_form
+  weight: 10
+
