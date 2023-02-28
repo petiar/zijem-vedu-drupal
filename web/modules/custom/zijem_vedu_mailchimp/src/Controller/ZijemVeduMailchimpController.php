@@ -3,9 +3,8 @@
 namespace Drupal\zijem_vedu_mailchimp\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\RequestException;
-use Laminas\Diactoros\Response\JsonResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Returns responses for Žijem vedu Mailchimp Integration routes.

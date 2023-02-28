@@ -58,12 +58,6 @@
         },
         "sort-packages": true
     },
-    "scripts": {
-        "test": [
-            "Composer\\Config::disableProcessTimeout",
-            "phpunit"
-        ]
-    },
     "extra": {
         "drupal-scaffold": {
             "locations": {
