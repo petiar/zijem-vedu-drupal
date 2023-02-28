@@ -38,7 +38,13 @@ class ZijemVeduMailchimpController extends ControllerBase {
         $notices[] = 'Úspešne prihlásený, ďakujeme!';
       }
       catch (RequestException $e) {
-        \Drupal::logger('mailchimp')->error('Bol problém s prihlásením {email}', ['email' => $email]);
+        $error = $e->getResponse()->getBody()->getContents();
+        $response = json_decode($error);
+        $errors[] = 'S prihlásením bol problém, skúste neskôr, prosím. Pozrieme sa na to. (Chyba: ' . $response->title . ')';
+        \Drupal::logger('mailchimp')->error('Bol problém s prihlásením {email}, chyba: {error}', [
+          'email' => $email,
+          'error' => $error,
+        ]);
       }
     }
 
