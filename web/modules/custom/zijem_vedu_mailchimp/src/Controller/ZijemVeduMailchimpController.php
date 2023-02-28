@@ -33,6 +33,11 @@ class ZijemVeduMailchimpController extends ControllerBase {
           'email_address' => $email,
           'status' => 'subscribed',
           'email_type' => 'html',
+          'merge_fields' => [
+            'FNAME' => 'Web',
+            'LNAME'=> 'Subscriber',
+            'COUNTRY' => 'SK',
+          ],
         ]);
         $notices[] = 'Úspešne prihlásený, ďakujeme!';
       }
