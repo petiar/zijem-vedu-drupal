@@ -2,7 +2,6 @@
 
 namespace Drupal\zijem_vedu_mailchimp;
 
-use Drupal\Core\Site\Settings;
 use MailchimpMarketing;
 
 /**
@@ -11,25 +10,14 @@ use MailchimpMarketing;
 class Api {
 
   /**
-   * The site settings.
-   *
-   * @var \Drupal\Core\Site\Settings
-   */
-  protected $settings;
-
-  /**
    * @var \MailchimpMarketing\ApiClient
    */
   protected $mailchimp;
 
   /**
    * Constructs an Api object.
-   *
-   * @param \Drupal\Core\Site\Settings $settings
-   *   The site settings.
    */
-  public function __construct(Settings $settings) {
-    $this->settings = $settings;
+  public function __construct() {
     $config = \Drupal::configFactory()->get('zijem_vedu_mailchimp.settings');
     $this->mailchimp = new MailchimpMarketing\ApiClient();
 

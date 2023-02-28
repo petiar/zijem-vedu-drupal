@@ -10,7 +10,6 @@ dependencies:
     - media
     - search
     - shortcut
-    - simplenews
     - system
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
@@ -23,6 +22,5 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'search content'
-  - 'subscribe to newsletters'
   - 'use text format basic_html'
   - 'view media'
