@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.podcast.field_header_obrazok
+    - field.field.taxonomy_term.podcast.field_include_in_podcast_feed
     - field.field.taxonomy_term.podcast.field_player_obrazok
     - image.style.podcast_player
     - taxonomy.vocabulary.podcast
@@ -32,6 +33,16 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_include_in_podcast_feed:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_player_obrazok:
     type: image

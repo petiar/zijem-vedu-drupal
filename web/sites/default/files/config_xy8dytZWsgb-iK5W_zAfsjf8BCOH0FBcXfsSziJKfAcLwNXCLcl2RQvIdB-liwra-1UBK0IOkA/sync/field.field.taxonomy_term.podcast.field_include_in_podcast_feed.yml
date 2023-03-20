@@ -1,0 +1,23 @@
+uuid: fd907291-d0c9-46c1-9b19-9940fe2b5dcf
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_include_in_podcast_feed
+    - taxonomy.vocabulary.podcast
+id: taxonomy_term.podcast.field_include_in_podcast_feed
+field_name: field_include_in_podcast_feed
+entity_type: taxonomy_term
+bundle: podcast
+label: 'Zahrnúť do podcast feed-u'
+description: 'Ak si prajete, aby bol tento podcast zahrnutý aj do podcast XML exportu pre podcastové aplikácie, zakliknite túto možnosť.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Zapnúť
+  off_label: Vypnúť
+field_type: boolean
