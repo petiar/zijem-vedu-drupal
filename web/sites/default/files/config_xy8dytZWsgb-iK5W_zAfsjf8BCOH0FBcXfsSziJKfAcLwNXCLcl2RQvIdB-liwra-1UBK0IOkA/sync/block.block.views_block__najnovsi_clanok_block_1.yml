@@ -11,7 +11,7 @@ dependencies:
 id: views_block__najnovsi_clanok_block_1
 theme: zijem_vedu
 region: frontpage_main_article
-weight: 0
+weight: -12
 provider: null
 plugin: 'views_block:najnovsi_clanok-block_1'
 settings:

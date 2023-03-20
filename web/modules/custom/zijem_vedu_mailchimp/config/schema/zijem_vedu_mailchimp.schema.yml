@@ -1,0 +1,15 @@
+# Schema for the configuration files of the Žijem vedu Mailchimp Integration module.
+zijem_vedu_mailchimp.settings:
+  type: config_object
+  label: 'Žijem vedu Mailchimp Integration settings'
+  mapping:
+    api_key:
+      type: string
+      label: 'Mailchimp API key'
+    server_prefix:
+      type: string
+      label: 'Server Prefix'
+    list_id:
+      type: string
+      label: 'Mailchimp List ID'
+

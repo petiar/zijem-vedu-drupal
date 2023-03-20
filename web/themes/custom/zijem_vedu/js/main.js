@@ -70,23 +70,6 @@
 		},
 	});
 
-  $('#newsletter-subscription').submit(function (event) {
-    $('#newsletter_errors').html('');
-    $('#newsletter_notice').html('');
-    $.post('/subscribe', { email: $('#email').val()})
-      .done(function(data) {
-        console.log(data);
-        data.errors.forEach(function(item) {
-          $('#newsletter_errors').html(item);
-        });
-        data.notices.forEach(function(item) {
-          $('#newsletter_notice').html(item);
-          $('#email').val('');
-        });
-      });
-    event.preventDefault();
-  });
-
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop() * -1;
     $('.freeweb-banner').css('right', scroll);
