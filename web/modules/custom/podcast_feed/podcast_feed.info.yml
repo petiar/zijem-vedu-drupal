@@ -1,5 +1,5 @@
 name: 'Podcast Feed'
 type: module
 description: 'Podcast Feed Module'
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 package: 'Žijem vedu'

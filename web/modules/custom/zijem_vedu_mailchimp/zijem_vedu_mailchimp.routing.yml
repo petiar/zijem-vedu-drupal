@@ -1,0 +1,17 @@
+zijem_vedu_mailchimp.subscribe:
+  path: '/subscribe'
+  methods: [POST]
+  defaults:
+    _controller: '\Drupal\zijem_vedu_mailchimp\Controller\ZijemVeduMailchimpController::subscribe'
+    _title: 'Subscribe to Zijem vedu Mailchimp newsletter'
+  requirements:
+    _permission: 'access content'
+
+zijem_vedu_mailchimp.settings_form:
+  path: '/admin/config/system/zijem-vedu-mailchimp'
+  defaults:
+    _title: 'Žijem vedu Mailchimp Integration settings'
+    _form: 'Drupal\zijem_vedu_mailchimp\Form\SettingsForm'
+  requirements:
+    _permission: 'administer zijem_vedu_mailchimp configuration'
+

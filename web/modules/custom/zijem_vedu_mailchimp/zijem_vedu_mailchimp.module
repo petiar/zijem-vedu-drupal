@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Žijem vedu Mailchimp Integration module.
+ */
+
+function zijem_vedu_mailchimp_theme() {
+  return [
+    'zijem_vedu_mailchimp_block' => [
+      'variables' => [],
+    ],
+  ];
+}

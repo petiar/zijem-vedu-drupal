@@ -8,6 +8,6 @@
     "minimum-stability": "dev",
     "support": {
         "issues": "https://www.drupal.org/project/issues/podcast_feed",
-        "source": "http://cgit.drupalcode.org/podcast_feed",
-    },
+        "source": "http://cgit.drupalcode.org/podcast_feed"
+    }
 }

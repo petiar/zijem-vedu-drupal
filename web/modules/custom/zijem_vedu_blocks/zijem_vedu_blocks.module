@@ -31,9 +31,6 @@ function zijem_vedu_blocks_theme() {
     'spajame_block' => [
       'variables' => [],
     ],
-    'newsletter_block' => [
-      'variables' => [],
-    ],
     'partners_block' => [
       'variables' => [],
     ],

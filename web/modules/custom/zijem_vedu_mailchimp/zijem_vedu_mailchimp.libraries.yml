@@ -1,0 +1,5 @@
+zijem_vedu_mailchimp:
+  js:
+    js/zijem-vedu-mailchimp.js: {}
+  dependencies:
+    - core/drupalSettings

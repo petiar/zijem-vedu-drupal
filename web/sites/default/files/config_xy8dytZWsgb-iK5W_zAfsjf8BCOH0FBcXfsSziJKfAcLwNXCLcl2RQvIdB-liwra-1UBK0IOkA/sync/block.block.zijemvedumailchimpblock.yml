@@ -1,0 +1,20 @@
+uuid: a0d3f9dd-3a8d-47d2-9992-15515a72fb1d
+langcode: sk
+status: true
+dependencies:
+  module:
+    - zijem_vedu_mailchimp
+  theme:
+    - zijem_vedu
+id: zijemvedumailchimpblock
+theme: zijem_vedu
+region: newsletter_block
+weight: 0
+provider: null
+plugin: zijem_vedu_mailchimp_block
+settings:
+  id: zijem_vedu_mailchimp_block
+  label: 'Žijem vedu Mailchimp Block'
+  label_display: visible
+  provider: zijem_vedu_mailchimp
+visibility: {  }

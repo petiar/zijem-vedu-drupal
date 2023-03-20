@@ -9,7 +9,7 @@ dependencies:
 id: spajameblocktest
 theme: zijem_vedu
 region: frontpage_heading_block
-weight: 0
+weight: -12
 provider: null
 plugin: spajame_block
 settings:
