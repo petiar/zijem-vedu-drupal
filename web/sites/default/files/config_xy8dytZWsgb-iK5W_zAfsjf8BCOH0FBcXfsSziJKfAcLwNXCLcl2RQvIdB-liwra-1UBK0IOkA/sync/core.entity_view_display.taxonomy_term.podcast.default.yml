@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.podcast.field_header_obrazok
     - field.field.taxonomy_term.podcast.field_include_in_podcast_feed
+    - field.field.taxonomy_term.podcast.field_o_podcaste
     - field.field.taxonomy_term.podcast.field_player_obrazok
     - image.style.podcast_player
     - taxonomy.vocabulary.podcast
@@ -43,6 +44,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_o_podcaste:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_player_obrazok:
     type: image

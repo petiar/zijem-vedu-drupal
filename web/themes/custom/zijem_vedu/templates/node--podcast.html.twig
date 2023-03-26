@@ -13,6 +13,9 @@
           <div class="col-12 col-xl-6 offset-xl-3">
             {% include '@zijem_vedu/podcast-player.html.twig' with { node } %}
             <?php endif; ?>
+            <div class="podcast-description">
+              {{ node.field_podcast.entity.field_o_podcaste.value | raw }}
+            </div>
             {{ node.body.value|raw }}
           </div>
           <div class="col-12 col-xl-6 offset-xl-3">
