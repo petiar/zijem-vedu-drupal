@@ -17,7 +17,7 @@ use App\Controller\Admin\PodcastsController;
   <div class="player">
     <div class="player__main">
       <div class="player__artwork player__artwork-{{ node.id }}"
-           style="background-position: center;background-size: cover;background-image: url('{{ file_url(node.field_podcast.entity.field_player_obrazok.entity.uri.value) }}');">
+           style="background-position: center;background-size: cover;background-image: url('{{ node.field_podcast.entity.field_player_obrazok.entity.uri.value | image_style('podcast_player') }}');">
       </div>
       <div class="player__body">
         <div class="currently-playing">
@@ -29,10 +29,10 @@ use App\Controller\Admin\PodcastsController;
         <div class="play-progress">
           <div class="play-pause-controls">
             <button title="{{ 'Play'|t }}" class="play-btn">
-              <span class="screen-reader-text"><?php __( 'Play Episode'|t }}</span>
+              <span class="screen-reader-text">{{ 'Play Episode'|t }}</span>
             </button>
             <button title="{{ 'Pause'|t }}" class="pause-btn hide">
-              <span class="screen-reader-text"><?php __( 'Pause Episode'|t }}</span>
+              <span class="screen-reader-text">{{ 'Pause Episode'|t }}</span>
             </button>
             <img src="{{ base_path ~ directory }}/img/icon-loader.svg" class="ssp-loader hide"/>
           </div>
