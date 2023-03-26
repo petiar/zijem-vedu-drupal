@@ -7,7 +7,7 @@
               <div class="fs-7 ml-1">{{ node.created.value|date('d. m. Y') }}</div>
             </div>
             <figure class="figure">
-              <img src="{{ file_url(node.field_podcast.entity.field_header_obrazok.entity.uri.value) }}" class="figure-img img-fluid rounded" alt="Podcast {{ node.field_podcast.entity.label }}">
+              <img src="{{ node.field_podcast.entity.field_header_obrazok.entity.uri.value | image_style('obrazok_k_clanku_stredny')}}" class="figure-img img-fluid rounded" alt="Podcast {{ node.field_podcast.entity.label }}">
             </figure>
           </div>
           <div class="col-12 col-xl-6 offset-xl-3">

@@ -1,7 +1,18 @@
 uuid: ec091277-0dc9-4d06-b371-5f003b3b2d5b
 langcode: sk
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - crop.type.obrazok_k_clanku_stredny
+  module:
+    - crop
 name: obrazok_k_clanku_stredny
 label: 'Obrázok k článku - stredný'
-effects: {  }
+effects:
+  7cd048c3-139d-49eb-b30c-e9bbdc2dbadb:
+    uuid: 7cd048c3-139d-49eb-b30c-e9bbdc2dbadb
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: obrazok_k_clanku_stredny
+      automatic_crop_provider: null
