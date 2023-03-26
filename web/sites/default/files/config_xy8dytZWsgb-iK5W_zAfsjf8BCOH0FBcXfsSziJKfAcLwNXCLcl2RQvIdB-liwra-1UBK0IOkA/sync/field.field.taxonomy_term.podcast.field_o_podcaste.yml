@@ -1,0 +1,21 @@
+uuid: 763379d9-921f-471c-bb08-ac977f99d0db
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_o_podcaste
+    - taxonomy.vocabulary.podcast
+  module:
+    - text
+id: taxonomy_term.podcast.field_o_podcaste
+field_name: field_o_podcaste
+entity_type: taxonomy_term
+bundle: podcast
+label: 'O podcaste'
+description: 'Tu môžete napísať stručnú informáciu o podcaste, ktorá sa potom zobrazí na stránke so zoznamom epizód a vo feede.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
