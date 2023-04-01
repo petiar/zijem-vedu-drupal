@@ -3,9 +3,13 @@
 namespace Drupal\podcast_feed\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Entity\Query\QueryInterface;
+use Drupal\Core\Entity\Query\Sql\Query;
 use Drupal\Core\File\FileUrlGenerator;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -13,24 +17,42 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class PodcastFeedController extends ControllerBase {
 
+  public function __construct(
+    private FileUrlGenerator $fileUrlGenerator,
+    protected $entityTypeManager,
+    private $urlGenerator,
+    private $renderer
+  )
+  {
+  }
+
+  public static function create(ContainerInterface $container)
+  {
+    return new static(
+      $container->get('file_url_generator'),
+      $container->get('entity_type.manager'),
+      $container->get('url_generator'),
+      $container->get('renderer')
+    );
+  }
+
   /**
    * The index method returns podcast XML.
    *
    * @return \Symfony\Component\HttpFoundation\Response
    */
   public function index() {
-    /** @var FileUrlGenerator $fileUrlGenerator */
-    $fileUrlGenerator = \Drupal::service('file_url_generator');
     $items = [];
 
-    $nids = \Drupal::entityQuery('node')
+    $nids = $this->entityTypeManager->getStorage('node')
+      ->getQuery()
       ->accessCheck(TRUE)
       ->condition('type', 'podcast')
       ->condition('status', 1)
       ->condition('field_podcast.entity.field_include_in_podcast_feed', 1)
       ->sort('created', 'DESC')
       ->execute();
-    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+    $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
 
     $lastBuildDate = 0;
     foreach ($nodes as $node) {
@@ -53,18 +75,18 @@ class PodcastFeedController extends ControllerBase {
         'description' => $this->truncateDescription($fieldPopis[0]['value'], 300),
         'subtitle' => $this->truncateDescription($fieldPopis[0]['value'], 300),
         'encoded' => $this->truncateDescription($fieldPopis[0]['value'], 300),
-        'filePath' => $fileUrlGenerator->generateAbsoluteString($file->getFileUri()),
+        'filePath' => $this->fileUrlGenerator->generateAbsoluteString($file->getFileUri()),
         'fileSize' => $file->getSize(),
         'fileType' => $file->getMimeType(),
-        'image' => $fileUrlGenerator->generateAbsoluteString($image->getFileUri()),
+        'image' => $this->fileUrlGenerator->generateAbsoluteString($image->getFileUri()),
         'playtime' => $playtime[0]['value'],
         ];
     }
 
     $channel = [
-      'url' => \Drupal::urlGenerator()->generateFromRoute('<front>', [], ['absolute' => true]),
+      'url' => $this->urlGenerator->generateFromRoute('<front>', [], ['absolute' => true]),
       'lastBuildDate' => $lastBuildDate,
-      'atomLink' => \Drupal::urlGenerator()->generateFromRoute('podcast.feed', [], ['absolute' => true]),
+      'atomLink' => $this->urlGenerator->generateFromRoute('podcast.feed', [], ['absolute' => true]),
     ];
 
     $build = [
@@ -74,7 +96,7 @@ class PodcastFeedController extends ControllerBase {
       '#cache' => ['max-age' => 0],
     ];
 
-    $output = \Drupal::service('renderer')->renderRoot($build);
+    $output = $this->renderer->renderRoot($build);
 
     $response = new Response();
     $response->setContent($output);

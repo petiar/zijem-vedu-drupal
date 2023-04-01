@@ -2,8 +2,8 @@
 /web/sites/*/*settings*.php
 settings.local.php
 /web/sites/*/*services*.yml
-!settings.php
-!services.yml
+settings.php
+services.yml
 /vendor/
 
 # Ignore paths that contain user-generated content.
