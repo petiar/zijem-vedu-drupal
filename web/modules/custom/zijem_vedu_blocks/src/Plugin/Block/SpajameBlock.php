@@ -18,7 +18,6 @@ class SpajameBlock extends BlockBase
   public function build() {
     return [
       '#theme' => 'spajame_block',
-      // '#markup' => 'Halo halo',
     ];
   }
 }

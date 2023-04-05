@@ -22,10 +22,9 @@ function zijem_vedu_pages_help($route_name, RouteMatchInterface $route_match) {
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
       $output .= '<p>' . t('Stránky pre prijekt Žijem vedu') . '</p>';
-      return $output;
-
     default:
   }
+  return $output;
 }
 
 /**
@@ -42,14 +41,14 @@ function zijem_vedu_pages_theme() {
 /**
  * Implements hook_entity_insert().
  */
-function zijem_vedu_pages_entity_insert(\Drupal\Core\Entity\EntityInterface $entity) {
+function zijem_vedu_pages_entity_insert(EntityInterface $entity) {
   zijem_vedu_pages_uncheck_others_featured($entity);
 }
 
 /**
  * Implements hook_entity_update().
  */
-function zijem_vedu_pages_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
+function zijem_vedu_pages_entity_update(EntityInterface $entity) {
   zijem_vedu_pages_uncheck_others_featured($entity);
 }
 
@@ -83,7 +82,7 @@ function zijem_vedu_pages_uncheck_others_featured(EntityInterface $entity) {
 /**
  * Implements hook_entity_presave().
  */
-function zijem_vedu_pages_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+function zijem_vedu_pages_entity_presave(EntityInterface $entity) {
   if ($entity->getEntityTypeId() == 'node') {
     if ($entity->bundle() == 'podcast') {
       $fileField = $entity->get('field_subor')->getValue();

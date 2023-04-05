@@ -1,0 +1,3 @@
+services:
+  zijem_vedu_blocks.solved_api:
+    class: Drupal\zijem_vedu_blocks\SolvedApiService

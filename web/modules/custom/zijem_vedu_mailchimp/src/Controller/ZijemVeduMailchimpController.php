@@ -2,26 +2,37 @@
 
 namespace Drupal\zijem_vedu_mailchimp\Controller;
 
+use Drupal\Component\Utility\EmailValidator;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\zijem_vedu_mailchimp\Api;
 use GuzzleHttp\Exception\RequestException;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Returns responses for Žijem vedu Mailchimp Integration routes.
  */
 class ZijemVeduMailchimpController extends ControllerBase {
+  public function __construct(
+    protected EmailValidator $emailValidator,
+    protected Api $mailchimpService
+  ) {}
 
-  public function subscribe() {
+  public static function create(ContainerInterface $container)
+  {
+    return new static (
+      $container->get('email.validator'),
+      $container->get('zijem_vedu_mailchimp.api')
+    );
+  }
+
+  public function subscribe(Request $request) {
     $notices = [];
     $errors = [];
-    $email = \Drupal::request()->get('email');
+    $email = $request->get('email');
 
-    /** @var \Drupal\Component\Utility\EmailValidator $emailValidator */
-    $emailValidator = \Drupal::service('email.validator');
-    /** @var \Drupal\zijem_vedu_mailchimp\Api $mailchimpService */
-    $mailchimpService = \Drupal::service('zijem_vedu_mailchimp.api');
-
-    if (!$emailValidator->isValid($email)) {
+    if (!$this->emailValidator->isValid($email)) {
       $errors[] = 'Toto veru nevyzerá na platný e-mail...';
     }
 
@@ -29,7 +40,7 @@ class ZijemVeduMailchimpController extends ControllerBase {
       $list_id = \Drupal::config('zijem_vedu_mailchimp.settings')->get('list_id');
       /** @var \GuzzleHttp\Psr7\Response $subscription */
       try {
-        $mailchimpService->getMailchimpApi()->lists->addListMember($list_id, [
+        $this->mailchimpService->getMailchimpApi()->lists->addListMember($list_id, [
           'email_address' => $email,
           'status' => 'subscribed',
           'email_type' => 'html',

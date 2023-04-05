@@ -41,7 +41,8 @@ class PodcastFeedController extends ControllerBase {
    *
    * @return \Symfony\Component\HttpFoundation\Response
    */
-  public function index() {
+  public function index(): Response
+  {
     $items = [];
 
     $nids = $this->entityTypeManager->getStorage('node')
@@ -105,7 +106,8 @@ class PodcastFeedController extends ControllerBase {
     return $response;
   }
 
-  function truncateDescription($text, $limit = 200) {
+  private function truncateDescription($text, $limit = 200): string
+  {
     $append = false;
     $text = strip_tags($text);
     if (mb_strlen(mb_substr($text, 0, $limit)) < strlen($text)) {
