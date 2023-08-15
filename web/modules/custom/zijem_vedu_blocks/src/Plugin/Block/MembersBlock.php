@@ -23,8 +23,8 @@ class MembersBlock extends BlockBase implements ContainerFactoryPluginInterface
 {
   public function __construct(
     array $configuration,
-    $plugin_id,
-    $plugin_definition,
+          $plugin_id,
+          $plugin_definition,
     protected SolvedApiService $solved_api)
   {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
