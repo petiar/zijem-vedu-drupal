@@ -1,0 +1,22 @@
+.links .active .link {
+  color: #FFFFFF;
+  border: none !important;
+  background: #ff00d7 !important;
+  background: linear-gradient(90deg, #ff00d7 0%, #d7a86d 100%) !important;
+}
+
+.nav-tabs {
+  border: none;
+}
+
+a {
+  color: #5104CE;
+}
+
+a:hover {
+  color: #660bfa;
+}
+
+.js-plotly-plot .plotly div {
+  margin: 0 auto;
+}

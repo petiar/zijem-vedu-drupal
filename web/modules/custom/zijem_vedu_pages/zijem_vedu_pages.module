@@ -35,6 +35,9 @@ function zijem_vedu_pages_theme() {
     'zijem_vedu_pages' => [
       'render element' => 'children',
     ],
+    'zijem_vedu_numbers' => [
+      'variables' => [],
+    ]
   ];
 }
 

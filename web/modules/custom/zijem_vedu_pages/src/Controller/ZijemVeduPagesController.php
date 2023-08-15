@@ -16,4 +16,16 @@ class ZijemVeduPagesController extends ControllerBase {
   public function about() {
     return [];
   }
+
+  public function numbers() {
+    return [
+      '#theme' => 'zijem_vedu_numbers',
+      '#attached' => [
+        'library' => [
+          'zijem_vedu/numbers',
+          'zijem_vedu/bootstrap'
+        ],
+      ],
+    ];
+  }
 }

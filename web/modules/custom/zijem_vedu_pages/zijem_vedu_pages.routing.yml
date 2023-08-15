@@ -12,3 +12,10 @@ zijem_vedu_pages.about:
     _title: 'O nás'
   requirements:
     _permission: 'access content'
+zijem_vedu_pages:numbers:
+  path: '/zijem-vedu-v-cislach'
+  defaults:
+    _controller: '\Drupal\zijem_vedu_pages\Controller\ZijemVeduPagesController::numbers'
+    _title: 'Žijem vedu v číslach'
+  requirements:
+    _permission: 'access content'
