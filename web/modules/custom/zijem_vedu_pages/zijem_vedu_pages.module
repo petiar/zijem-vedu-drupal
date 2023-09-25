@@ -21,8 +21,9 @@ function zijem_vedu_pages_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.zijem_vedu_pages':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Stránky pre prijekt Žijem vedu') . '</p>';
+      $output .= '<p>' . t('Stránky pre projekt Žijem vedu') . '</p>';
     default:
+      $output = '';
   }
   return $output;
 }
