@@ -2,7 +2,7 @@ window.PLOTLYENV=window.PLOTLYENV || {};
 window.PLOTLYENV.BASE_URL="https://plot.ly";
 
 var settings = {
-	most_recent_year: 2021,
+	most_recent_year: 2022,
 	// ordered IDs
 	id: [
 		"participation",
@@ -30,12 +30,19 @@ var settings = {
 		"Pracovné zaradenie účastníčiek a účastníkov",
 		"Prehľad zastúpenia vedných odborov"	
 	],
+	// count years
+	count_years: function () {
+		return this.most_recent_year - 2017;
+	},
+	// figure name and number
 	compileFigname: function (i) {
 		return "Obr. " + (i+1) + ": " + this.figName[i];
 	},
+	// bold text
 	set_bold: function (txt) {
 		return("<b>" + txt + "</b>")
 	},
+	// barcharts: x axis title
 	set_title: function (currentId) {
 		if (currentId.includes("position")) {
 			return(this.set_bold("Počet osôb na pozícii daného typu"));
@@ -44,14 +51,18 @@ var settings = {
 			return(this.set_bold("Počet osôb z daného typu inštitúcie"));
 		}
 	},
+	// time series: y axis maximum
 	set_yMax: function (add_updateMenu, year) {
+		// default: year by year
 		var yMax = {
+			year_2022: 150,
 			year_2021: 200,
 			year_2019: 150,
 			year_2018: 125,
 			year_2017: 200
 		};
 		
+		// conclusion
 		if (add_updateMenu == true) {
 			var yMax_values = [];
 			for (var key in yMax) {
@@ -64,6 +75,7 @@ var settings = {
 		}
 		return(this_yMax);
 	},
+	// compile layout from js data
 	compileLayout: function (year, currentId, i, temp_remove) {
 		var layout;
 		
@@ -78,11 +90,12 @@ var settings = {
 			if (year == "conclusion") {
 				layout.updatemenus = temp_remove.includes(currentId)
 				? updateMenu_sunburst_tempSkip
-				: layout.updatemenus = updateMenu_sunburst
+				: updateMenu_sunburst
 			}
 			
 			return layout;
 		}
+		// time series
 		else if (currentId == this.specify("registration_timeSeries", year)) {
 			var add_updateMenu = false;
 			
@@ -94,7 +107,7 @@ var settings = {
 			
 			var registration_labels = window[this.specify("data_registration_timeLabels", year)];
 			var registration_ticks = window[this.specify("data_registration_timeSeries", year)];
-			var j = year > 2018 ? 3 : 4;
+			var j = year == 2021 ? 3 : 4;
 						
 			// y limit: together => the same for all years; separate => own for each year
 			var this_yMax = this.set_yMax(add_updateMenu, year);
@@ -121,13 +134,14 @@ var settings = {
 
 			return layout;
 		}
+		// barchart
 		else if (currentId.includes("position") || currentId.includes("institution")) {
 			updateMenu_suffix = ""
 			
 			if (year == "conclusion") {
 				currentId = currentId.replace("_" + year, "");
 				
-				if (temp_remove.includes(currentId) & currentId != "position_gender") {
+				if (temp_remove.includes(currentId)) {
 					updateMenu_suffix = "_tempSkip"
 				}
 			}
@@ -179,33 +193,40 @@ var settings = {
 	language_setupString: function (txt, languageVersion) {
 		return txt + "_" + languageVersion;
 	},
-	plot: function (year, languageVersion) {
+	// create plot
+	create_plot: function (year, languageVersion) {
 		var n = settings.id.length;
 		var varName,
 	 		 layout, 
 	 		 id, 
 	 		 dataset;
+	 	// skip these due to missing data in years 2019 and 2021
 		var temp_remove = ["participation", "position_gender", "institution_country", "institution_gender"];
+		// keep these in 2021
 		var except2021 = ["participation", "position_gender"]
 
 		for (var i = 0; i < n; i++) {
+			// each id
 			id = this.id[i];
 			// 2019: temporarily disable empty plots
+			// 2021: temporarily disable empty plots but keep those not empty again
 			if ((year == 2019 || year == 2021) && temp_remove.includes(id) && !(year == 2021 && except2021.includes(id))) {
 				continue;
 			}
-	
+			
+			// proceed dynamic plots only (not the cartodiagrams in png files)
 			if (id != "skipFigure") {
+				// specify variable name by id + year
 				id = this.specify(id, year);
+				// read dataset by name
 				dataset = window['data_' + id];
 				
 				//dataset = this.language_setupData(dataset, languageVersion);
 				// 2019: temporarily edit dataset visibility for empty plots
 				//if (year == 'conclusion' && temp_remove.includes(id)) {
+				//	console.log(id)
 				//	edit = dataset;
-				//	console.log(edit)
-				//	n_edit = edit.length / 3;
-				//	console.log(id, n_edit)
+				//	n_edit = edit.length / settings.count_years();
 					
 				//	for (var k = 0; k < n_edit; k++) {
 				//		if (edit[k]['visible'] == true) {
@@ -213,8 +234,10 @@ var settings = {
 				//		}							
 				//	}
 				//}
-								
+				
+				// compile layout from js data				
 				layout = this.compileLayout(year, id, i, temp_remove);
+				// core function
 				Plotly.newPlot(this.language_setupString(id, languageVersion), dataset, layout, {"plotlyServerURL": "https://plot.ly"});		
 				
 				// make redundant xTicks transparent
@@ -230,8 +253,8 @@ var settings = {
 			var subcontainer = container.getElementsByClassName("xaxislayer-above");
 			var ticks = subcontainer[0].getElementsByClassName('xtick ticks crisp');
 			var registration_labels = window[this.specify("data_registration_timeLabels", year)];
-						
-			n = ticks.length;	
+					
+			n = ticks.length;
 			for (var j = 0; j < n; j++) {
 				if (registration_labels[j] == "") {
 					ticks[j].setAttribute('style', 'stroke-opacity = 0');
@@ -243,13 +266,15 @@ var settings = {
 	}
 };
 
+// main()
 // separate years
 languageVersion = "sk";
 for (var year = 2017; year <= settings.most_recent_year; year++) {
 	if (year == 2020) {
 		continue;
 	}
-	settings.plot(year, languageVersion);
+	// create plots year by year
+	settings.create_plot(year, languageVersion);
 }
 // conclusion
-settings.plot("conclusion", languageVersion);
+settings.create_plot("conclusion", languageVersion);
