@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <p class="color-violet-dark fw-bolder">{{ content.body }}</p>
+      <p class="color-violet-dark fw-bolder">{{ node.body.value|raw }}</p>
       {% if node.field_url|length > 0 %}
       <p class="color-violet-dark fw-bolder">Viac info o podujatí {{ label }} na {{ content.field_url }}</p>
       {% endif %}
