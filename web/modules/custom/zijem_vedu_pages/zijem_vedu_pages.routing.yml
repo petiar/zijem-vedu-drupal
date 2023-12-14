@@ -13,7 +13,7 @@ zijem_vedu_pages.about:
   requirements:
     _permission: 'access content'
 zijem_vedu_pages:numbers:
-  path: '/zijem-vedu-v-cislach'
+  path: '/zvn-v-cislach'
   defaults:
     _controller: '\Drupal\zijem_vedu_pages\Controller\ZijemVeduPagesController::numbers'
     _title: 'Žijem vedu v číslach'
