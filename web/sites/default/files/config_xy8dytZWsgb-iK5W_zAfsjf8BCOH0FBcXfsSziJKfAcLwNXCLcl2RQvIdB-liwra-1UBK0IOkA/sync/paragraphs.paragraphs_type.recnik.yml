@@ -1,0 +1,10 @@
+uuid: f0af8ae1-35a0-4487-84d4-b0f0883938f8
+langcode: sk
+status: true
+dependencies: {  }
+id: recnik
+label: Rečník
+icon_uuid: null
+icon_default: null
+description: 'Toto je paragraph pre pridávanie rečníka na event.'
+behavior_plugins: {  }

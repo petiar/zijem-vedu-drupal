@@ -1,0 +1,19 @@
+uuid: bc6e571a-b4f3-47fb-8e4f-436a19ff13e6
+langcode: sk
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_odkazy
+field_name: field_odkazy
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

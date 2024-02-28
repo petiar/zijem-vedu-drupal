@@ -1,0 +1,10 @@
+uuid: e75c73c2-ea94-4247-8964-53588f674340
+langcode: sk
+status: true
+dependencies:
+  module:
+    - media
+id: media.recnik
+label: Recnik
+targetEntityType: media
+cache: true

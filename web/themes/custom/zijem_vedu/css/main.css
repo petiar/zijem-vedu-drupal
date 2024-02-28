@@ -289,7 +289,8 @@ h6 {
 	}
 }
 
-.links .link {
+.links .link,
+.links .bef-link {
 	padding: 6px 10px;
 	margin-left: 1rem;
 	margin-right: 1rem;
@@ -301,11 +302,20 @@ h6 {
 	text-transform: uppercase;
 }
 
-.links .link.active {
+.links .link.active,
+.links .bef-link.bef-link--selected {
 	color: #FFFFFF;
 	border: none !important;
 	background: #ff00d7 !important;
 	background: linear-gradient(90deg, #ff00d7 0%, #d7a86d 100%) !important;
+}
+
+.bef-links ul {
+  list-style: none;
+}
+
+.bef-links ul li {
+  float: left;
 }
 
 .newsletter__wrapper {

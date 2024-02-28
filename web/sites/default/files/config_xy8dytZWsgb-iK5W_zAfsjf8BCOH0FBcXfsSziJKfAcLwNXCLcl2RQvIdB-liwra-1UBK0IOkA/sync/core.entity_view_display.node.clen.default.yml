@@ -1,0 +1,61 @@
+uuid: fb515b1d-bf62-4edb-a894-8f8abc988301
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.field.node.clen.field_clen_email
+    - field.field.node.clen.field_clen_popis
+    - field.field.node.clen.field_fotografia
+    - field.field.node.clen.field_odkazy
+    - node.type.clen
+  module:
+    - link
+    - text
+    - user
+id: node.clen.default
+targetEntityType: node
+bundle: clen
+mode: default
+content:
+  field_clen_email:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_clen_popis:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_fotografia:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_odkazy:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - editor
+    - media
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
 name: 'Základné HTML'
@@ -16,7 +17,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <span> <a hreflang href> <blockquote cite> <ul type> <ol type start> <strong> <em> <code> <li> <img src alt height width data-entity-uuid data-entity-type data-caption data-align>'
+      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <span> <a hreflang href> <blockquote cite> <ul type> <ol type start> <strong> <em> <code> <li> <img src alt height width data-entity-uuid data-entity-type data-caption data-align> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -42,4 +43,19 @@ filters:
     provider: editor
     status: true
     weight: 11
+    settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes: {  }
+      allowed_media_types: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 12
     settings: {  }

@@ -1,0 +1,29 @@
+uuid: 5acdf508-3779-491e-8932-78e7a7153234
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponzori
+    - media.type.logo_sponzora_konferencie
+    - node.type.event
+id: node.event.field_sponzori
+field_name: field_sponzori
+entity_type: node
+bundle: event
+label: Sponzori
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      logo_sponzora_konferencie: logo_sponzora_konferencie
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

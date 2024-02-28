@@ -1,0 +1,24 @@
+uuid: 866bde9f-075b-4301-b854-bbcc1c5d5cd3
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bio
+    - filter.format.restricted_html
+    - paragraphs.paragraphs_type.recnik
+  module:
+    - text
+id: paragraph.recnik.field_bio
+field_name: field_bio
+entity_type: paragraph
+bundle: recnik
+label: Bio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - restricted_html
+field_type: text_long

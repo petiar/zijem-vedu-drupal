@@ -1,0 +1,26 @@
+uuid: c92a6732-3fb9-4e06-b8b3-418b1b282345
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clen_popis
+    - filter.format.basic_html
+    - filter.format.full_html
+    - node.type.clen
+  module:
+    - text
+id: node.clen.field_clen_popis
+field_name: field_clen_popis
+entity_type: node
+bundle: clen
+label: 'O členovi'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_long

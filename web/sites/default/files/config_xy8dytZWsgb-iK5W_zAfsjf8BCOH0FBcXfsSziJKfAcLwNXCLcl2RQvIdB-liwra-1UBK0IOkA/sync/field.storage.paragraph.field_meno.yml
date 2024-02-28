@@ -1,0 +1,21 @@
+uuid: 426f6c2d-4087-46ac-ab63-7aa26f8cfbb6
+langcode: sk
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_meno
+field_name: field_meno
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

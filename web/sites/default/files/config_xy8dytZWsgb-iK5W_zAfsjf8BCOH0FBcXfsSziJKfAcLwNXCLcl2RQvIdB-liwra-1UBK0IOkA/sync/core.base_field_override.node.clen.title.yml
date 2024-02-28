@@ -1,0 +1,18 @@
+uuid: d349112d-f84f-4bd4-afba-3769c2621c09
+langcode: sk
+status: true
+dependencies:
+  config:
+    - node.type.clen
+id: node.clen.title
+field_name: title
+entity_type: node
+bundle: clen
+label: 'Meno, priezvisko'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

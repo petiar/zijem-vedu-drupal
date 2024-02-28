@@ -1,0 +1,29 @@
+uuid: 9da9cd5b-afdb-49c0-b149-03555bdd860b
+langcode: sk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.clen.field_clen_email
+    - field.field.node.clen.field_clen_popis
+    - field.field.node.clen.field_fotografia
+    - field.field.node.clen.field_odkazy
+    - node.type.clen
+  module:
+    - user
+id: node.clen.teaser
+targetEntityType: node
+bundle: clen
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_clen_email: true
+  field_clen_popis: true
+  field_fotografia: true
+  field_odkazy: true
+  langcode: true

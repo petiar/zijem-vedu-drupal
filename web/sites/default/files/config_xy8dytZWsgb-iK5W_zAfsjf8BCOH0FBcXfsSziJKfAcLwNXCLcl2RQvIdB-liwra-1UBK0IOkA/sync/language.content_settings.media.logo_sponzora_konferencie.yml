@@ -1,0 +1,11 @@
+uuid: ac4c0d5f-5fb3-4873-b9c9-63b0120db8ff
+langcode: sk
+status: true
+dependencies:
+  config:
+    - media.type.logo_sponzora_konferencie
+id: media.logo_sponzora_konferencie
+target_entity_type_id: media
+target_bundle: logo_sponzora_konferencie
+default_langcode: site_default
+language_alterable: false

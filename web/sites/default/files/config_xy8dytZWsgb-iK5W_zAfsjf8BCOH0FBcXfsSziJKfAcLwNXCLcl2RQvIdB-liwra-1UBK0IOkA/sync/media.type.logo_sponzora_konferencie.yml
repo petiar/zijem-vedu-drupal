@@ -1,0 +1,13 @@
+uuid: 860a7139-6c6c-44f4-9f1b-4e024fd06f08
+langcode: sk
+status: true
+dependencies: {  }
+id: logo_sponzora_konferencie
+label: 'Logo sponzora konferencie'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

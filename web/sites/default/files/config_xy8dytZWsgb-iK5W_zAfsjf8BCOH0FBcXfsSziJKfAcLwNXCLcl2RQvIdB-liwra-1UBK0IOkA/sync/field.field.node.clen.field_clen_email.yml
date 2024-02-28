@@ -1,0 +1,19 @@
+uuid: 9b6aecc0-866e-4c0d-8210-e93b00708c72
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clen_email
+    - node.type.clen
+id: node.clen.field_clen_email
+field_name: field_clen_email
+entity_type: node
+bundle: clen
+label: E-mail
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

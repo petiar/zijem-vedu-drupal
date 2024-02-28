@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.event.field_koniec
     - field.field.node.event.field_miesto_konania
     - field.field.node.event.field_miesto_konania_kratko
+    - field.field.node.event.field_recnik
+    - field.field.node.event.field_sponzori
     - field.field.node.event.field_tags
     - field.field.node.event.field_url
     - field.field.node.event.field_zaciatok
@@ -98,4 +100,6 @@ content:
 hidden:
   field_galeria: true
   field_miesto_konania_kratko: true
+  field_recnik: true
+  field_sponzori: true
   langcode: true

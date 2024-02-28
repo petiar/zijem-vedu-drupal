@@ -29,3 +29,28 @@ img.align-center,
   padding: 2rem;
 }
 
+.recnik {
+  margin-bottom: 20px;
+}
+
+.recnik-info {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.recnik-info .bio {
+  flex-grow: 2;
+}
+
+.sponzori {
+  align-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sponzori .logo {
+  margin-bottom:20px;
+}

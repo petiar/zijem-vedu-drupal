@@ -1,0 +1,35 @@
+uuid: a2deabf3-11f3-4eb5-9be9-d727a03b1298
+langcode: sk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.logo_sponzora_konferencie.field_media_image
+    - field.field.media.logo_sponzora_konferencie.field_odkaz_na_web
+    - image.style.medium
+    - media.type.logo_sponzora_konferencie
+  module:
+    - image
+id: media.logo_sponzora_konferencie.media_library
+targetEntityType: media
+bundle: logo_sponzora_konferencie
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_image: true
+  field_odkaz_na_web: true
+  langcode: true
+  name: true
+  uid: true

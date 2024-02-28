@@ -1,0 +1,19 @@
+uuid: f1c8c900-8b8f-4700-96d6-709ff3d1e8b7
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meno
+    - paragraphs.paragraphs_type.recnik
+id: paragraph.recnik.field_meno
+field_name: field_meno
+entity_type: paragraph
+bundle: recnik
+label: Meno
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

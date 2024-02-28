@@ -5,6 +5,7 @@ module:
   admin_toolbar: 0
   automated_cron: 0
   baguettebox: 0
+  better_exposed_filters: 0
   big_pipe: 0
   block: 0
   block_content: 0
@@ -22,6 +23,7 @@ module:
   devel: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -31,11 +33,16 @@ module:
   image: 0
   image_widget_crop: 0
   inline_entity_form: 0
+  jquery_ui: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_slider: 0
+  jquery_ui_touch_punch: 0
   language: 0
   layout_discovery: 0
   link: 0
   locale: 0
   media: 0
+  media_library: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
@@ -46,8 +53,11 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  paragraphs_edit: 0
+  paragraphs_modal_edit: 0
   path: 0
   path_alias: 0
+  phpass: 0
   podcast: 0
   podcast_feed: 0
   preload_font: 0
@@ -69,6 +79,7 @@ module:
   zijem_vedu_pages: 0
   pathauto: 1
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   claro: 0

@@ -1,0 +1,11 @@
+uuid: 03a39c57-3823-40a1-831e-4f9061de6cc1
+langcode: sk
+status: true
+dependencies:
+  config:
+    - node.type.clen
+id: node.clen
+target_entity_type_id: node
+target_bundle: clen
+default_langcode: site_default
+language_alterable: false

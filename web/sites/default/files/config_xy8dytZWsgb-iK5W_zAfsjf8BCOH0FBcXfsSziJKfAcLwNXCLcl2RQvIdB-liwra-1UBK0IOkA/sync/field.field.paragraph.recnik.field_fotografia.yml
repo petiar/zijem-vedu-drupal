@@ -1,0 +1,29 @@
+uuid: 2f636250-7e97-4eae-85af-6d8667e44dec
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fotografia
+    - media.type.image
+    - paragraphs.paragraphs_type.recnik
+id: paragraph.recnik.field_fotografia
+field_name: field_fotografia
+entity_type: paragraph
+bundle: recnik
+label: Fotografia
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

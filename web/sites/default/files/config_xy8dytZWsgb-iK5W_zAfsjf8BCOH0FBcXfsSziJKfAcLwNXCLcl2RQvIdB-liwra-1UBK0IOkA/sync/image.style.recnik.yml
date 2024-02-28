@@ -1,0 +1,15 @@
+uuid: be337f44-2d87-4411-9bdc-4fce3d0b9ba6
+langcode: sk
+status: true
+dependencies: {  }
+name: recnik
+label: Rečník
+effects:
+  27ca9171-464a-4f40-87cf-ddb8dfe0e7c3:
+    uuid: 27ca9171-464a-4f40-87cf-ddb8dfe0e7c3
+    id: image_scale
+    weight: 1
+    data:
+      width: 160
+      height: null
+      upscale: true

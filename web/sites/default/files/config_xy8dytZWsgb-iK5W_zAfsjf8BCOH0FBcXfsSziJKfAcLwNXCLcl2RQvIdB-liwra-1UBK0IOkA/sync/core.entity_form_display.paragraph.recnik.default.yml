@@ -1,0 +1,43 @@
+uuid: 40f9ec8b-8a14-48bd-b86e-213af7f7589d
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recnik.field_bio
+    - field.field.paragraph.recnik.field_fotografia
+    - field.field.paragraph.recnik.field_meno
+    - paragraphs.paragraphs_type.recnik
+  module:
+    - media_library
+    - text
+id: paragraph.recnik.default
+targetEntityType: paragraph
+bundle: recnik
+mode: default
+content:
+  field_bio:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_fotografia:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_meno:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
