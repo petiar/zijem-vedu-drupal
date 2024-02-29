@@ -225,3 +225,7 @@ function zijem_vedu_preprocess_views_view_field(&$variables) {
     }
   }
 }
+
+function zijem_vedu_preprocess_time(&$variables) {
+  $variables['attributes']['class'][] = 'tag-gradient';
+}
