@@ -11,6 +11,7 @@ dependencies:
     - media.type.remote_video
     - media.type.video
     - node.type.article
+    - node.type.clen
     - node.type.event
     - node.type.novinka
     - node.type.page
@@ -48,6 +49,7 @@ permissions:
   - 'administer url aliases'
   - 'create article content'
   - 'create audio media'
+  - 'create clen content'
   - 'create document media'
   - 'create event content'
   - 'create image media'
@@ -61,6 +63,7 @@ permissions:
   - 'customize shortcut links'
   - 'delete any article content'
   - 'delete any audio media'
+  - 'delete any clen content'
   - 'delete any document media'
   - 'delete any event content'
   - 'delete any image media'
@@ -70,9 +73,11 @@ permissions:
   - 'delete any remote_video media'
   - 'delete any video media'
   - 'delete article revisions'
+  - 'delete clen revisions'
   - 'delete media'
   - 'delete own article content'
   - 'delete own audio media'
+  - 'delete own clen content'
   - 'delete own document media'
   - 'delete own event content'
   - 'delete own files'
@@ -84,6 +89,7 @@ permissions:
   - 'delete page revisions'
   - 'edit any article content'
   - 'edit any audio media'
+  - 'edit any clen content'
   - 'edit any document media'
   - 'edit any event content'
   - 'edit any image media'
@@ -94,6 +100,7 @@ permissions:
   - 'edit any video media'
   - 'edit own article content'
   - 'edit own audio media'
+  - 'edit own clen content'
   - 'edit own document media'
   - 'edit own event content'
   - 'edit own image media'
@@ -105,6 +112,7 @@ permissions:
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'revert article revisions'
+  - 'revert clen revisions'
   - 'revert event revisions'
   - 'revert novinka revisions'
   - 'revert podcast revisions'
@@ -116,6 +124,7 @@ permissions:
   - 'view all media revisions'
   - 'view all revisions'
   - 'view article revisions'
+  - 'view clen revisions'
   - 'view event revisions'
   - 'view novinka revisions'
   - 'view own unpublished content'
