@@ -1,0 +1,10 @@
+uuid: 90f2b77f-99ef-4e9e-91c9-e9e10fa24881
+langcode: sk
+status: true
+dependencies:
+  module:
+    - media
+id: media.kruhovy_portret
+label: 'Kruhový portrét'
+targetEntityType: media
+cache: true

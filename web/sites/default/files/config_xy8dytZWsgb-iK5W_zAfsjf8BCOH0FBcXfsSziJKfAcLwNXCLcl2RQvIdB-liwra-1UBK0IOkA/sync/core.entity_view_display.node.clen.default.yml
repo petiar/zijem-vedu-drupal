@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.clen.field_clen_popis
     - field.field.node.clen.field_fotografia
     - field.field.node.clen.field_odkazy
+    - field.field.node.clen.field_skupina
     - node.type.clen
   module:
     - link
@@ -18,44 +19,52 @@ bundle: clen
 mode: default
 content:
   field_clen_email:
-    type: basic_string
+    type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_clen_popis:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 2
     region: content
   field_fotografia:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: kruhovy_portret
       link: false
     third_party_settings: {  }
-    weight: 102
+    weight: 1
     region: content
   field_odkazy:
-    type: link
+    type: link_separate
     label: hidden
     settings:
       trim_length: 80
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
-    weight: 104
+    weight: 4
+    region: content
+  field_skupina:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true

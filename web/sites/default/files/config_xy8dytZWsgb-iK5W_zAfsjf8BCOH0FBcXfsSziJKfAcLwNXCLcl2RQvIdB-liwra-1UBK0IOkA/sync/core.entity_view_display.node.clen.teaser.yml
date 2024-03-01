@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.clen.field_clen_popis
     - field.field.node.clen.field_fotografia
     - field.field.node.clen.field_odkazy
+    - field.field.node.clen.field_skupina
     - node.type.clen
   module:
     - user
@@ -26,4 +27,5 @@ hidden:
   field_clen_popis: true
   field_fotografia: true
   field_odkazy: true
+  field_skupina: true
   langcode: true

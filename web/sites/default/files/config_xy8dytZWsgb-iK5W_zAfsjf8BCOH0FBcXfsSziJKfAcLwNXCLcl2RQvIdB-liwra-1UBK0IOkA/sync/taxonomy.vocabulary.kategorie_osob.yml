@@ -1,0 +1,8 @@
+uuid: 8769ae67-fb50-453f-84dd-3f887082d73e
+langcode: sk
+status: true
+dependencies: {  }
+name: 'Kategórie osôb'
+vid: kategorie_osob
+description: ''
+weight: 0

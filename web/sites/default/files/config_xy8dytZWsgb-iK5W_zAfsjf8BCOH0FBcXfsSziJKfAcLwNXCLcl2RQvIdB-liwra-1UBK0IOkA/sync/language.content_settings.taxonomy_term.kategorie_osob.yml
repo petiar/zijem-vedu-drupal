@@ -1,0 +1,11 @@
+uuid: e6af4e68-7e67-43cf-ad53-932dd82bce82
+langcode: sk
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.kategorie_osob
+id: taxonomy_term.kategorie_osob
+target_entity_type_id: taxonomy_term
+target_bundle: kategorie_osob
+default_langcode: site_default
+language_alterable: false

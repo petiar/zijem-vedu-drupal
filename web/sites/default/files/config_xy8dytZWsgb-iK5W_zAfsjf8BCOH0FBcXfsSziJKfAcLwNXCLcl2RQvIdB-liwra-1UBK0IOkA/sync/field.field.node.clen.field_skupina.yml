@@ -1,0 +1,29 @@
+uuid: fe69cecd-2eae-48d7-b5c5-6089b70b7348
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skupina
+    - node.type.clen
+    - taxonomy.vocabulary.kategorie_osob
+id: node.clen.field_skupina
+field_name: field_skupina
+entity_type: node
+bundle: clen
+label: 'Skupina osôb'
+description: 'Do ktorej skupiny táto osoba patrí?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      kategorie_osob: kategorie_osob
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

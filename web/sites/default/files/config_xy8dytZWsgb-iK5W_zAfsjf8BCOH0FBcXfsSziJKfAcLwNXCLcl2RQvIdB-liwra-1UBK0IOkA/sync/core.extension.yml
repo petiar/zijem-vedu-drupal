@@ -30,6 +30,7 @@ module:
   file: 0
   filter: 0
   help: 0
+  iek: 0
   image: 0
   image_widget_crop: 0
   inline_entity_form: 0

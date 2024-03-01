@@ -1,0 +1,35 @@
+uuid: feb9a032-c58f-4dfa-9bf9-fafc5b3c225f
+langcode: sk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.kruhovy_portret
+    - field.field.media.image.field_media_image
+    - image.style.kruh
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.kruhovy_portret
+targetEntityType: media
+bundle: image
+mode: kruhovy_portret
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: kruh
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

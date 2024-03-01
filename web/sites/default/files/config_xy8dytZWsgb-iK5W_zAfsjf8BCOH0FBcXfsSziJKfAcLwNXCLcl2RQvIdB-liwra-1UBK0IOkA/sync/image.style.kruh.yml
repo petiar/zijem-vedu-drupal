@@ -1,0 +1,23 @@
+uuid: 355f0305-ead7-46bb-8915-b5d5568e3ea4
+langcode: sk
+status: true
+dependencies:
+  module:
+    - iek
+name: kruh
+label: Kruh
+effects:
+  3feb8b5c-51bd-43f8-bf14-b3729eaf7890:
+    uuid: 3feb8b5c-51bd-43f8-bf14-b3729eaf7890
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 300
+      anchor: center-center
+  87d537af-789c-4d63-af38-591abe33eb6d:
+    uuid: 87d537af-789c-4d63-af38-591abe33eb6d
+    id: iek_image_corner
+    weight: 2
+    data:
+      radius: '150'

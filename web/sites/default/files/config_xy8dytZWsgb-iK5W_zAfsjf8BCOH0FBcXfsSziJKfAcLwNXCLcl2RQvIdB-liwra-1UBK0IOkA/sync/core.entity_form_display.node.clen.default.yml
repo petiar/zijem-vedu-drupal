@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.clen.field_clen_popis
     - field.field.node.clen.field_fotografia
     - field.field.node.clen.field_odkazy
+    - field.field.node.clen.field_skupina
     - node.type.clen
   module:
     - link
@@ -54,6 +55,12 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_skupina:
+    type: options_buttons
+    weight: 125
+    region: content
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
