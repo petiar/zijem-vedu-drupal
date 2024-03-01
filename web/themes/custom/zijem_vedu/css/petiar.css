@@ -54,3 +54,20 @@ img.align-center,
 .sponzori .logo {
   margin-bottom:20px;
 }
+
+.status-message {
+  background: linear-gradient(90deg, #ff00d7 0%, #d7a86d 100%) !important;
+  text-align: center;
+  padding: 10px;
+  /* border: 1px solid #000; */
+  border-radius: 5px;
+  color:#fff;
+}
+
+.placeholder {
+  display: inline;
+  vertical-align: inherit;
+  background-color: transparent;
+  opacity: 1;
+  cursor: inherit;
+}

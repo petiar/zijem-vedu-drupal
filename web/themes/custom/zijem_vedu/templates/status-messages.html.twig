@@ -21,7 +21,7 @@
  * @ingroup themeable
  */
 #}
-<div data-drupal-messages>
+<div class="status-message col-12 col-xl-8 offset-xl-2" data-drupal-messages>
   {% for type, messages in message_list %}
     <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
       {% if type == 'error' %}

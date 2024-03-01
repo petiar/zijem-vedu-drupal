@@ -1,27 +1,26 @@
-uuid: 68ff452e-0eb3-43f6-adbe-d004729a87ae
+uuid: 090bd812-bd84-49b4-bfda-f41e90afcf59
 langcode: sk
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.media_library
+    - core.entity_view_mode.media.editor
     - field.field.media.document.field_media_document
-    - image.style.thumbnail
     - media.type.document
   module:
     - image
 _core:
-  default_config_hash: YcWqjhIlo-2RZUM5ogvRsrKB7M3voF2XB3lVLwgOlLU
-id: media.document.media_library
+  default_config_hash: XxUyhaTuM0OUUZpr8G6jdrFBEh5eag7auWxBKhm6cvY
+id: media.document.editor
 targetEntityType: media
 bundle: document
-mode: media_library
+mode: editor
 content:
   thumbnail:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: thumbnail
+      image_style: ''
       image_loading:
         attribute: lazy
     third_party_settings: {  }

@@ -2,6 +2,8 @@ uuid: db089d3a-b169-4a3f-9ae6-a041deb69292
 langcode: sk
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.editor
   module:
     - editor
     - media
@@ -50,8 +52,9 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
+      default_view_mode: editor
+      allowed_view_modes:
+        editor: editor
       allowed_media_types: {  }
   filter_image_lazy_load:
     id: filter_image_lazy_load

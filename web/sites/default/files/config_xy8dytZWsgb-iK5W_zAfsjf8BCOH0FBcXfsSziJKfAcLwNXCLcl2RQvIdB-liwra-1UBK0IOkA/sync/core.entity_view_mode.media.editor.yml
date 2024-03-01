@@ -1,0 +1,10 @@
+uuid: 5ffc809e-2c15-4043-b447-7282d39c0a26
+langcode: sk
+status: true
+dependencies:
+  module:
+    - media
+id: media.editor
+label: Editor
+targetEntityType: media
+cache: true

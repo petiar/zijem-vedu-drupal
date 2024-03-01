@@ -649,6 +649,10 @@ h6 {
 	text-transform: uppercase;
 }
 
+.align-center {
+  text-align: center;
+}
+
 .social__list {
 	display: flex;
 	list-style: none;
@@ -1025,7 +1029,7 @@ h6 {
 }
 
 .news li {
-
+  margin-bottom: 2em;
 }
 
 .news li i {
