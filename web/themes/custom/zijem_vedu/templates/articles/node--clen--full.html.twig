@@ -74,9 +74,13 @@
       {{ content.field_fotografia }}
     </div>
     {{ content.field_clen_popis }}
+    {% if content.field_clen_email['#items'].getValue() %}
     <h2>E-mail</h2>
     {{ content.field_clen_email }}
+    {% endif %}
+    {% if content.field_odkazy['#items'].getValue() %}
     <h2>Odkazy</h2>
     {{ content.field_odkazy }}
+    {% endif %}
   </article>
 </div>

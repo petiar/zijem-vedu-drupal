@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.event_frontpage
 label: 'Event Frontpage'
+description: ''
 targetEntityType: node
 cache: true

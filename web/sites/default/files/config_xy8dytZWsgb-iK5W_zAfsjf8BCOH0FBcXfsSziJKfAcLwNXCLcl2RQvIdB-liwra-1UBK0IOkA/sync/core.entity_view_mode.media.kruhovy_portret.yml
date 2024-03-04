@@ -6,5 +6,6 @@ dependencies:
     - media
 id: media.kruhovy_portret
 label: 'Kruhový portrét'
+description: ''
 targetEntityType: media
 cache: true

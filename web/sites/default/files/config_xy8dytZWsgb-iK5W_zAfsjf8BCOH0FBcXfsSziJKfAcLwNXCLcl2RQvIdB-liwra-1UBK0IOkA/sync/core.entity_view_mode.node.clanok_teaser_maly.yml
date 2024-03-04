@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.clanok_teaser_maly
 label: 'Článok teaser - malý'
+description: ''
 targetEntityType: node
 cache: true

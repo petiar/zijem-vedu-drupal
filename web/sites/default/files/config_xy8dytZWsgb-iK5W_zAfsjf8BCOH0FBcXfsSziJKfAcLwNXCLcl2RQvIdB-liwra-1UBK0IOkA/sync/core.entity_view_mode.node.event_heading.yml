@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.event_heading
 label: 'Event Heading'
+description: ''
 targetEntityType: node
 cache: true

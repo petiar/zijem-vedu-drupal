@@ -22,16 +22,12 @@
       </div>
 
       <p class="color-violet-dark fw-bolder">{{ node.body.value|raw }}</p>
-      <h3>Rečníci/Rečníčky</h3>
-      {{ content.field_recnik }}
       {% if node.field_url|length > 0 %}
       <p class="color-violet-dark fw-bolder">Viac info o podujatí {{ label }} na {{ content.field_url }}</p>
       {% endif %}
 
       {{ content.field_galeria }}
       {{ content.field_tags }}
-      <h2>Organizácie</h2>
-      {{ content.field_sponzori }}
     </div>
   </div>
 </div>

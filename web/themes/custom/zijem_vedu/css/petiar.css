@@ -57,7 +57,6 @@ img.align-center,
 
 .status-message {
   background: linear-gradient(90deg, #ff00d7 0%, #d7a86d 100%) !important;
-  text-align: center;
   padding: 10px;
   /* border: 1px solid #000; */
   border-radius: 5px;
@@ -70,4 +69,13 @@ img.align-center,
   background-color: transparent;
   opacity: 1;
   cursor: inherit;
+}
+
+.podcast-categories ul {
+  display: flex;
+}
+
+.podcast-categories ul li {
+  flex-direction: row;
+  list-style: none;
 }

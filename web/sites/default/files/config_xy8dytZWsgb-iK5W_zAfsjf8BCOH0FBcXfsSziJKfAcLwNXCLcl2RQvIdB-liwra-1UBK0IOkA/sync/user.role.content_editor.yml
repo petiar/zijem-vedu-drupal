@@ -21,6 +21,7 @@ dependencies:
     - contextual
     - file
     - filter
+    - help
     - media
     - node
     - path
@@ -40,6 +41,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access help pages'
   - 'access media overview'
   - 'access shortcuts'
   - 'access site in maintenance mode'
