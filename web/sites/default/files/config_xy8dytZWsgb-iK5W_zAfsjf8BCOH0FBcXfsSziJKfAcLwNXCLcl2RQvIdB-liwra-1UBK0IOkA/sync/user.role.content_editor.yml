@@ -19,6 +19,7 @@ dependencies:
     - taxonomy.vocabulary.tags
   module:
     - contextual
+    - entityqueue
     - file
     - filter
     - help
@@ -112,6 +113,7 @@ permissions:
   - 'edit own remote_video media'
   - 'edit own video media'
   - 'edit terms in tags'
+  - 'manipulate all entityqueues'
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert clen revisions'
@@ -120,6 +122,7 @@ permissions:
   - 'revert podcast revisions'
   - 'switch shortcut sets'
   - 'update any media'
+  - 'update ludia entityqueue'
   - 'update media'
   - 'use text format basic_html'
   - 'use text format restricted_html'

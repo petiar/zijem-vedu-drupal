@@ -1,0 +1,26 @@
+uuid: 4dfaf938-4fdb-4560-8828-0a7c73a0059e
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: ludia
+label: Ľudia
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      clen: clen
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: false

@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.list
+    - entityqueue.entity_queue.ludia
     - field.storage.node.field_clen_email
     - field.storage.node.field_fotografia
     - node.type.clen
   module:
+    - entityqueue
     - node
     - user
 id: osoby
@@ -238,22 +240,20 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        created:
-          id: created
+        entityqueue_relationship:
+          id: entityqueue_relationship
           table: node_field_data
-          field: created
+          field: entityqueue_relationship
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: created
-          plugin_id: date
-          order: DESC
+          plugin_id: entity_queue_position
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
-          granularity: second
       arguments: {  }
       filters:
         status:
@@ -291,7 +291,18 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: 'Content queue'
+          entity_type: node
+          plugin_id: entity_queue
+          required: false
+          limit_queue: ludia
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -303,8 +314,11 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:entityqueue.entity_queue.ludia'
         - 'config:field.storage.node.field_clen_email'
         - 'config:field.storage.node.field_fotografia'
+        - entity_field_info
+        - views_data
   block_1:
     id: block_1
     display_title: Block
@@ -320,5 +334,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:entityqueue.entity_queue.ludia'
         - 'config:field.storage.node.field_clen_email'
         - 'config:field.storage.node.field_fotografia'
+        - entity_field_info
+        - views_data

@@ -46,7 +46,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Nadpis
+          label: Názov
           exclude: false
           alter:
             alter_text: false
@@ -298,7 +298,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Nadpis
+            label: Názov
             description: ''
             use_operator: false
             operator: title_op
