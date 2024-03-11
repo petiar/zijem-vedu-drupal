@@ -9,7 +9,6 @@ dependencies:
     - taxonomy.vocabulary.podcast
   content:
     - 'taxonomy_term:podcast:103b178a-7a91-4988-a46d-41deb0e0ad2f'
-    - 'taxonomy_term:podcast:4fddf926-0647-4e39-8376-80fc4852a15c'
     - 'taxonomy_term:podcast:ec9c2be0-b5f4-431f-8772-1f22bea26856'
   module:
     - better_exposed_filters
@@ -319,7 +318,12 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        field_podcast:
+          id: field_podcast
+          table: node__field_podcast
+          field: field_podcast
+          plugin_id: standard
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -848,17 +852,16 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_podcast_target_id:
-          id: field_podcast_target_id
-          table: node__field_podcast
-          field: field_podcast_target_id
-          relationship: none
+        field_id_value:
+          id: field_id_value
+          table: taxonomy_term__field_id
+          field: field_id_value
+          relationship: field_podcast
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value:
-            - 16
+          plugin_id: string
+          operator: '='
+          value: rtvs
           group: 1
           exposed: false
           expose:
@@ -875,7 +878,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -888,19 +891,24 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          vid: podcast
-          type: textfield
-          hierarchy: false
-          limit: true
-          error_message: true
       filter_groups:
         operator: AND
         groups:
           1: AND
       defaults:
+        relationships: false
         filters: false
         filter_groups: false
+      relationships:
+        field_podcast:
+          id: field_podcast
+          table: node__field_podcast
+          field: field_podcast
+          relationship: none
+          group_type: group
+          admin_label: 'field_podcast: Taxonomy term'
+          plugin_id: standard
+          required: false
       display_description: ''
       display_extenders: {  }
       path: blogcast/podcast/rtvs
@@ -976,17 +984,16 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_podcast_target_id:
-          id: field_podcast_target_id
-          table: node__field_podcast
-          field: field_podcast_target_id
-          relationship: none
+        field_id_value:
+          id: field_id_value
+          table: taxonomy_term__field_id
+          field: field_id_value
+          relationship: field_podcast
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value:
-            - 9
+          plugin_id: string
+          operator: '='
+          value: okolo
           group: 1
           exposed: false
           expose:
@@ -1003,7 +1010,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1016,19 +1023,24 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          vid: podcast
-          type: textfield
-          hierarchy: false
-          limit: true
-          error_message: true
       filter_groups:
         operator: AND
         groups:
           1: AND
       defaults:
+        relationships: false
         filters: false
         filter_groups: false
+      relationships:
+        field_podcast:
+          id: field_podcast
+          table: node__field_podcast
+          field: field_podcast
+          relationship: none
+          group_type: group
+          admin_label: 'field_podcast: Taxonomy term'
+          plugin_id: standard
+          required: false
       display_description: ''
       display_extenders: {  }
       path: blogcast/podcast/s-vedcami-okolo-sveta
@@ -1150,6 +1162,45 @@ display:
           hierarchy: false
           limit: true
           error_message: true
+        field_id_value:
+          id: field_id_value
+          table: taxonomy_term__field_id
+          field: field_id_value
+          relationship: field_podcast
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: '='
+          value: jednohubky
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:

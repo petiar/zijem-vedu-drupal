@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.podcast.field_header_obrazok
+    - field.field.taxonomy_term.podcast.field_id
     - field.field.taxonomy_term.podcast.field_include_in_podcast_feed
     - field.field.taxonomy_term.podcast.field_o_podcaste
     - field.field.taxonomy_term.podcast.field_player_obrazok
@@ -43,6 +44,14 @@ content:
       warn_multiple_usages: true
       show_crop_area: false
       show_default_crop: true
+    third_party_settings: {  }
+  field_id:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_include_in_podcast_feed:
     type: boolean_checkbox

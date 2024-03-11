@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.podcast.field_header_obrazok
+    - field.field.taxonomy_term.podcast.field_id
     - field.field.taxonomy_term.podcast.field_include_in_podcast_feed
     - field.field.taxonomy_term.podcast.field_o_podcaste
     - field.field.taxonomy_term.podcast.field_player_obrazok
@@ -34,6 +35,14 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_include_in_podcast_feed:
     type: boolean
