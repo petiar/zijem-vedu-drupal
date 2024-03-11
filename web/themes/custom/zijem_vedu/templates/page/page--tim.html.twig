@@ -4,17 +4,8 @@
     <div class="container">
       <div class="row align-items-end">
         <div class="col-12 col-lg-3"></div>
-        <div class="col-12 col-lg-6"><h1 class="family-heading mb-0 text-center">O nás</h1></div>
+        <div class="col-12 col-lg-6"><h1 class="family-heading mb-0 text-center">Tím Žijem vedu</h1></div>
         <div class="col-12 col-lg-3"></div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="links">
-            {% set current = path('<current>')|split('/') %}
-            <a href="/tim" class="link article-category-menu-item {% if current.2 == "article" %}active{% endif %}">Tím Žijem vedu</a>
-            <a href="/oz" class="link article-category-menu-item {% if current.2 == "podcast" %}active{% endif %}">OZ Žijem vedu</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -22,18 +13,21 @@
   <section class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-xl-8 offset-xl-2">
+        <div class="col">
           <h1 class="family-heading">Žijem vedu</h1>
-          <p class="subheading">Pôvodne ako neformálna skupina vedkýň a vedcov sme 2. augusta 2018 založili občianske združenie Žijem vedu. Zastrešenie pod právnu entitu nám umožnuje rozširovať naše aktivity vo viacerých smeroch, ako aj zapájať sa do rôznych výziev a grantových schém.</p>
-          <h2>Pridáte sa k nám?</h2>
-          <p>Náš tím sa stále rozrastá o nových členov. Staň sa jednou/jedným z nás.</p>
-          <p>Len nám napíšte na zijemvedu@zijemvedu.sk alebo cez sociálne siete a my sa ozveme späť.</p>
+          <p class="subheading">Žijem vedu, to sú ľudia z vedeckej komunity, ale aj nadšenci, všetci pracujú ako dobrovoľníci. Sme jeden tím a jediné, na čom záleží, je dobrý nápad, chuť spolupracovať a zlepšovať sa.</p>
         </div>
       </div>
     </div>
   </section>
 
-
+  <section class="pb-4">
+    <div class="container">
+      <div class="row py-4">
+        {{ drupal_view('osoby', 'block_1') }}
+      </div>
+    </div>
+  </section>
 
   <section class="events py-4 d-none">
 

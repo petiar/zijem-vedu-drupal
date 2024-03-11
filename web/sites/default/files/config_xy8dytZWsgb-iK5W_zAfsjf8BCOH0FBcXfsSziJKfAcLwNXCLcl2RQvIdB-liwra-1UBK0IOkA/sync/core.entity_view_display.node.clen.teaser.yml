@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.clen.field_aktivity
     - field.field.node.clen.field_clen_email
     - field.field.node.clen.field_clen_popis
     - field.field.node.clen.field_fotografia
@@ -23,6 +24,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_aktivity: true
   field_clen_email: true
   field_clen_popis: true
   field_fotografia: true

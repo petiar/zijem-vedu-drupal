@@ -1,6 +1,6 @@
 uuid: d37a36ad-3141-4205-87c4-a53a6e52f7b4
 langcode: sk
-status: true
+status: false
 dependencies:
   module:
     - zijem_vedu_blocks

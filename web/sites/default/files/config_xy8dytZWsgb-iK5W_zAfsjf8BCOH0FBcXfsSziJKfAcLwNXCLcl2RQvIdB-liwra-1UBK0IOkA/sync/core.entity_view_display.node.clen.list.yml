@@ -1,8 +1,9 @@
-uuid: fb515b1d-bf62-4edb-a894-8f8abc988301
+uuid: a103f853-18d0-4e44-89e7-1b882b0967be
 langcode: sk
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.list
     - field.field.node.clen.field_aktivity
     - field.field.node.clen.field_clen_email
     - field.field.node.clen.field_clen_popis
@@ -11,69 +12,39 @@ dependencies:
     - field.field.node.clen.field_skupina
     - node.type.clen
   module:
-    - link
-    - text
     - user
-id: node.clen.default
+id: node.clen.list
 targetEntityType: node
 bundle: clen
-mode: default
+mode: list
 content:
   field_aktivity:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 2
     region: content
   field_clen_email:
     type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
-    region: content
-  field_clen_popis:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_fotografia:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: kruhovy_portret
       link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_odkazy:
-    type: link_separate
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_skupina:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  links:
-    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  field_clen_popis: true
+  field_odkazy: true
+  field_skupina: true
   langcode: true
+  links: true

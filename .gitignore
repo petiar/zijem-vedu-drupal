@@ -27,3 +27,6 @@ services.yml
 
 # Ignore macOS system files
 .DS_Store
+
+# Ignore .env files as they are personal
+.env

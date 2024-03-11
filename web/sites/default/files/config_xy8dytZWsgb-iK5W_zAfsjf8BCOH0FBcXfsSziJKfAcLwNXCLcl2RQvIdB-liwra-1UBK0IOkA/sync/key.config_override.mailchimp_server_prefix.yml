@@ -1,0 +1,14 @@
+uuid: 9922650e-6b82-4f05-beda-14835dd9da4a
+langcode: sk
+status: true
+dependencies:
+  config:
+    - key.key.mailchimp_server_prefix
+    - zijem_vedu_mailchimp.settings
+id: mailchimp_server_prefix
+label: 'Mailchimp Server Prefix'
+config_type: system.simple
+config_prefix: ''
+config_name: zijem_vedu_mailchimp.settings
+config_item: server_prefix
+key_id: mailchimp_server_prefix

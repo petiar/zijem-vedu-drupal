@@ -253,7 +253,7 @@ display:
         type: normal
         title: Podujatia
         description: ''
-        weight: 0
+        weight: -44
         expanded: false
         menu_name: main
         parent: ''

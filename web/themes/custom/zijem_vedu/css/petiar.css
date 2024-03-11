@@ -79,3 +79,15 @@ img.align-center,
   flex-direction: row;
   list-style: none;
 }
+
+.crooked {
+  opacity: 0.7;
+  transform: rotate(5deg);
+  transition-duration: 200ms;
+  transition-property: opacity, transform;
+}
+
+.crooked:hover {
+  opacity: 1;
+  transform: scale(1.2) rotate(0);
+}

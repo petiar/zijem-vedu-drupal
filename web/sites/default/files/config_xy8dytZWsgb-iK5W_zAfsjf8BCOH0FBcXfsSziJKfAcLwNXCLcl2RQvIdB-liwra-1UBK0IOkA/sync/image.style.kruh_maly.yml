@@ -1,0 +1,29 @@
+uuid: 6a544f63-3daa-4062-a1cb-d277a433ecf9
+langcode: sk
+status: true
+dependencies:
+  module:
+    - iek
+name: kruh_maly
+label: 'Kruh malý'
+effects:
+  3c1ef6be-a6d8-40cb-8c29-a6e9100d544e:
+    uuid: 3c1ef6be-a6d8-40cb-8c29-a6e9100d544e
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 120
+      height: 120
+      anchor: center-center
+  57ffbca1-2cb5-4221-874e-5952dc3db059:
+    uuid: 57ffbca1-2cb5-4221-874e-5952dc3db059
+    id: iek_image_corner
+    weight: -8
+    data:
+      radius: '60'
+  42cc172c-ea7f-4f8d-a740-eb4e9b27206d:
+    uuid: 42cc172c-ea7f-4f8d-a740-eb4e9b27206d
+    id: image_convert
+    weight: -10
+    data:
+      extension: png

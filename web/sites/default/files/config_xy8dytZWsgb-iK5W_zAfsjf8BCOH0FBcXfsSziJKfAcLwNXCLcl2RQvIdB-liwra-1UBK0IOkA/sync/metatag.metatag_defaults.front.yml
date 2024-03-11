@@ -8,5 +8,7 @@ id: front
 label: 'Front page'
 tags:
   canonical_url: '[site:url]'
+  og_image: /themes/custom/zijem_vedu/img/Zijem_vedu_logo.png
+  og_site_name: 'Žijem vedu'
   shortlink: '[site:url]'
   title: 'Spájame slovenských vedcov'

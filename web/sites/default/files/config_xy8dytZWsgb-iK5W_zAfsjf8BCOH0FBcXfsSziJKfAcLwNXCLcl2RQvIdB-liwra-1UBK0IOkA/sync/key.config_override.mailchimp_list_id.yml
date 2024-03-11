@@ -1,0 +1,14 @@
+uuid: de61ce32-4881-44fe-a9f3-eeba6babc2b4
+langcode: sk
+status: true
+dependencies:
+  config:
+    - key.key.mailchimp_list_id
+    - zijem_vedu_mailchimp.settings
+id: mailchimp_list_id
+label: 'Mailchimp List ID'
+config_type: system.simple
+config_prefix: ''
+config_name: zijem_vedu_mailchimp.settings
+config_item: list_id
+key_id: mailchimp_list_id

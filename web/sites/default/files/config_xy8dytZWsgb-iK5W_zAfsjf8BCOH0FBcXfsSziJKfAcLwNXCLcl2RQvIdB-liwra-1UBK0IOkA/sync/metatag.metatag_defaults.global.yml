@@ -9,4 +9,13 @@ label: Global
 tags:
   canonical_url: '[current-page:url]'
   icon_192x192: /themes/custom/zijem_vedu/img/cropped-favicon-192x192.webp
+  og_country_name: Slovakia
+  og_description: 'Spájame slovenské vedkyne a vedcov doma aj v zahraničí'
+  og_image: 'https://zijemvedu.sk/themes/custom/zijem_vedu/img/Zijem_vedu_logo.png'
+  og_image_type: image/png
+  og_site_name: 'Žijem vedu'
+  og_title: 'Žijem vedu'
+  og_type: website
+  og_url: 'http://zijemvedu.sk'
+  shortcut_icon: /themes/custom/zijem_vedu//img/favicon/favicon-16x16.png
   title: '[current-page:title] | [site:name]'

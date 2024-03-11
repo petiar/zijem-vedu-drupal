@@ -3,6 +3,7 @@ langcode: sk
 status: true
 dependencies:
   config:
+    - field.field.node.clen.field_aktivity
     - field.field.node.clen.field_clen_email
     - field.field.node.clen.field_clen_popis
     - field.field.node.clen.field_fotografia
@@ -24,6 +25,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_aktivity:
+    type: string_textfield
+    weight: 126
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_clen_email:
     type: email_default

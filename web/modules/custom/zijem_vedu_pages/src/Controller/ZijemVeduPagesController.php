@@ -3,6 +3,7 @@
 namespace Drupal\zijem_vedu_pages\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Render\Element\Form;
 
 class ZijemVeduPagesController extends ControllerBase {
   public function articles() {
@@ -14,6 +15,15 @@ class ZijemVeduPagesController extends ControllerBase {
   }
 
   public function about() {
+    return [];
+  }
+
+  public function oz() {
+    return [];
+  }
+
+  public function team() {
+
     return [];
   }
 

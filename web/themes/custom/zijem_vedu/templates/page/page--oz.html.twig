@@ -11,8 +11,8 @@
         <div class="col-12">
           <div class="links">
             {% set current = path('<current>')|split('/') %}
-            <a href="/tim" class="link article-category-menu-item {% if current.2 == "article" %}active{% endif %}">Tím Žijem vedu</a>
-            <a href="/oz" class="link article-category-menu-item {% if current.2 == "podcast" %}active{% endif %}">OZ Žijem vedu</a>
+            <a href="/oz" class="link article-category-menu-item {% if current.1 == "oz" %}active{% endif %}">OZ Žijem vedu</a>
+            <a href="/tim" class="link article-category-menu-item {% if current.1 == "tim" %}active{% endif %}">Tím Žijem vedu</a>
           </div>
         </div>
       </div>
@@ -22,18 +22,56 @@
   <section class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-xl-8 offset-xl-2">
+        <div class="col-12 col-md-6 col-lg-4">
           <h1 class="family-heading">Žijem vedu</h1>
           <p class="subheading">Pôvodne ako neformálna skupina vedkýň a vedcov sme 2. augusta 2018 založili občianske združenie Žijem vedu. Zastrešenie pod právnu entitu nám umožnuje rozširovať naše aktivity vo viacerých smeroch, ako aj zapájať sa do rôznych výziev a grantových schém.</p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-7 offset-lg-1">
           <h2>Pridáte sa k nám?</h2>
-          <p>Náš tím sa stále rozrastá o nových členov. Staň sa jednou/jedným z nás.</p>
+          <p>Súčasťou tímu môžete byť aj vy.</p>
           <p>Len nám napíšte na zijemvedu@zijemvedu.sk alebo cez sociálne siete a my sa ozveme späť.</p>
         </div>
       </div>
     </div>
   </section>
 
-
+  <section class="pb-4">
+    <div class="container">
+      <h3 class="text-center mb-4">Občianske združenie je vedené Radou občianskeho združenia Žijem vedu.</h3>
+      <div class="row py-4">
+        <div class="col-12 col-md-6 col-lg">
+          <div class="member">
+            <p class="fw-bold color-violet mb-0">Dominika Fričová</p>
+            <span class="member__meta">predsedníčka rady</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg">
+          <div class="member">
+            <p class="fw-bold color-violet mb-0">Dominika Hroššová</p>
+            <span class="member__meta">podpredsedníčka rady</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg">
+          <div class="member">
+            <p class="fw-bold color-violet mb-0">Jana Laláková</p>
+            <span class="member__meta">podpredsedníčka rady</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg">
+          <div class="member">
+            <p class="fw-bold color-violet mb-0">Martina Dekanová</p>
+            <span class="member__meta">výkonná riaditeľka</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg">
+          <div class="member">
+            <p class="fw-bold color-violet mb-0">Lenka Belicová</p>
+            <span class="member__meta">členka rady</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="events py-4 d-none">
 

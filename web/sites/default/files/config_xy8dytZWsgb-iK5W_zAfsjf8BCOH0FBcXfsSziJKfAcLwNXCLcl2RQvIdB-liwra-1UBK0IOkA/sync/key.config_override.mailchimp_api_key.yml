@@ -1,0 +1,14 @@
+uuid: da87b263-1546-47ea-8267-89f9953ef6e5
+langcode: sk
+status: true
+dependencies:
+  config:
+    - key.key.mailchimp_api_key
+    - zijem_vedu_mailchimp.settings
+id: mailchimp_api_key
+label: 'Mailchimp API key'
+config_type: system.simple
+config_prefix: ''
+config_name: zijem_vedu_mailchimp.settings
+config_item: api_key
+key_id: mailchimp_api_key

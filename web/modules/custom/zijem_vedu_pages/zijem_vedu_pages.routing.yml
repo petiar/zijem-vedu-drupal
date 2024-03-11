@@ -19,3 +19,17 @@ zijem_vedu_pages:numbers:
     _title: 'Žijem vedu v číslach'
   requirements:
     _permission: 'access content'
+zijem_vedu_pages:oz:
+  path: '/oz'
+  defaults:
+    _controller: '\Drupal\zijem_vedu_pages\Controller\ZijemVeduPagesController::oz'
+    _title: 'Občianske združenie Žijem vedu'
+  requirements:
+    _permission: 'access content'
+zijem_vedu_pages:team:
+  path: '/tim'
+  defaults:
+    _controller: '\Drupal\zijem_vedu_pages\Controller\ZijemVeduPagesController::team'
+    _title: 'Žijem vedu tím'
+  requirements:
+    _permission: 'access content'
