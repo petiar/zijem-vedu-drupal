@@ -4,8 +4,6 @@ namespace Drupal\podcast_feed\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManager;
-use Drupal\Core\Entity\Query\QueryInterface;
-use Drupal\Core\Entity\Query\Sql\Query;
 use Drupal\Core\File\FileUrlGenerator;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
@@ -60,28 +58,32 @@ class PodcastFeedController extends ControllerBase {
       if ($node->getCreatedTime() > $lastBuildDate) {
         $lastBuildDate = $node->getCreatedTime();
       }
-      $fieldPopis = $node->get('field_popis')->getValue();
       /** @var \Drupal\file\Entity\File $file */
       $file = $node->get('field_subor')->entity;
       /** @var \Drupal\taxonomy\Entity\Term $term */
       $term = $node->get('field_podcast')->entity;
+      if (!$file || !$term) {
+        continue;
+      }
       $image = $term->get('field_header_obrazok')->entity;
+      $fieldPopis = $node->get('field_popis')->getValue();
       $playtime = $node->get('field_playtime_string')->getValue();
+      $description = !empty($fieldPopis[0]['value']) ? $this->truncateDescription($fieldPopis[0]['value'], 300) : '';
       $items[] = [
         'podcast' => $term->getName(),
         'title' => $this->getEpisodeTitle($term, $node),
         'pubDate' => $node->getCreatedTime(),
         'link' => $node->toUrl('canonical', ['absolute' => true]),
         'guid' => $node->uuid(),
-        'description' => $this->truncateDescription($fieldPopis[0]['value'], 300),
-        'subtitle' => $this->truncateDescription($fieldPopis[0]['value'], 300),
-        'encoded' => $this->truncateDescription($fieldPopis[0]['value'], 300),
+        'description' => $description,
+        'subtitle' => $description,
+        'encoded' => $description,
         'filePath' => $this->fileUrlGenerator->generateAbsoluteString($file->getFileUri()),
         'fileSize' => $file->getSize(),
         'fileType' => $file->getMimeType(),
-        'image' => $this->fileUrlGenerator->generateAbsoluteString($image->getFileUri()),
-        'playtime' => $playtime[0]['value'],
-        ];
+        'image' => $image ? $this->fileUrlGenerator->generateAbsoluteString($image->getFileUri()) : '',
+        'playtime' => !empty($playtime[0]['value']) ? $playtime[0]['value'] : '',
+      ];
     }
 
     $channel = [
@@ -117,7 +119,9 @@ class PodcastFeedController extends ControllerBase {
   }
 
   private function getEpisodeTitle(Term $term, Node $node): string {
-    return $term->getName() . ' (' . $node->get('field_cislo_epizody')->getValue()[0]['value'] . ') - ' . $node->getTitle();
+    $epizody = $node->get('field_cislo_epizody')->getValue();
+    $number = !empty($epizody[0]['value']) ? ' (' . $epizody[0]['value'] . ')' : '';
+    return $term->getName() . $number . ' - ' . $node->getTitle();
   }
 
 }

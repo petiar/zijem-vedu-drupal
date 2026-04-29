@@ -2,27 +2,29 @@
 
 namespace Drupal\zijem_vedu_mailchimp\Form;
 
-use Drupal\Console\Bootstrap\Drupal;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\zijem_vedu_mailchimp\Api;
 use GuzzleHttp\Exception\RequestException;
-use MailchimpMarketing;
-use Drupal\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Configure Zijem vedu mailchimp settings for this site.
  */
 class SettingsForm extends ConfigFormBase {
 
-  public static function create(ContainerInterface|\Symfony\Component\DependencyInjection\ContainerInterface $container) {
+  public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('zijem_vedu_mailchimp.api')
+      $container->get('config.factory'),
+      $container->get('zijem_vedu_mailchimp.api'),
     );
   }
 
-  public function __construct(Api $mailchimpApiService) {
-    $this->mailchimpApiService = $mailchimpApiService;
+  public function __construct(
+    $config_factory,
+    protected Api $mailchimpApiService,
+  ) {
+    parent::__construct($config_factory);
   }
 
   /**
@@ -91,14 +93,12 @@ class SettingsForm extends ConfigFormBase {
   private function getLists() {
     try {
       $lists = $this->mailchimpApiService->getMailchimpApi()->lists->getAllLists();
+      return $lists ? array_column($lists->lists, 'name', 'id') : [];
     }
     catch (RequestException $e) {
       \Drupal::logger('mailchimp')->alert($e->getMessage());
       \Drupal::messenger()->addError($e->getMessage());
-    }
-    if (!$lists) {
       return [];
     }
-    return array_column($lists->lists, 'name', 'id');
   }
 }

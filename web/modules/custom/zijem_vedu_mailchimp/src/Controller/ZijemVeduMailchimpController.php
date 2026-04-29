@@ -30,7 +30,7 @@ class ZijemVeduMailchimpController extends ControllerBase {
   public function subscribe(Request $request) {
     $notices = [];
     $errors = [];
-    $email = $request->get('email');
+    $email = $request->request->get('email');
 
     if (!$this->emailValidator->isValid($email)) {
       $errors[] = 'Toto veru nevyzerá na platný e-mail...';
@@ -53,13 +53,20 @@ class ZijemVeduMailchimpController extends ControllerBase {
         $notices[] = 'Úspešne prihlásený, ďakujeme!';
       }
       catch (RequestException $e) {
-        $error = $e->getResponse()->getBody()->getContents();
-        $response = json_decode($error);
-        $errors[] = 'S prihlásením bol problém, skúste neskôr, prosím. Pozrieme sa na to. (Chyba: ' . $response->title . ')';
-        \Drupal::logger('mailchimp')->error('Bol problém s prihlásením {email}, chyba: {error}', [
-          'email' => $email,
-          'error' => $error,
-        ]);
+        $errorDetail = '';
+        if ($e->hasResponse()) {
+          $error = $e->getResponse()->getBody()->getContents();
+          $decoded = json_decode($error);
+          $errorDetail = isset($decoded->title) ? ' (Chyba: ' . $decoded->title . ')' : '';
+          \Drupal::logger('mailchimp')->error('Bol problém s prihlásením {email}, chyba: {error}', [
+            'email' => $email,
+            'error' => $error,
+          ]);
+        }
+        else {
+          \Drupal::logger('mailchimp')->error('Bol problém s prihlásením {email}: sieťová chyba', ['email' => $email]);
+        }
+        $errors[] = 'S prihlásením bol problém, skúste neskôr, prosím. Pozrieme sa na to.' . $errorDetail;
       }
     }
 

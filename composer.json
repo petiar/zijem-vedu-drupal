@@ -17,7 +17,7 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.1",
-        "drupal/baguettebox": "^1.5",
+        "drupal/baguettebox": "^3.0",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/ckeditor": "^1.0",
         "drupal/config_ignore": "^3.0@beta",
@@ -40,7 +40,7 @@
         "drupal/paragraphs_modal_edit": "^1.1",
         "drupal/pathauto": "^1.11",
         "drupal/podcast": "^1.2",
-        "drupal/preload_font": "^1.0",
+        "drupal/preload_font": "^3.0",
         "drupal/readonly_field_widget": "^1.5",
         "drupal/twig_tweak": "^3.1",
         "drupal/upgrade_status": "^4.0@alpha",
