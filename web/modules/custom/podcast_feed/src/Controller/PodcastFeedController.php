@@ -3,47 +3,33 @@
 namespace Drupal\podcast_feed\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Entity\EntityTypeManager;
-use Drupal\Core\File\FileUrlGenerator;
+use Drupal\Core\File\FileUrlGeneratorInterface;
+use Drupal\Core\Render\RendererInterface;
+use Drupal\Core\Routing\UrlGeneratorInterface;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Class PodcastFeedController.
- */
 class PodcastFeedController extends ControllerBase {
 
   public function __construct(
-    private FileUrlGenerator $fileUrlGenerator,
-    protected $entityTypeManager,
-    private $urlGenerator,
-    private $renderer
-  )
-  {
-  }
+    private readonly FileUrlGeneratorInterface $fileUrlGenerator,
+    private readonly UrlGeneratorInterface $urlGenerator,
+    private readonly RendererInterface $renderer,
+  ) {}
 
-  public static function create(ContainerInterface $container)
-  {
+  public static function create(ContainerInterface $container): static {
     return new static(
       $container->get('file_url_generator'),
-      $container->get('entity_type.manager'),
       $container->get('url_generator'),
-      $container->get('renderer')
+      $container->get('renderer'),
     );
   }
 
-  /**
-   * The index method returns podcast XML.
-   *
-   * @return \Symfony\Component\HttpFoundation\Response
-   */
-  public function index(): Response
-  {
-    $items = [];
-
-    $nids = $this->entityTypeManager->getStorage('node')
+  public function index(Request $request): Response {
+    $nids = $this->entityTypeManager()->getStorage('node')
       ->getQuery()
       ->accessCheck(TRUE)
       ->condition('type', 'podcast')
@@ -51,71 +37,84 @@ class PodcastFeedController extends ControllerBase {
       ->condition('field_podcast.entity.field_include_in_podcast_feed', 1)
       ->sort('created', 'DESC')
       ->execute();
-    $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
 
+    $nodes = $this->entityTypeManager()->getStorage('node')->loadMultiple($nids);
+
+    $items = [];
     $lastBuildDate = 0;
+
     foreach ($nodes as $node) {
-      if ($node->getCreatedTime() > $lastBuildDate) {
-        $lastBuildDate = $node->getCreatedTime();
-      }
-      /** @var \Drupal\file\Entity\File $file */
+      /** @var \Drupal\file\Entity\File|null $file */
       $file = $node->get('field_subor')->entity;
-      /** @var \Drupal\taxonomy\Entity\Term $term */
+      /** @var \Drupal\taxonomy\Entity\Term|null $term */
       $term = $node->get('field_podcast')->entity;
       if (!$file || !$term) {
         continue;
       }
+
+      $created = $node->getCreatedTime();
+      if ($created > $lastBuildDate) {
+        $lastBuildDate = $created;
+      }
+
       $image = $term->get('field_header_obrazok')->entity;
       $fieldPopis = $node->get('field_popis')->getValue();
       $playtime = $node->get('field_playtime_string')->getValue();
       $description = !empty($fieldPopis[0]['value']) ? $this->truncateDescription($fieldPopis[0]['value'], 300) : '';
+
       $items[] = [
-        'podcast' => $term->getName(),
-        'title' => $this->getEpisodeTitle($term, $node),
-        'pubDate' => $node->getCreatedTime(),
-        'link' => $node->toUrl('canonical', ['absolute' => true]),
-        'guid' => $node->uuid(),
+        'podcast'   => $term->getName(),
+        'title'     => $this->getEpisodeTitle($term, $node),
+        'pubDate'   => $created,
+        'link'      => $node->toUrl('canonical', ['absolute' => TRUE]),
+        'guid'      => $node->uuid(),
         'description' => $description,
-        'subtitle' => $description,
-        'encoded' => $description,
-        'filePath' => $this->fileUrlGenerator->generateAbsoluteString($file->getFileUri()),
-        'fileSize' => $file->getSize(),
-        'fileType' => $file->getMimeType(),
-        'image' => $image ? $this->fileUrlGenerator->generateAbsoluteString($image->getFileUri()) : '',
-        'playtime' => !empty($playtime[0]['value']) ? $playtime[0]['value'] : '',
+        'filePath'  => $this->fileUrlGenerator->generateAbsoluteString($file->getFileUri()),
+        'fileSize'  => $file->getSize(),
+        'fileType'  => $file->getMimeType(),
+        'image'     => $image ? $this->fileUrlGenerator->generateAbsoluteString($image->getFileUri()) : '',
+        'playtime'  => $playtime[0]['value'] ?? '',
       ];
     }
 
-    $channel = [
-      'url' => $this->urlGenerator->generateFromRoute('<front>', [], ['absolute' => true]),
-      'lastBuildDate' => $lastBuildDate,
-      'atomLink' => $this->urlGenerator->generateFromRoute('podcast.feed', [], ['absolute' => true]),
-    ];
+    // Podpora podmienečného GET — vráti 304 ak sa feed nezmenil.
+    $etag = md5($lastBuildDate . count($items));
+    if ($request->headers->get('If-None-Match') === $etag) {
+      return new Response('', Response::HTTP_NOT_MODIFIED);
+    }
 
     $build = [
       '#theme' => 'podcast_feed',
       '#items' => $items,
-      '#channel' => $channel,
-      '#cache' => ['max-age' => 0],
+      '#channel' => [
+        'url'           => $this->urlGenerator->generateFromRoute('<front>', [], ['absolute' => TRUE]),
+        'lastBuildDate' => $lastBuildDate,
+        'atomLink'      => $this->urlGenerator->generateFromRoute('podcast.feed', [], ['absolute' => TRUE]),
+        'artworkUrl'    => $request->getSchemeAndHttpHost() . '/themes/custom/zijem_vedu/img/podcast-header.png',
+      ],
+      '#cache' => [
+        'max-age' => 3600,
+        'tags'    => ['node_list:podcast'],
+      ],
     ];
 
     $output = $this->renderer->renderRoot($build);
 
-    $response = new Response();
-    $response->setContent($output);
-    $response->headers->set('Content-Type', 'text/xml');
+    $response = new Response($output);
+    $response->headers->set('Content-Type', 'application/rss+xml; charset=UTF-8');
+    $response->headers->set('ETag', $etag);
+    $response->headers->set('Last-Modified', gmdate('D, d M Y H:i:s', $lastBuildDate) . ' GMT');
+    $response->headers->set('Cache-Control', 'public, max-age=3600');
 
     return $response;
   }
 
-  private function truncateDescription($text, $limit = 200): string
-  {
-    $append = false;
-    $text = strip_tags($text);
-    if (mb_strlen(mb_substr($text, 0, $limit)) < strlen($text)) {
-      $append = true;
+  private function truncateDescription(string $text, int $limit = 200): string {
+    $text = strip_tags(html_entity_decode($text));
+    if (mb_strlen($text) <= $limit) {
+      return $text;
     }
-    return mb_substr(html_entity_decode($text), 0, $limit) . ($append ? '...' : '');
+    return mb_substr($text, 0, $limit) . '...';
   }
 
   private function getEpisodeTitle(Term $term, Node $node): string {

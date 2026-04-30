@@ -30,12 +30,11 @@
       <itunes:email>zijemvedu@zijemvedu.sk</itunes:email>
     </itunes:owner>
     <itunes:explicit>clean</itunes:explicit>
-    <itunes:image href="/themes/custom/zijem_vedu/img/podcast-header.png"></itunes:image>
+    <itunes:image href="{{ channel.artworkUrl }}"></itunes:image>
     <image>
-      <url>https://zijemvedu.sk/themes/custom/zijem_vedu/img/podcast-header.png</url>
+      <url>{{ channel.artworkUrl }}</url>
       <title>Žijem vedu podcast</title>
-      <link>
-      https://zijemvedu.sk/</link>
+      <link>{{ channel.url }}</link>
     </image>
     <itunes:category text="Science">
     </itunes:category>
@@ -53,8 +52,8 @@
         </dc:creator>
         <guid isPermaLink="false">{{ item.guid }}</guid>
         <description><![CDATA[{{ item.description }}]]></description>
-        <itunes:subtitle><![CDATA[{{ item.subtitle }}]]></itunes:subtitle>
-        <content:encoded><![CDATA[{{ item.encoded }}]]></content:encoded>
+        <itunes:subtitle><![CDATA[{{ item.description }}]]></itunes:subtitle>
+        <content:encoded><![CDATA[{{ item.description }}]]></content:encoded>
         <enclosure url="{{ item.filePath }}" length="{{ item.fileSize }}" type="{{ item.fileType }}"></enclosure>
         <itunes:summary>
           <![CDATA[{{ item.description }}]]>

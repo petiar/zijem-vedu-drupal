@@ -6,8 +6,8 @@
         <div class="article__tag mb-0 color-gold">{{ content.field_kategoria.0.value }}</div>
         <div class="fs-7 ml-1">{{ node.created.value|date('d. m. Y') }}</div>
       </div>
-      <figure class="figure">
-        <img src="{{ file_url(node.field_image.entity.fileuri) }}" class="figure-img img-fluid rounded" alt="{{ node.field_image.alt }}">
+      <figure class="figure d-block">
+        <img src="{{ file_url(node.field_image.entity.fileuri) }}" class="figure-img img-fluid rounded d-block mx-auto" alt="{{ node.field_image.alt }}">
       </figure>
     </div>
     <div class="col-12 col-xl-6 offset-xl-3">
